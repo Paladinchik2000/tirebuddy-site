@@ -1,246 +1,159 @@
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-
-const PRIMARY_RED = '#E63946'
-
-function Logo() {
-    return (
-        <div className="flex items-center gap-3 select-none">
-            <img
-                src="https://i.imgur.com/hNgWir3.png"
-                alt="Buddy logo"
-                className="h-8 w-8 rounded-full object-contain shadow-sm"
-            />
-            <span className="text-xl md:text-2xl font-extrabold tracking-tight text-slate-900">
-                Tire<span className="text-slate-800">Buddy</span>
-            </span>
-        </div>
-    )
-}
-
-function NavBar() {
-    return (
-        <header className="sticky top-0 z-30 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-slate-100">
-            <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-                <Logo />
-                <nav className="hidden md:flex items-center gap-8 text-sm text-slate-700">
-                    <a className="hover:text-slate-900" href="#home">Home</a>
-                    <a className="hover:text-slate-900" href="#services">Services</a>
-                    <a className="hover:text-slate-900" href="#about">About</a>
-                    <a className="hover:text-slate-900" href="#booking">Booking</a>
-                    <a className="hover:text-slate-900" href="#blog">Blog</a>
-                    <a
-                        href="#booking"
-                        className="ml-2 rounded-full px-4 py-2 font-semibold text-white shadow-sm hover:shadow transition"
-                        style={{ background: PRIMARY_RED }}
-                    >
-                        Book Now
-                    </a>
-                </nav>
-            </div>
-        </header>
-    )
-}
-
-function Toast({ message, type }) {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.3 }}
-            className={`fixed bottom-6 right-6 px-5 py-3 rounded-lg shadow-lg text-white font-medium ${type === 'success' ? 'bg-green-600' : 'bg-red-600'
-                }`}
-        >
-            {message}
-        </motion.div>
-    )
-}
-
-function Booking() {
-    const [submitted, setSubmitted] = useState(false)
-    const [errors, setErrors] = useState({})
-    const [toast, setToast] = useState(null)
-    const [postalCode, setPostalCode] = useState('')
-
-    const validate = (data) => {
-        const newErrors = {}
-        if (!data.get('name')) newErrors.name = 'Name is required'
-        if (!data.get('phone')) newErrors.phone = 'Phone number is required'
-        if (!data.get('address')) newErrors.address = 'Address is required'
-        if (!data.get('vehicleMake')) newErrors.vehicleMake = 'Vehicle Make is required'
-        if (!data.get('vehicleModel')) newErrors.vehicleModel = 'Vehicle Model is required'
-        if (!data.get('postalCode')) newErrors.postalCode = 'Postal Code is required'
-        if (!data.get('service')) newErrors.service = 'Please select a service'
-        return newErrors
-    }
-
-    const handlePostalChange = (e) => {
-        let value = e.target.value.toUpperCase().replace(/\s+/g, '')
-        if (value.length > 3) {
-            value = value.slice(0, 3) + ' ' + value.slice(3)
-        }
-        setPostalCode(value)
-    }
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const form = e.target
-        const data = new FormData(form)
-        const validationErrors = validate(data)
-
-        if (Object.keys(validationErrors).length > 0) {
-            setErrors(validationErrors)
-            return
-        }
-
-        setErrors({})
-
-        try {
-            const res = await fetch('https://formspree.io/f/xwprnndy', {
-                method: 'POST',
-                body: data,
-                headers: { Accept: 'application/json' },
-            })
-
-            if (res.ok) {
-                setSubmitted(true)
-                setToast({ message: '✅ Booking sent successfully!', type: 'success' })
-                form.reset()
-                setPostalCode('')
-            } else {
-                setToast({ message: '❌ Something went wrong, please try again.', type: 'error' })
-            }
-        } catch (err) {
-            setToast({ message: '❌ Network error. Please try again later.', type: 'error' })
-        }
-
-        setTimeout(() => setToast(null), 4000)
-    }
-
-    return (
-        <section id="booking" className="bg-white py-16 border-t border-slate-200 relative">
-            <AnimatePresence>{toast && <Toast message={toast.message} type={toast.type} />}</AnimatePresence>
-
-            <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-12 items-start">
-                {/* Booking Form */}
-                <div>
-                    <h2 className="text-3xl font-bold text-slate-900 mb-4">Book Your Service in 2 Minutes</h2>
-                    <p className="text-slate-600 mb-8">Quick, friendly, and mobile — we come to your driveway!</p>
-
-                    {!submitted ? (
-                        <form className="grid gap-4" onSubmit={handleSubmit}>
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <input name="name" type="text" placeholder="Name" className={`border rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 ${errors.name ? 'border-red-400 ring-red-300' : 'border-slate-300 focus:ring-red-400'}`} />
-                                    {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
-                                </div>
-                                <div>
-                                    <input name="phone" type="tel" placeholder="Phone" className={`border rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 ${errors.phone ? 'border-red-400 ring-red-300' : 'border-slate-300 focus:ring-red-400'}`} />
-                                    {errors.phone && <p className="text-sm text-red-500 mt-1">{errors.phone}</p>}
-                                </div>
-                            </div>
-
-                            <div>
-                                <input name="address" type="text" placeholder="Address" className={`border rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 ${errors.address ? 'border-red-400 ring-red-300' : 'border-slate-300 focus:ring-red-400'}`} />
-                                {errors.address && <p className="text-sm text-red-500 mt-1">{errors.address}</p>}
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <input name="vehicleMake" type="text" placeholder="Vehicle Make" className={`border rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 ${errors.vehicleMake ? 'border-red-400 ring-red-300' : 'border-slate-300 focus:ring-red-400'}`} />
-                                    {errors.vehicleMake && <p className="text-sm text-red-500 mt-1">{errors.vehicleMake}</p>}
-                                </div>
-                                <div>
-                                    <input name="vehicleModel" type="text" placeholder="Vehicle Model" className={`border rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 ${errors.vehicleModel ? 'border-red-400 ring-red-300' : 'border-slate-300 focus:ring-red-400'}`} />
-                                    {errors.vehicleModel && <p className="text-sm text-red-500 mt-1">{errors.vehicleModel}</p>}
-                                </div>
-                            </div>
-
-                            <div>
-                                <input
-                                    name="postalCode"
-                                    type="text"
-                                    value={postalCode}
-                                    onChange={handlePostalChange}
-                                    placeholder="Postal Code (e.g. A1A 1A1)"
-                                    maxLength={7}
-                                    className={`border rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 ${errors.postalCode ? 'border-red-400 ring-red-300' : 'border-slate-300 focus:ring-red-400'}`}
-                                />
-                                {errors.postalCode && <p className="text-sm text-red-500 mt-1">{errors.postalCode}</p>}
-                            </div>
-
-                            <div>
-                                <select name="service" className={`border rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 ${errors.service ? 'border-red-400 ring-red-300' : 'border-slate-300 focus:ring-red-400'}`}>
-                                    <option value="">Select Service</option>
-                                    <option>Tire Change</option>
-                                    <option>Punctured Tire Repair</option>
-                                    <option>Gutter Cleaning</option>
-                                    <option>Fall Cleanup</option>
-                                </select>
-                                {errors.service && <p className="text-sm text-red-500 mt-1">{errors.service}</p>}
-                            </div>
-
-                            <textarea name="message" placeholder="Additional details (optional)" rows={3} className="border border-slate-300 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-red-400" />
-
-                            <button type="submit" className="rounded-full px-6 py-3 font-semibold text-white shadow-md hover:shadow-lg transition" style={{ background: PRIMARY_RED }}>
-                                Book Now
-                            </button>
-                        </form>
-                    ) : (
-                        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }} className="p-6 border border-slate-200 rounded-xl bg-green-50 text-green-700">
-                            <h3 className="font-bold text-lg">Thank you!</h3>
-                            <p>Your booking has been received. We’ll contact you shortly to confirm your appointment.</p>
-                        </motion.div>
-                    )}
-                </div>
-
-                {/* Contact + Map Section */}
-                <div className="space-y-6">
-                    <div>
-                        <h3 className="text-2xl font-bold text-slate-900 mb-2">We’ll Take Care of the Rest!</h3>
-                        <p className="text-slate-600 mb-4">Once you submit the form, our friendly team will contact you to confirm your appointment within 15 minutes.</p>
-                        <a href="tel:+14164285819" className="inline-block rounded-full px-6 py-3 font-semibold text-white shadow hover:shadow-lg transition" style={{ background: PRIMARY_RED }}>
-                            Call Us Now
-                        </a>
-                    </div>
-
-                    <div className="aspect-video w-full rounded-xl overflow-hidden shadow border border-slate-200">
-                        <iframe
-                            title="TireBuddy Service Area"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.526698232996!2d-79.38318468450488!3d43.65322697912161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d1f0d8c0ab%3A0xb7e5d7d642f9b6c!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1678378366115!5m2!1sen!2sca"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            allowFullScreen=""
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                        ></iframe>
-                    </div>
-
-                    <div className="text-slate-600 text-sm">
-                        <p>📍 Serving: Toronto, Mississauga, Oakville, Burlington</p>
-                        <p>📞 +1 416 428 5819</p>
-                        <p>✉️ info@tirebuddy.ca</p>
-                        <p>🕒 Mon–Sun, 8am–8pm</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
-}
+import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 export default function TireBuddyHome() {
-    return (
-        <div className="min-h-screen bg-[#F4F4F4] text-slate-800">
-            <NavBar />
-            <Booking />
-            <footer className="border-t border-slate-200 bg-white">
-                <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-3">
-                    <p>© {new Date().getFullYear()} TireBuddy. All rights reserved.</p>
-                    <p>Made with ❤️ in Canada. “Your Tire’s Best Friend.”</p>
-                </div>
-            </footer>
+  const [loading, setLoading] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const PRIMARY_RED = "#E63946";
+  const linkClass = ({ isActive }) =>
+    (isActive ? "text-slate-900" : "text-slate-700") +
+    " hover:text-slate-900 transition";
+
+  return (
+    <div className="bg-[#F4F4F4] min-h-screen flex flex-col">
+      {loading ? (
+        <div className="flex flex-col items-center justify-center flex-1">
+          <img
+            src="https://i.imgur.com/4YFSmoN.png"
+            alt="Buddy loading"
+            className="h-24 w-24 animate-spin"
+          />
+          <p className="text-slate-700 mt-3">Loading TireBuddy...</p>
         </div>
-    )
+      ) : (
+        <>
+          <header className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-100">
+            <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+              <Link to="/" className="flex items-center gap-2 select-none">
+                <img
+                  src="https://i.imgur.com/4YFSmoN.png"
+                  alt="Buddy logo"
+                  className="h-8 w-8 rounded-full"
+                />
+                <span className="text-xl md:text-2xl font-extrabold text-slate-900">
+                  Tire<span className="text-slate-800">Buddy</span>
+                </span>
+              </Link>
+
+              <nav className="hidden md:flex items-center gap-8 text-sm">
+                <NavLink to="/" className={linkClass}>Home</NavLink>
+                <NavLink to="/services" className={linkClass}>Services</NavLink>
+                <NavLink to="/about" className={linkClass}>About</NavLink>
+                <NavLink to="/blog" className={linkClass}>Blog</NavLink>
+                <a
+                  href="/#booking"
+                  className="ml-2 rounded-full px-4 py-2 font-semibold text-white shadow-sm hover:shadow transition"
+                  style={{ background: PRIMARY_RED }}
+                >
+                  Book Now
+                </a>
+              </nav>
+
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="md:hidden text-slate-700 focus:outline-none text-2xl"
+              >
+                ☰
+              </button>
+            </div>
+
+            {menuOpen && (
+              <div className="md:hidden bg-white border-t border-slate-200 px-4 py-3 space-y-3">
+                <NavLink to="/" className={linkClass} onClick={() => setMenuOpen(false)}>Home</NavLink>
+                <br />
+                <NavLink to="/services" className={linkClass} onClick={() => setMenuOpen(false)}>Services</NavLink>
+                <br />
+                <NavLink to="/about" className={linkClass} onClick={() => setMenuOpen(false)}>About</NavLink>
+                <br />
+                <NavLink to="/blog" className={linkClass} onClick={() => setMenuOpen(false)}>Blog</NavLink>
+                <br />
+                <a
+                  href="/#booking"
+                  onClick={() => setMenuOpen(false)}
+                  className="block rounded-full px-4 py-2 text-center font-semibold text-white shadow-sm hover:shadow transition"
+                  style={{ background: PRIMARY_RED }}
+                >
+                  Book Now
+                </a>
+              </div>
+            )}
+          </header>
+
+          <main className="flex-1">
+            <section className="text-center py-20">
+              <h1 className="text-4xl font-bold text-slate-900 mb-4">
+                Your Tire’s Best Friend
+              </h1>
+              <p className="text-slate-700 max-w-xl mx-auto">
+                Fast, friendly, and mobile tire service across Ontario — from tire changes
+                to seasonal cleanup, we come to you.
+              </p>
+            </section>
+
+            <section id="services" className="max-w-6xl mx-auto px-4 py-16">
+              <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+                Our Services
+              </h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[
+                  { title: "Tire Change", desc: "Seasonal swaps done at your driveway." },
+                  { title: "Punctured Tire Repair", desc: "We fix flats on-site quickly." },
+                  { title: "Gutter Cleaning", desc: "Prevent water damage to your home." },
+                  { title: "Fall Cleanup", desc: "Keep your yard clean before winter." },
+                  { title: "Snow Plowing", desc: "Reliable driveway clearing in winter." },
+                ].map((s) => (
+                  <article key={s.title} className="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm hover:shadow-md transition">
+                    <h3 className="font-semibold text-slate-900">{s.title}</h3>
+                    <p className="text-sm text-slate-600 mt-1">{s.desc}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+
+            <section id="booking" className="bg-white border-t border-slate-200 py-16">
+              <div className="max-w-3xl mx-auto px-4">
+                <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
+                  Book an Appointment
+                </h2>
+                <form action="https://formspree.io/f/xwprnndy" method="POST" className="space-y-4">
+                  <input type="text" name="name" placeholder="Full Name" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
+                  <input type="tel" name="phone" placeholder="Phone Number" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
+                  <input type="text" name="vehicle_make" placeholder="Vehicle Make" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
+                  <input type="text" name="vehicle_model" placeholder="Vehicle Model" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
+                  <input type="text" name="postal_code" placeholder="Postal Code" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
+                  <textarea name="message" placeholder="Additional Details (optional)" className="w-full rounded-lg border border-slate-300 px-4 py-2"></textarea>
+                  <button type="submit" className="w-full rounded-lg bg-[#E63946] text-white py-3 font-semibold shadow hover:opacity-90 transition">
+                    Submit Request
+                  </button>
+                </form>
+              </div>
+            </section>
+          </main>
+
+          <footer className="border-t border-slate-200 bg-white mt-10">
+            <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="text-center md:text-left">
+                <p>© {new Date().getFullYear()} TireBuddy. All rights reserved.</p>
+                <p>Made with ❤️ in Canada. “Your Tire’s Best Friend.”</p>
+              </div>
+              <div className="flex items-center gap-5 text-slate-600">
+                <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="hover:text-red-600 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="h-6 w-6"><path d="M23.498 6.186a2.997 2.997 0 00-2.112-2.119C19.2 3.5 12 3.5 12 3.5s-7.2 0-9.386.567A2.997 2.997 0 00.502 6.186 31.8 31.8 0 000 12a31.8 31.8 0 00.502 5.814 2.997 2.997 0 002.112 2.119C4.8 20.5 12 20.5 12 20.5s7.2 0 9.386-.567a2.997 2.997 0 002.112-2.119A31.8 31.8 0 0024 12a31.8 31.8 0 00-.502-5.814zM9.75 15.02V8.98l6.25 3.02-6.25 3.02z" /></svg>
+                </a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="h-6 w-6"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.794.143v3.24h-1.918c-1.505 0-1.796.716-1.796 1.764v2.314h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.325C24 .593 23.407 0 22.675 0z"/></svg>
+                </a>
+              </div>
+            </div>
+          </footer>
+        </>
+      )}
+    </div>
+  );
 }
