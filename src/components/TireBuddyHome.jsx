@@ -116,25 +116,100 @@ export default function TireBuddyHome() {
               </div>
             </section>
 
-            <section id="booking" className="bg-white border-t border-slate-200 py-16">
-              <div className="max-w-3xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-                  Book an Appointment
-                </h2>
-                <form action="https://formspree.io/f/xwprnndy" method="POST" className="space-y-4">
-                  <input type="text" name="name" placeholder="Full Name" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
-                  <input type="tel" name="phone" placeholder="Phone Number" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
-                  <input type="text" name="vehicle_make" placeholder="Vehicle Make" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
-                  <input type="text" name="vehicle_model" placeholder="Vehicle Model" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
-                  <input type="text" name="postal_code" placeholder="Postal Code" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
-                  <textarea name="message" placeholder="Additional Details (optional)" className="w-full rounded-lg border border-slate-300 px-4 py-2"></textarea>
-                  <button type="submit" className="w-full rounded-lg bg-[#E63946] text-white py-3 font-semibold shadow hover:opacity-90 transition">
-                    Submit Request
-                  </button>
-                </form>
-              </div>
-            </section>
-          </main>
+            <section id="booking" className="bg-[#F9FAFB] border-t border-slate-200 py-20">
+  <div className="max-w-3xl mx-auto px-6">
+    <div className="text-center mb-10">
+      <h2 className="text-4xl font-bold text-slate-900 mb-2">Book Your Appointment</h2>
+      <p className="text-slate-600">
+        Fast, friendly, and mobile — we come to you. Fill out the form below and we’ll get back to you shortly.
+      </p>
+    </div>
+
+    <form
+      action="https://formspree.io/f/xwprnndy"
+      method="POST"
+      className="bg-white shadow-md rounded-2xl p-8 space-y-5 border border-slate-200"
+    >
+      <div className="grid md:grid-cols-2 gap-5">
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          required
+          className="rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-[#E63946] focus:outline-none"
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Phone Number"
+          required
+          className="rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-[#E63946] focus:outline-none"
+        />
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-5">
+        <input
+          type="text"
+          name="vehicle_make"
+          placeholder="Vehicle Make"
+          required
+          className="rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-[#E63946] focus:outline-none"
+        />
+        <input
+          type="text"
+          name="vehicle_model"
+          placeholder="Vehicle Model"
+          required
+          className="rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-[#E63946] focus:outline-none"
+        />
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-5">
+        <input
+          type="text"
+          name="address"
+          placeholder="Address"
+          required
+          className="rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-[#E63946] focus:outline-none"
+        />
+        <input
+          type="text"
+          name="postal_code"
+          placeholder="Postal Code"
+          required
+          className="rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-[#E63946] focus:outline-none"
+        />
+      </div>
+
+      <select
+        name="service_type"
+        required
+        className="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-[#E63946] focus:outline-none text-slate-700"
+      >
+        <option value="">Select Service</option>
+        <option value="tire_change">Tire Change</option>
+        <option value="punctured_tire_repair">Punctured Tire Repair</option>
+        <option value="gutter_cleaning">Gutter Cleaning</option>
+        <option value="fall_cleanup">Fall Cleanup</option>
+        <option value="snow_plowing">Snow Plowing</option>
+      </select>
+
+      <textarea
+        name="message"
+        placeholder="Additional Details (optional)"
+        className="w-full rounded-lg border border-slate-300 px-4 py-2 focus:ring-2 focus:ring-[#E63946] focus:outline-none min-h-[100px]"
+      ></textarea>
+
+      <button
+        type="submit"
+        className="w-full bg-[#E63946] text-white py-3 font-semibold rounded-full shadow-md hover:opacity-90 transition"
+      >
+        Submit Request
+      </button>
+    </form>
+  </div>
+</section>
+
 
           <footer className="border-t border-slate-200 bg-white mt-10">
             <div className="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-4">
