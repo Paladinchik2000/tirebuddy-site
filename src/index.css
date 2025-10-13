@@ -5,3 +5,11 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
+body {
+  background-image: url("https://imgur.com/a/WT0KTdu#WKm2lus");
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-color: #F4F4F4;
+  opacity: 0.95;
+}
