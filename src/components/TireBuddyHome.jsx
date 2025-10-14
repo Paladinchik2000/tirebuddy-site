@@ -32,6 +32,9 @@ export default function TireBuddyHome() {
               <p className="text-slate-700 max-w-xl mx-auto">
                 Fast, friendly, and mobile tire service across Ontario — from tire changes
                 to seasonal cleanup, we come to you.
+              </h1>
+              <p className="text-slate-700 max-w-xl mx-auto">
+                We offer a 10% discount for pensioner!
               </p>
             </section>
 
