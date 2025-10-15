@@ -5,7 +5,7 @@ export default function ServicesPage() {
     {
       title: "Tire Change",
       desc: "Seasonal tire swaps done right in your driveway — fast, clean, and stress-free.",
-      img: "https://images.unsplash.com/photo-1607860108855-1b1e3b7f1f7e?auto=format&fit=crop&w=800&q=80",
+      img: "https://i.imgur.com/FUlWaht.jpeg",
     },
     {
       title: "Punctured Tire Repair",
