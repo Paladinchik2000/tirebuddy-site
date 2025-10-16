@@ -94,58 +94,73 @@ export default function TireBuddyHome() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
                 Book an Appointment
               </h2>
-              <form
-                action="https://formspree.io/f/xwprnndy"
-                method="POST"
-                className="space-y-4"
-              >
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Full Name"
-                  required
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  required
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
-                />
-                <input
-                  type="text"
-                  name="vehicle_make"
-                  placeholder="Vehicle Make"
-                  required
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
-                />
-                <input
-                  type="text"
-                  name="vehicle_model"
-                  placeholder="Vehicle Model"
-                  required
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
-                />
-                <input
-                  type="text"
-                  name="postal_code"
-                  placeholder="Postal Code"
-                  required
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
-                />
-                <textarea
-                  name="message"
-                  placeholder="Additional Details (optional)"
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
-                ></textarea>
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-[#E63946] text-white py-3 font-semibold shadow hover:opacity-90 transition"
-                >
-                  Submit Request
-                </button>
-              </form>
+             <form
+  action="https://formspree.io/f/xwprnndy"
+  method="POST"
+  className="space-y-4"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Full Name"
+    required
+    className="w-full rounded-lg border border-slate-300 px-4 py-2"
+  />
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone Number"
+    required
+    className="w-full rounded-lg border border-slate-300 px-4 py-2"
+  />
+
+  {/* NEW: SERVICE SELECTION */}
+  <select
+    name="service"
+    required
+    className="w-full rounded-lg border border-slate-300 px-4 py-2 bg-white"
+  >
+    <option value="">Select a Service</option>
+    <option value="Tire Change">Tire Change</option>
+    <option value="Punctured Tire Repair">Punctured Tire Repair</option>
+    <option value="Gutter Cleaning">Gutter Cleaning</option>
+    <option value="Fall Cleanup">Fall Cleanup</option>
+    <option value="Snow Plowing">Snow Plowing</option>
+  </select>
+
+  <input
+    type="text"
+    name="vehicle_make"
+    placeholder="Vehicle Make"
+    required
+    className="w-full rounded-lg border border-slate-300 px-4 py-2"
+  />
+  <input
+    type="text"
+    name="vehicle_model"
+    placeholder="Vehicle Model"
+    required
+    className="w-full rounded-lg border border-slate-300 px-4 py-2"
+  />
+  <input
+    type="text"
+    name="postal_code"
+    placeholder="Postal Code"
+    required
+    className="w-full rounded-lg border border-slate-300 px-4 py-2"
+  />
+  <textarea
+    name="message"
+    placeholder="Additional Details (optional)"
+    className="w-full rounded-lg border border-slate-300 px-4 py-2"
+  ></textarea>
+  <button
+    type="submit"
+    className="w-full rounded-lg bg-[#E63946] text-white py-3 font-semibold shadow hover:opacity-90 transition"
+  >
+    Submit Request
+  </button>
+</form>
             </div>
           </section>
         </>
