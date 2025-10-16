@@ -9,7 +9,19 @@ export default function Layout() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F4F4F4]">
-      {/* HEADER */}
+      {/* ===== TOP CONTACT BAR ===== */}
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 py-2 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-600">
+          <p>
+            📞 <a href="tel:+14164285819" className="hover:text-[#E63946] transition">+1 (416) 428-5819</a>
+          </p>
+          <p>
+            ✉️ <a href="mailto:info@tirebuddy.ca" className="hover:text-[#E63946] transition">info@tirebuddy.ca</a>
+          </p>
+        </div>
+      </div>
+
+      {/* ===== HEADER ===== */}
       <header className="sticky top-0 z-50 bg-white shadow-md border-b border-slate-200">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 select-none">
@@ -39,12 +51,12 @@ export default function Layout() {
         </div>
       </header>
 
-      {/* MAIN CONTENT */}
-      <main className="flex-1">
+      {/* ===== MAIN CONTENT (tire track background applies here only) ===== */}
+      <main className="flex-1 relative z-0">
         <Outlet />
       </main>
 
-      {/* FOOTER */}
+      {/* ===== FOOTER ===== */}
       <footer className="bg-white border-t border-slate-200 shadow-inner mt-10">
         <div className="mx-auto max-w-7xl px-6 py-10 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-center md:text-left">
