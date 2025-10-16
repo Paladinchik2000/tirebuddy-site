@@ -114,7 +114,7 @@ export default function TireBuddyHome() {
     className="w-full rounded-lg border border-slate-300 px-4 py-2"
   />
 
-  {/* NEW: SERVICE SELECTION */}
+  {/* SERVICE SELECTION */}
   <select
     name="service"
     required
@@ -128,6 +128,7 @@ export default function TireBuddyHome() {
     <option value="Snow Plowing">Snow Plowing</option>
   </select>
 
+  {/* VEHICLE INFO */}
   <input
     type="text"
     name="vehicle_make"
@@ -142,6 +143,17 @@ export default function TireBuddyHome() {
     required
     className="w-full rounded-lg border border-slate-300 px-4 py-2"
   />
+
+  {/* NEW: ADDRESS FIELD */}
+  <input
+    type="text"
+    name="address"
+    placeholder="Service Address"
+    required
+    className="w-full rounded-lg border border-slate-300 px-4 py-2"
+  />
+
+  {/* POSTAL CODE */}
   <input
     type="text"
     name="postal_code"
@@ -149,11 +161,13 @@ export default function TireBuddyHome() {
     required
     className="w-full rounded-lg border border-slate-300 px-4 py-2"
   />
+
   <textarea
     name="message"
     placeholder="Additional Details (optional)"
     className="w-full rounded-lg border border-slate-300 px-4 py-2"
   ></textarea>
+
   <button
     type="submit"
     className="w-full rounded-lg bg-[#E63946] text-white py-3 font-semibold shadow hover:opacity-90 transition"
@@ -161,6 +175,7 @@ export default function TireBuddyHome() {
     Submit Request
   </button>
 </form>
+
             </div>
           </section>
         </>
