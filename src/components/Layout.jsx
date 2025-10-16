@@ -41,6 +41,7 @@ export default function Layout() {
             <NavLink to="/services" className={linkClass}>Services</NavLink>
             <NavLink to="/about" className={linkClass}>About</NavLink>
             <NavLink to="/blog" className={linkClass}>Blog</NavLink>
+            <NavLink to="/contact" className={linkClass}>Contact</NavLink>
             <a
               href="/#booking"
               className="ml-2 rounded-full px-4 py-2 font-semibold text-white shadow-sm hover:shadow transition"
