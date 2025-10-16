@@ -11,13 +11,14 @@ export default function Layout() {
     <div className="flex flex-col min-h-screen bg-[#F4F4F4]">
       {/* ===== TOP CONTACT BAR ===== */}
       <div className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 py-2 flex flex-col sm:flex-row items-center justify-between text-sm text-slate-600">
-          <p>
-            📞 <a href="tel:+14164285819" className="hover:text-[#E63946] transition">+1 (416) 428-5819</a>
-          </p>
-          <p>
-            ✉️ <a href="mailto:info@tirebuddy.ca" className="hover:text-[#E63946] transition">info@tirebuddy.ca</a>
-          </p>
+        <div className="max-w-7xl mx-auto px-6 py-2 flex justify-end items-center text-sm text-slate-600 space-x-4">
+          <a href="tel:+14164285819" className="hover:text-[#E63946] transition">
+            📞 +1 (416) 428-5819
+          </a>
+          <div className="h-4 w-px bg-slate-300"></div>
+          <a href="mailto:info@tirebuddy.ca" className="hover:text-[#E63946] transition">
+            ✉️ info@tirebuddy.ca
+          </a>
         </div>
       </div>
 
@@ -51,7 +52,7 @@ export default function Layout() {
         </div>
       </header>
 
-      {/* ===== MAIN CONTENT (tire track background applies here only) ===== */}
+      {/* ===== MAIN CONTENT ===== */}
       <main className="flex-1 relative z-0">
         <Outlet />
       </main>
