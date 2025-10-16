@@ -4,9 +4,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#F4F4F4]">
       {/* ===== BANNER ===== */}
-      <section
-        className="bg-[#E63946] text-white text-center py-10 shadow-md"
-      >
+      <section className="bg-[#E63946] text-white text-center py-10 shadow-md">
         <h1 className="text-4xl font-bold mb-2">Need support? Get in touch!</h1>
         <p className="text-lg text-red-100 max-w-2xl mx-auto">
           We're here to help with any questions about our services or your upcoming appointment.
