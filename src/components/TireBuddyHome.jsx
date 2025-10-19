@@ -28,7 +28,7 @@ export default function TireBuddyHome() {
             className="relative flex flex-col justify-center items-center text-center text-white h-[80vh] bg-cover bg-center"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1581091870622-5c61c6a86e8f?auto=format&fit=crop&w=1600&q=80')",
+                "url('https://i.imgur.com/rhM6PWB.jpeg')",
             }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
