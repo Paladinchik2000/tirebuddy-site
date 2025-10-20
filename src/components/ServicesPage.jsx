@@ -10,22 +10,22 @@ export default function ServicesPage() {
     {
       title: "Punctured Tire Repair",
       desc: "We fix flats on-site, getting you back on the road safely in no time.",
-      img: "https://images.unsplash.com/photo-1607860175258-bd71c1e2d8b7?auto=format&fit=crop&w=800&q=80",
+      img: "https://i.imgur.com/lGNeHc3.jpeg",
     },
     {
       title: "Gutter Cleaning",
       desc: "Keep your gutters clear and your home safe from water damage with our seasonal service.",
-      img: "https://images.unsplash.com/photo-1615732394743-f9ef10f3774f?auto=format&fit=crop&w=800&q=80",
+      img: "https://i.imgur.com/zU6jmjk.jpeg",
     },
     {
       title: "Fall Cleanup",
       desc: "We take care of leaves and debris so your yard stays neat and ready for winter.",
-      img: "https://images.unsplash.com/photo-1602956709386-cab3f9a4d203?auto=format&fit=crop&w=800&q=80",
+      img: "https://i.imgur.com/UZybBYI.jpeg",
     },
     {
       title: "Snow Plowing",
       desc: "Reliable and fast driveway snow removal — stay safe and mobile all winter long.",
-      img: "https://images.unsplash.com/photo-1615209639561-9a08e85e4d8a?auto=format&fit=crop&w=800&q=80",
+      img: "https://i.imgur.com/ZZd6J5C.jpeg",
     },
   ];
 
