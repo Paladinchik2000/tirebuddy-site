@@ -1,25 +1,5 @@
 import { useState, useEffect } from "react";
 
-useEffect(() => {
-  const sections = document.querySelectorAll(".fade-in-section");
-
-  const revealOnScroll = () => {
-    sections.forEach((section) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        section.classList.add("appear");
-      }
-    });
-  };
-
-  window.addEventListener("scroll", revealOnScroll);
-  revealOnScroll();
-  return () => window.removeEventListener("scroll", revealOnScroll);
-}, []);
-
-export default function TireBuddyHome() {
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
