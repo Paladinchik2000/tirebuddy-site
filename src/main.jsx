@@ -8,6 +8,9 @@ import ServicesPage from "./components/ServicesPage";
 import BlogPage from "./components/BlogPage";
 import ContactPage from "./components/ContactPage";
 import "./index.css";
+import FaqPage from "./components/FaqPage";
+<Route path="faq" element={<FaqPage />} />
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -19,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="about" element={<AboutPage />} />
           <Route path="blog" element={<BlogPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="faq" element={<FaqPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
