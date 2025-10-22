@@ -121,8 +121,11 @@ export default function TireBuddyHome() {
     </div>
   </div>
 </section>
+          
 {/* ===== CUSTOMER REVIEWS ===== */}
-<section className="bg-white border-t border-slate-200 py-20">
+<section
+  className="bg-white border-t border-slate-200 py-20 opacity-0 translate-y-8 transition-all duration-700 fade-in-section"
+>
   <div className="max-w-6xl mx-auto px-4 text-center">
     <h2 className="text-3xl font-bold text-slate-900 mb-10">
       What Our Customers Say
@@ -162,7 +165,9 @@ export default function TireBuddyHome() {
 </section>
 
 {/* ===== PROUDLY SERVING ONTARIO MAP ===== */}
-<section className="bg-white border-t border-slate-200 py-20">
+<section
+  className="bg-white border-t border-slate-200 py-20 opacity-0 translate-y-8 transition-all duration-700 fade-in-section"
+>
   <div className="max-w-6xl mx-auto px-4 text-center">
     <h2 className="text-3xl font-bold text-slate-900 mb-4">
       Proudly Serving Ontario
