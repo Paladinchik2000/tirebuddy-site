@@ -1,8 +1,29 @@
 import { useState, useEffect } from "react";
 
+export default function TireBuddyHome() {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Fade-in animation effect for sections
+  useEffect(() => {
+    const sections = document.querySelectorAll(".fade-in-section");
+
+    const revealOnScroll = () => {
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          section.classList.add("appear");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+    return () => window.removeEventListener("scroll", revealOnScroll);
   }, []);
 
   const PRIMARY_RED = "#E63946";
@@ -25,7 +46,7 @@ import { useState, useEffect } from "react";
             className="relative flex flex-col justify-center items-center text-center text-white h-[80vh] bg-cover bg-center"
             style={{
               backgroundImage:
-                "url('https://i.imgur.com/7Wi8YBS.png')",
+                "url('https://images.unsplash.com/photo-1581091870622-5c61c6a86e8f?auto=format&fit=crop&w=1600&q=80')",
             }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -84,110 +105,105 @@ import { useState, useEffect } from "react";
               ))}
             </div>
           </section>
-          
-{/* ===== ABOUT TIREBUDDY INFO SECTION ===== */}
-<section className="bg-white border-t border-slate-200 py-20">
-  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <img
-        src="https://i.imgur.com/lg3mXA9.png"
-        alt="TireBuddy mobile service van"
-        className="rounded-2xl shadow-md"
-      />
-    </div>
 
-    <div>
-      <h2 className="text-3xl font-bold text-slate-900 mb-4">
-        Built on Trust. Driven by Care.
-      </h2>
-      <p className="text-slate-700 mb-4 leading-relaxed">
-        At <span className="font-semibold text-[#E63946]">TireBuddy</span>, we believe that taking care of your car
-        should be simple, stress-free, and personal. That’s why we bring
-        professional tire service right to your driveway — saving you time and hassle.
-      </p>
-      <p className="text-slate-700 mb-4 leading-relaxed">
-        As a proud family-operated Canadian business, we value honesty,
-        reliability, and community. Every service we perform is done with care,
-        attention to detail, and a friendly smile.
-      </p>
-      <p className="text-slate-700 leading-relaxed">
-        Whether it’s a quick tire change, a flat repair, or seasonal cleanup —
-        TireBuddy is here to make sure your vehicle is ready for the road ahead.
-        Because for us, it’s not just about tires — it’s about people.
-      </p>
-    </div>
-  </div>
-</section>
-          
-{/* ===== CUSTOMER REVIEWS ===== */}
-<section
-  className="bg-white border-t border-slate-200 py-20 opacity-0 translate-y-8 transition-all duration-700 fade-in-section"
->
-  <div className="max-w-6xl mx-auto px-4 text-center">
-    <h2 className="text-3xl font-bold text-slate-900 mb-10">
-      What Our Customers Say
-    </h2>
+          {/* ===== ABOUT SECTION ===== */}
+          <section className="bg-white border-t border-slate-200 py-20">
+            <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <img
+                  src="https://images.unsplash.com/photo-1615201216513-88e53b8c5d04?auto=format&fit=crop&w=800&q=80"
+                  alt="TireBuddy van"
+                  className="rounded-2xl shadow-md"
+                />
+              </div>
 
-    <div className="grid md:grid-cols-3 gap-8">
-      {[
-        {
-          name: "James R.",
-          location: "Toronto",
-          text: "Fast, friendly, and professional! TireBuddy changed my tires right in my driveway — so easy and convenient.",
-        },
-        {
-          name: "Amelia P.",
-          location: "Mississauga",
-          text: "Excellent experience! They arrived on time, super polite, and finished the job faster than I expected.",
-        },
-        {
-          name: "Mark T.",
-          location: "Brampton",
-          text: "I love that it’s a family-run business. Honest service and great attention to detail — highly recommended!",
-        },
-      ].map((review) => (
-        <div
-          key={review.name}
-          className="bg-[#F9FAFB] rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition"
-        >
-          <p className="text-slate-700 mb-4 italic">“{review.text}”</p>
-          <p className="font-semibold text-slate-900">
-            {review.name}
-            <span className="text-slate-500"> — {review.location}</span>
-          </p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+              <div>
+                <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                  Built on Trust. Driven by Care.
+                </h2>
+                <p className="text-slate-700 mb-4 leading-relaxed">
+                  At <span className="font-semibold text-[#E63946]">TireBuddy</span>, we believe that taking care of your car
+                  should be simple, stress-free, and personal. That’s why we bring
+                  professional tire service right to your driveway — saving you time and hassle.
+                </p>
+                <p className="text-slate-700 mb-4 leading-relaxed">
+                  As a proud family-operated Canadian business, we value honesty,
+                  reliability, and community. Every service we perform is done with care,
+                  attention to detail, and a friendly smile.
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  Whether it’s a quick tire change, a flat repair, or seasonal cleanup —
+                  TireBuddy is here to make sure your vehicle is ready for the road ahead.
+                  Because for us, it’s not just about tires — it’s about people.
+                </p>
+              </div>
+            </div>
+          </section>
 
-{/* ===== PROUDLY SERVING ONTARIO MAP ===== */}
-<section
-  className="bg-white border-t border-slate-200 py-20 opacity-0 translate-y-8 transition-all duration-700 fade-in-section"
->
-  <div className="max-w-6xl mx-auto px-4 text-center">
-    <h2 className="text-3xl font-bold text-slate-900 mb-4">
-      Proudly Serving Ontario
-    </h2>
-    <p className="text-slate-700 mb-10 max-w-2xl mx-auto">
-      TireBuddy is based in Ontario and proudly serves local communities across the Greater Toronto Area — including Toronto, Mississauga, and Brampton.
-    </p>
+          {/* ===== CUSTOMER REVIEWS ===== */}
+          <section className="bg-white border-t border-slate-200 py-20 opacity-0 translate-y-8 transition-all duration-700 fade-in-section">
+            <div className="max-w-6xl mx-auto px-4 text-center">
+              <h2 className="text-3xl font-bold text-slate-900 mb-10">
+                What Our Customers Say
+              </h2>
 
-    {/* Static Google Map Embed */}
-    <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200">
-      <iframe
-        title="TireBuddy Service Area"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92272.67448483084!2d-79.6121673275408!3d43.65322600609495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d3d3b76a7f%3A0x37f68c3b1b2f0f19!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
-        width="100%"
-        height="400"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </div>
-  </div>
-</section>
+              <div className="grid md:grid-cols-3 gap-8">
+                {[
+                  {
+                    name: "James R.",
+                    location: "Toronto",
+                    text: "Fast, friendly, and professional! TireBuddy changed my tires right in my driveway — so easy and convenient.",
+                  },
+                  {
+                    name: "Amelia P.",
+                    location: "Mississauga",
+                    text: "Excellent experience! They arrived on time, super polite, and finished the job faster than I expected.",
+                  },
+                  {
+                    name: "Mark T.",
+                    location: "Brampton",
+                    text: "I love that it’s a family-run business. Honest service and great attention to detail — highly recommended!",
+                  },
+                ].map((review) => (
+                  <div
+                    key={review.name}
+                    className="bg-[#F9FAFB] rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition"
+                  >
+                    <p className="text-slate-700 mb-4 italic">“{review.text}”</p>
+                    <p className="font-semibold text-slate-900">
+                      {review.name}
+                      <span className="text-slate-500"> — {review.location}</span>
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* ===== PROUDLY SERVING ONTARIO MAP ===== */}
+          <section className="bg-white border-t border-slate-200 py-20 opacity-0 translate-y-8 transition-all duration-700 fade-in-section">
+            <div className="max-w-6xl mx-auto px-4 text-center">
+              <h2 className="text-3xl font-bold text-slate-900 mb-4">
+                Proudly Serving Ontario
+              </h2>
+              <p className="text-slate-700 mb-10 max-w-2xl mx-auto">
+                TireBuddy is based in Ontario and proudly serves local communities across the Greater Toronto Area — including Toronto, Mississauga, and Brampton.
+              </p>
+
+              <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200">
+                <iframe
+                  title="TireBuddy Service Area"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92272.67448483084!2d-79.6121673275408!3d43.65322600609495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d3d3b76a7f%3A0x37f68c3b1b2f0f19!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </section>
 
           {/* ===== BOOKING SECTION ===== */}
           <section id="booking" className="bg-white border-t border-slate-200 py-16">
@@ -195,88 +211,80 @@ import { useState, useEffect } from "react";
               <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
                 Book an Appointment
               </h2>
-             <form
-  action="https://formspree.io/f/xwprnndy"
-  method="POST"
-  className="space-y-4"
->
-  <input
-    type="text"
-    name="name"
-    placeholder="Full Name"
-    required
-    className="w-full rounded-lg border border-slate-300 px-4 py-2"
-  />
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Phone Number"
-    required
-    className="w-full rounded-lg border border-slate-300 px-4 py-2"
-  />
+              <form
+                action="https://formspree.io/f/xwprnndy"
+                method="POST"
+                className="space-y-4"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Full Name"
+                  required
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  required
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
+                />
 
-  {/* SERVICE SELECTION */}
-  <select
-    name="service"
-    required
-    className="w-full rounded-lg border border-slate-300 px-4 py-2 bg-white"
-  >
-    <option value="">Select a Service</option>
-    <option value="Tire Change">Tire Change</option>
-    <option value="Punctured Tire Repair">Punctured Tire Repair</option>
-    <option value="Gutter Cleaning">Gutter Cleaning</option>
-    <option value="Fall Cleanup">Fall Cleanup</option>
-    <option value="Snow Plowing">Snow Plowing</option>
-  </select>
+                {/* SERVICE SELECTION */}
+                <select
+                  name="service"
+                  required
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2 bg-white"
+                >
+                  <option value="">Select a Service</option>
+                  <option value="Tire Change">Tire Change</option>
+                  <option value="Punctured Tire Repair">Punctured Tire Repair</option>
+                  <option value="Gutter Cleaning">Gutter Cleaning</option>
+                  <option value="Fall Cleanup">Fall Cleanup</option>
+                  <option value="Snow Plowing">Snow Plowing</option>
+                </select>
 
-  {/* VEHICLE INFO */}
-  <input
-    type="text"
-    name="vehicle_make"
-    placeholder="Vehicle Make"
-    required
-    className="w-full rounded-lg border border-slate-300 px-4 py-2"
-  />
-  <input
-    type="text"
-    name="vehicle_model"
-    placeholder="Vehicle Model"
-    required
-    className="w-full rounded-lg border border-slate-300 px-4 py-2"
-  />
-
-  {/* NEW: ADDRESS FIELD */}
-  <input
-    type="text"
-    name="address"
-    placeholder="Service Address"
-    required
-    className="w-full rounded-lg border border-slate-300 px-4 py-2"
-  />
-
-  {/* POSTAL CODE */}
-  <input
-    type="text"
-    name="postal_code"
-    placeholder="Postal Code"
-    required
-    className="w-full rounded-lg border border-slate-300 px-4 py-2"
-  />
-
-  <textarea
-    name="message"
-    placeholder="Additional Details (optional)"
-    className="w-full rounded-lg border border-slate-300 px-4 py-2"
-  ></textarea>
-
-  <button
-    type="submit"
-    className="w-full rounded-lg bg-[#E63946] text-white py-3 font-semibold shadow hover:opacity-90 transition"
-  >
-    Submit Request
-  </button>
-</form>
-
+                <input
+                  type="text"
+                  name="vehicle_make"
+                  placeholder="Vehicle Make"
+                  required
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
+                />
+                <input
+                  type="text"
+                  name="vehicle_model"
+                  placeholder="Vehicle Model"
+                  required
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
+                />
+                <input
+                  type="text"
+                  name="address"
+                  placeholder="Service Address"
+                  required
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
+                />
+                <input
+                  type="text"
+                  name="postal_code"
+                  placeholder="Postal Code"
+                  required
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
+                />
+                <textarea
+                  name="message"
+                  placeholder="Additional Details (optional)"
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="w-full rounded-lg bg-[#E63946] text-white py-3 font-semibold shadow hover:opacity-90 transition"
+                >
+                  Submit Request
+                </button>
+              </form>
             </div>
           </section>
         </>
