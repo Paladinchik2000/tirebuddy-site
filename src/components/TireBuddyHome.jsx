@@ -87,6 +87,40 @@ export default function TireBuddyHome() {
               ))}
             </div>
           </section>
+          
+{/* ===== ABOUT TIREBUDDY INFO SECTION ===== */}
+<section className="bg-white border-t border-slate-200 py-20">
+  <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <img
+        src="https://images.unsplash.com/photo-1615201216513-88e53b8c5d04?auto=format&fit=crop&w=800&q=80"
+        alt="TireBuddy mobile service van"
+        className="rounded-2xl shadow-md"
+      />
+    </div>
+
+    <div>
+      <h2 className="text-3xl font-bold text-slate-900 mb-4">
+        Built on Trust. Driven by Care.
+      </h2>
+      <p className="text-slate-700 mb-4 leading-relaxed">
+        At <span className="font-semibold text-[#E63946]">TireBuddy</span>, we believe that taking care of your car
+        should be simple, stress-free, and personal. That’s why we bring
+        professional tire service right to your driveway — saving you time and hassle.
+      </p>
+      <p className="text-slate-700 mb-4 leading-relaxed">
+        As a proud family-operated Canadian business, we value honesty,
+        reliability, and community. Every service we perform is done with care,
+        attention to detail, and a friendly smile.
+      </p>
+      <p className="text-slate-700 leading-relaxed">
+        Whether it’s a quick tire change, a flat repair, or seasonal cleanup —
+        TireBuddy is here to make sure your vehicle is ready for the road ahead.
+        Because for us, it’s not just about tires — it’s about people.
+      </p>
+    </div>
+  </div>
+</section>
 
           {/* ===== BOOKING SECTION ===== */}
           <section id="booking" className="bg-white border-t border-slate-200 py-16">
