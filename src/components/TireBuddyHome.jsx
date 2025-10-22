@@ -93,7 +93,7 @@ export default function TireBuddyHome() {
   <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
     <div>
       <img
-        src="https://i.imgur.com/eXQeYjq.png"
+        src="https://i.imgur.com/lg3mXA9.png"
         alt="TireBuddy mobile service van"
         className="rounded-2xl shadow-md"
       />
