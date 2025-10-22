@@ -121,6 +121,71 @@ export default function TireBuddyHome() {
     </div>
   </div>
 </section>
+{/* ===== CUSTOMER REVIEWS ===== */}
+<section className="bg-white border-t border-slate-200 py-20">
+  <div className="max-w-6xl mx-auto px-4 text-center">
+    <h2 className="text-3xl font-bold text-slate-900 mb-10">
+      What Our Customers Say
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          name: "James R.",
+          location: "Toronto",
+          text: "Fast, friendly, and professional! TireBuddy changed my tires right in my driveway — so easy and convenient.",
+        },
+        {
+          name: "Amelia P.",
+          location: "Mississauga",
+          text: "Excellent experience! They arrived on time, super polite, and finished the job faster than I expected.",
+        },
+        {
+          name: "Mark T.",
+          location: "Brampton",
+          text: "I love that it’s a family-run business. Honest service and great attention to detail — highly recommended!",
+        },
+      ].map((review) => (
+        <div
+          key={review.name}
+          className="bg-[#F9FAFB] rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition"
+        >
+          <p className="text-slate-700 mb-4 italic">“{review.text}”</p>
+          <p className="font-semibold text-slate-900">
+            {review.name}
+            <span className="text-slate-500"> — {review.location}</span>
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* ===== PROUDLY SERVING ONTARIO MAP ===== */}
+<section className="bg-white border-t border-slate-200 py-20">
+  <div className="max-w-6xl mx-auto px-4 text-center">
+    <h2 className="text-3xl font-bold text-slate-900 mb-4">
+      Proudly Serving Ontario
+    </h2>
+    <p className="text-slate-700 mb-10 max-w-2xl mx-auto">
+      TireBuddy is based in Ontario and proudly serves local communities across the Greater Toronto Area — including Toronto, Mississauga, and Brampton.
+    </p>
+
+    {/* Static Google Map Embed */}
+    <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200">
+      <iframe
+        title="TireBuddy Service Area"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92272.67448483084!2d-79.6121673275408!3d43.65322600609495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d3d3b76a7f%3A0x37f68c3b1b2f0f19!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
+        width="100%"
+        height="400"
+        style={{ border: 0 }}
+        allowFullScreen=""
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
 
           {/* ===== BOOKING SECTION ===== */}
           <section id="booking" className="bg-white border-t border-slate-200 py-16">
