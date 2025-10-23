@@ -139,8 +139,8 @@ export default function TireBuddyHome() {
               </div>
             </div>
           </section>
-
-        {/* ===== CUSTOMER REVIEWS ===== */}
+          
+   {/* ===== CUSTOMER REVIEWS ===== */}
 <section className="bg-white border-t border-slate-200 py-20 fade-in-section">
   <div className="max-w-6xl mx-auto px-4 text-center">
     <h2 className="text-3xl font-bold text-slate-900 mb-10">
