@@ -8,23 +8,27 @@ export default function TireBuddyHome() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Fade-in animation effect for sections
-  useEffect(() => {
-    const sections = document.querySelectorAll(".fade-in-section");
+  // Fade-in animation for sections after loading
+useEffect(() => {
+  if (loading) return; // ждём окончания анимации загрузки
 
-    const revealOnScroll = () => {
-      sections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          section.classList.add("appear");
-        }
-      });
-    };
+  const sections = document.querySelectorAll(".fade-in-section");
 
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-    return () => window.removeEventListener("scroll", revealOnScroll);
-  }, []);
+  const revealOnScroll = () => {
+    sections.forEach((section, index) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        // добавляем плавное появление и задержку между блоками
+        setTimeout(() => section.classList.add("appear"), index * 150);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // запускаем сразу при загрузке
+  return () => window.removeEventListener("scroll", revealOnScroll);
+}, [loading]);
+
 
   const PRIMARY_RED = "#E63946";
 
