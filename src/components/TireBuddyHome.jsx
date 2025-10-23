@@ -1,3 +1,5 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useState, useEffect } from "react";
 
 export default function TireBuddyHome() {
@@ -23,6 +25,14 @@ useEffect(() => {
       }
     });
   };
+
+  useEffect(() => {
+  AOS.init({
+    duration: 800,
+    easing: "ease-out-cubic",
+    once: true, // анимация один раз при первом появлении
+  });
+}, []);
 
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll(); // запускаем сразу при загрузке
@@ -73,7 +83,9 @@ useEffect(() => {
           </section>
 
           {/* ===== BENEFITS SECTION ===== */}
-          <section className="max-w-6xl mx-auto px-4 py-20">
+         <section
+  data-aos="fade-up"
+  className="max-w-6xl mx-auto px-4 py-20">
             <h2 className="text-3xl font-bold text-slate-900 text-center mb-10">
               Why Choose TireBuddy?
             </h2>
@@ -111,7 +123,9 @@ useEffect(() => {
           </section>
 
           {/* ===== ABOUT SECTION ===== */}
-          <section className="bg-white border-t border-slate-200 py-20">
+         <section
+  data-aos="fade-up"
+  className="bg-white border-t border-slate-200 py-20">
             <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
               <div>
                 <img
@@ -291,6 +305,15 @@ useEffect(() => {
               </form>
             </div>
           </section>
+          
+          {/* ===== MOBILE STICKY BOOK NOW BUTTON ===== */}
+<a
+  href="#booking"
+  className="fixed bottom-5 right-5 z-50 md:hidden bg-[#E63946] text-white font-semibold py-3 px-5 rounded-full shadow-lg hover:opacity-90 transition"
+>
+  📅 Book Tire Change
+</a>
+
         </>
       )}
     </div>
