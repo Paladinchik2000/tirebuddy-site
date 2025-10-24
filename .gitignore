@@ -13,6 +13,7 @@ build
 .env
 .vscode
 .vercel
+Thumbs.db
 
 # lockfiles
 npm-debug.log*
