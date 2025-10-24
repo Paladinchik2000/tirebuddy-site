@@ -1,5 +1,6 @@
-import TireBuddyHome from './components/TireBuddyHome'
+import React from "react";
+import TireBuddyHome from "./components/TireBuddyHome";
 
 export default function App() {
-  return <TireBuddyHome />
+  return <TireBuddyHome />;
 }
