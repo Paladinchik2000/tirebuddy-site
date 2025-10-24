@@ -1,15 +1,16 @@
 # dependencies
 node_modules
+package-lock.json
 
-# build output
+# production build
 dist
 .vercel
 
-# env
+# environment files
 .env
 .env.local
 .env.*.local
 
-# system
+# system files
 .DS_Store
 Thumbs.db
