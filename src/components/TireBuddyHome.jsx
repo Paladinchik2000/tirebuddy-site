@@ -6,25 +6,33 @@ export default function TireBuddyHome() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1200);
+
     return () => clearTimeout(timer);
-  }, []);
+  }, []); // пустой массив — выполняется 1 раз при монтировании
 
-  // Fade-in animation for sections after loading
-useEffect(() => {
-  if (loading) return; // ждём окончания анимации загрузки
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-[#F4F4F4]">
+        <img
+          src="https://i.imgur.com/4YFSmoN.png"
+          alt="Loading Buddy"
+          className="h-24 w-24 animate-spin-slow"
+        />
+      </div>
+    );
+  }
 
-  const sections = document.querySelectorAll(".fade-in-section");
+  // === Далее остальной JSX твоей главной страницы ===
+  return (
+    <div className="fade-in-section appear">
+      {/* Весь контент Home */}
+    </div>
+  );
+}
 
-  const revealOnScroll = () => {
-    sections.forEach((section, index) => {
-      const rect = section.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 100) {
-        // добавляем плавное появление и задержку между блоками
-        setTimeout(() => section.classList.add("appear"), index * 150);
-      }
-    });
-  };
 
   useEffect(() => {
   AOS.init({
