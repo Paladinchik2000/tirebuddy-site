@@ -1,8 +1,12 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }
 {
-  "buildCommand": "npm install && npm run build"
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist"
 }
