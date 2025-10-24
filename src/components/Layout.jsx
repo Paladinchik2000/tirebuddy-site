@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 
-export default function Layout() {
+export default function Layout({ children }) {
   const PRIMARY_RED = "#E63946";
   const linkClass = ({ isActive }) =>
     (isActive ? "text-slate-900" : "text-slate-700") +
@@ -42,7 +42,11 @@ export default function Layout() {
 
       {/* ===== MAIN CONTENT ===== */}
       <main className="flex-1">
+        {/* React Router outlet */}
         <Outlet />
+
+        {/* Direct children (if used outside Routes) */}
+        {children}
       </main>
 
       {/* ===== FOOTER ===== */}
@@ -52,6 +56,7 @@ export default function Layout() {
             <p>© {new Date().getFullYear()} TireBuddy. All rights reserved.</p>
             <p>Made with ❤️ in Canada. “Your Tire’s Best Friend.”</p>
           </div>
+
           <div className="flex items-center gap-5 text-slate-600">
             <a
               href="https://www.youtube.com/"
@@ -89,3 +94,4 @@ export default function Layout() {
     </div>
   );
 }
+
