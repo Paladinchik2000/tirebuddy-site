@@ -1,7 +1,14 @@
 import { Helmet } from "react-helmet-async";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function ServicesPage() {
   const PRIMARY_RED = "#E63946";
+
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: "ease-out-cubic", once: true });
+  }, []);
 
   const services = [
     {
@@ -59,7 +66,7 @@ export default function ServicesPage() {
 
       {/* ===== PAGE CONTENT ===== */}
       <div className="max-w-7xl mx-auto px-4 py-20 text-slate-700">
-        <div className="text-center mb-12">
+        <div data-aos="fade-up" className="text-center mb-12">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">Our Services</h1>
           <p className="text-slate-600 max-w-2xl mx-auto">
             At TireBuddy, we make it easy to handle your seasonal and maintenance needs — right at your driveway.
@@ -68,15 +75,18 @@ export default function ServicesPage() {
         </div>
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <div
               key={service.title}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
               className="bg-white rounded-2xl shadow-md hover:shadow-lg overflow-hidden transition transform hover:-translate-y-1 border border-slate-200"
             >
               <img
                 src={service.img}
                 alt={service.title}
                 className="w-full h-56 object-cover"
+                loading="lazy"
               />
               <div className="p-6">
                 <h2 className="text-xl font-semibold text-slate-900 mb-2">
