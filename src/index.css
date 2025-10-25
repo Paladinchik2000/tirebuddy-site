@@ -37,3 +37,41 @@ body {
 .animate-spin-slow {
   animation: spin-slow 1.5s linear;
 }
+/* ===== Buddy wink (моргает каждые ~6s) ===== */
+@keyframes buddy-wink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  94%, 96% { transform: scaleY(0.05); }
+  98% { transform: scaleY(1); }
+}
+
+.buddy-wink .buddy-eye-right {
+  transform-origin: 75px 50px; /* центр правого глаза из SVG */
+  animation: buddy-wink 6s ease-in-out infinite;
+}
+
+/* ===== Rolling wheel across screen ===== */
+@keyframes roll-across {
+  0%   { transform: translateX(0) rotate(0deg);    }
+  100% { transform: translateX(120vw) rotate(900deg); }
+}
+
+.wheel-roll {
+  width: 56px;
+  height: 56px;
+  border: 6px solid #1f2937;      /* темно-серый */
+  border-top-color: #e5e7eb;      /* светлая “полоса” */
+  border-radius: 50%;
+  animation: roll-across 2s cubic-bezier(.3,.7,.2,1) forwards;
+  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+  position: relative;
+}
+
+.wheel-core {
+  position: absolute;
+  inset: 50%;
+  width: 12px;
+  height: 12px;
+  background: #111827;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
