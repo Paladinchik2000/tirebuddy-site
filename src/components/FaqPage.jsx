@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 export default function FaqPage() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -52,50 +53,81 @@ export default function FaqPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F4F4F4]">
-      {/* ===== HEADER SECTION ===== */}
-      <section className="bg-[#E63946] text-white text-center py-10 shadow-md">
-        <h1 className="text-4xl font-bold mb-2">Frequently Asked Questions</h1>
-        <p className="text-lg text-red-100 max-w-2xl mx-auto">
-          Answers to the most common questions about TireBuddy’s mobile service.
-        </p>
-      </section>
+    <>
+      {/* ===== SEO META TAGS ===== */}
+      <Helmet>
+        <title>FAQ | TireBuddy – Mobile Tire Service Ontario</title>
+        <meta
+          name="description"
+          content="Find answers to common questions about TireBuddy’s mobile tire service in Ontario. Learn how our on-site tire change, repair, and seasonal services work."
+        />
 
-      {/* ===== FAQ CONTENT ===== */}
-      <section className="max-w-4xl mx-auto px-4 py-16">
-        <div className="space-y-4">
-          {faqItems.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 transition hover:shadow-md cursor-pointer"
-              onClick={() => toggleQuestion(index)}
-            >
-              <div className="flex justify-between items-center">
-                <h3
-                  className={`text-lg font-semibold ${
-                    openIndex === index ? "text-[#E63946]" : "text-slate-900"
+        {/* Open Graph for Facebook, LinkedIn, etc. */}
+        <meta property="og:title" content="TireBuddy FAQ | Mobile Tire Service Ontario" />
+        <meta
+          property="og:description"
+          content="Find out everything about TireBuddy’s mobile tire change and repair services. We bring professional tire service right to your driveway."
+        />
+        <meta property="og:image" content="https://i.imgur.com/4YFSmoN.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tirebuddy.ca/faq" />
+
+        {/* Twitter Card for sharing */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TireBuddy FAQ | Ontario Mobile Tire Experts" />
+        <meta
+          name="twitter:description"
+          content="Have questions about our services? TireBuddy answers your most common tire and seasonal service questions here."
+        />
+        <meta name="twitter:image" content="https://i.imgur.com/4YFSmoN.png" />
+      </Helmet>
+
+      {/* ===== PAGE CONTENT ===== */}
+      <div className="min-h-screen bg-[#F4F4F4]">
+        {/* ===== HEADER SECTION ===== */}
+        <section className="bg-[#E63946] text-white text-center py-10 shadow-md">
+          <h1 className="text-4xl font-bold mb-2">Frequently Asked Questions</h1>
+          <p className="text-lg text-red-100 max-w-2xl mx-auto">
+            Answers to the most common questions about TireBuddy’s mobile service.
+          </p>
+        </section>
+
+        {/* ===== FAQ CONTENT ===== */}
+        <section className="max-w-4xl mx-auto px-4 py-16">
+          <div className="space-y-4">
+            {faqItems.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl shadow-sm border border-slate-200 p-5 transition hover:shadow-md cursor-pointer"
+                onClick={() => toggleQuestion(index)}
+              >
+                <div className="flex justify-between items-center">
+                  <h3
+                    className={`text-lg font-semibold ${
+                      openIndex === index ? "text-[#E63946]" : "text-slate-900"
+                    }`}
+                  >
+                    {item.question}
+                  </h3>
+                  <span className="text-2xl text-slate-400">
+                    {openIndex === index ? "−" : "+"}
+                  </span>
+                </div>
+
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    openIndex === index ? "max-h-40 mt-3" : "max-h-0"
                   }`}
                 >
-                  {item.question}
-                </h3>
-                <span className="text-2xl text-slate-400">
-                  {openIndex === index ? "−" : "+"}
-                </span>
+                  <p className="text-slate-700 leading-relaxed">
+                    {item.answer}
+                  </p>
+                </div>
               </div>
-
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-40 mt-3" : "max-h-0"
-                }`}
-              >
-                <p className="text-slate-700 leading-relaxed">
-                  {item.answer}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
+            ))}
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
