@@ -1,5 +1,4 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
-import BuddyWink from "./BuddyWink"; // 👈 добавлено
 
 export default function Layout() {
   const PRIMARY_RED = "#E63946";
@@ -13,17 +12,30 @@ export default function Layout() {
       <header className="sticky top-0 z-30 bg-white shadow-md border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 select-none">
-  <span className="text-2xl font-extrabold text-slate-900">
-    Tire<span className="text-slate-800">Buddy</span>
-       </span>
-       </Link>
+            <span className="text-2xl font-extrabold text-slate-900">
+              Tire<span className="text-slate-800">Buddy</span>
+            </span>
+          </Link>
+
           <nav className="hidden md:flex items-center gap-8 text-sm">
-            <NavLink to="/" className={linkClass}>Home</NavLink>
-            <NavLink to="/services" className={linkClass}>Services</NavLink>
-            <NavLink to="/about" className={linkClass}>About</NavLink>
-            <NavLink to="/blog" className={linkClass}>Blog</NavLink>
-            <NavLink to="/faq" className={linkClass}>FAQ</NavLink>
-            <NavLink to="/contact" className={linkClass}>Contact</NavLink>
+            <NavLink to="/" className={linkClass}>
+              Home
+            </NavLink>
+            <NavLink to="/services" className={linkClass}>
+              Services
+            </NavLink>
+            <NavLink to="/about" className={linkClass}>
+              About
+            </NavLink>
+            <NavLink to="/blog" className={linkClass}>
+              Blog
+            </NavLink>
+            <NavLink to="/faq" className={linkClass}>
+              FAQ
+            </NavLink>
+            <NavLink to="/contact" className={linkClass}>
+              Contact
+            </NavLink>
             <a
               href="/#booking"
               className="ml-2 rounded-full px-4 py-2 font-semibold text-white shadow-sm hover:shadow transition"
