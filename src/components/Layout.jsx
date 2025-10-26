@@ -13,11 +13,11 @@ export default function Layout() {
       <header className="sticky top-0 z-30 bg-white shadow-md border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 select-none">
-            <img
-              src="https://i.imgur.com/4YFSmoN.png"
-              alt="Buddy logo"
-              className="h-10 w-10"
-            />
+          <img
+                src="https://i.imgur.com/4YFSmoN.png"
+                alt="Buddy logo"
+                className="h-10 w-10"
+             />
             <span className="text-2xl font-extrabold text-slate-900">
               Tire<span className="text-slate-800">Buddy</span>
             </span>
