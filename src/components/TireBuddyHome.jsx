@@ -237,7 +237,7 @@ export default function TireBuddyHome() {
               Book an Appointment
             </h2>
             <form
-              action="https://formspree.io/f/xwprnndy"
+              action="https://formspree.io/f/mnnondng"
               method="POST"
               className="space-y-4"
             >
