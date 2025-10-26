@@ -1,39 +1,60 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 export default function ContactPage() {
   const PRIMARY_RED = "#E63946";
+  const [submitting, setSubmitting] = useState(false);
+  const [status, setStatus] = useState(null); // "ok" | "error" | null
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitting(true);
+    setStatus(null);
+
+    const form = e.currentTarget;
+    if (form._gotcha.value) return; // защита от ботов
+
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mnnondng", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("ok");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <>
       {/* ===== SEO META TAGS ===== */}
       <Helmet>
-        <title>Contact TireBuddy | Mobile Tire Service in Ontario</title>
+        <title>Contact TireBuddy | Ontario Mobile Tire Service</title>
         <meta
           name="description"
-          content="Need support or want to book a mobile tire service? Contact TireBuddy today — we proudly serve Ontario with fast, friendly, and reliable on-site tire changes."
+          content="Contact TireBuddy for fast, mobile tire change and repair services anywhere in Ontario. We’ll come to you — driveway or workplace!"
         />
-
-        {/* Open Graph (Facebook, LinkedIn, etc.) */}
-        <meta property="og:title" content="Contact TireBuddy | Mobile Tire Service in Ontario" />
+        <meta property="og:title" content="TireBuddy - Contact Us" />
         <meta
           property="og:description"
-          content="Get in touch with TireBuddy for mobile tire changes and repairs. Serving Ontario drivers — fast, friendly, and local."
+          content="Get in touch with TireBuddy for mobile tire change and repair across Ontario. We're happy to help!"
         />
         <meta property="og:image" content="https://i.imgur.com/4YFSmoN.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tirebuddy.ca/contact" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact TireBuddy | Ontario Mobile Tire Experts" />
-        <meta
-          name="twitter:description"
-          content="Book or contact TireBuddy for mobile tire service — fast, friendly, and trusted across Ontario."
-        />
-        <meta name="twitter:image" content="https://i.imgur.com/4YFSmoN.png" />
       </Helmet>
 
-      {/* ===== PAGE CONTENT ===== */}
       <div className="min-h-screen bg-[#F4F4F4]">
         {/* ===== BANNER ===== */}
         <section className="bg-[#E63946] text-white text-center py-10 shadow-md">
@@ -55,19 +76,13 @@ export default function ContactPage() {
             <ul className="space-y-4 text-slate-700">
               <li>
                 <strong className="block text-slate-900">📞 Phone:</strong>
-                <a
-                  href="tel:+14164285819"
-                  className="text-[#E63946] hover:underline"
-                >
+                <a href="tel:+14164285819" className="text-[#E63946] hover:underline">
                   +1 (416) 428-5819
                 </a>
               </li>
               <li>
                 <strong className="block text-slate-900">✉️ Email:</strong>
-                <a
-                  href="mailto:info@tirebuddy.ca"
-                  className="text-[#E63946] hover:underline"
-                >
+                <a href="mailto:info@tirebuddy.ca" className="text-[#E63946] hover:underline">
                   info@tirebuddy.ca
                 </a>
               </li>
@@ -81,11 +96,10 @@ export default function ContactPage() {
           {/* CONTACT FORM */}
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Send a Message</h2>
-            <form
-              action="https://formspree.io/f/xwprnndy"
-              method="POST"
-              className="space-y-4"
-            >
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot */}
+              <input type="text" name="_gotcha" className="hidden" tabIndex="-1" autoComplete="off" />
+
               <input
                 type="text"
                 name="name"
@@ -109,15 +123,57 @@ export default function ContactPage() {
               ></textarea>
               <button
                 type="submit"
-                className="w-full rounded-lg py-3 font-semibold text-white shadow hover:opacity-90 transition"
+                disabled={submitting}
+                className="w-full rounded-lg py-3 font-semibold text-white shadow hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{ background: PRIMARY_RED }}
               >
-                Send Message
+                {submitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>
         </section>
+
+        {/* ===== POPUP CONFIRMATION ===== */}
+        {status === "ok" && (
+          <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl p-6 max-w-md w-full text-center shadow-xl">
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Message Sent ✅</h3>
+              <p className="text-slate-600 mb-5">
+                Thanks for reaching out! We’ll get back to you shortly.
+              </p>
+              <button
+                onClick={() => setStatus(null)}
+                className="rounded-lg px-5 py-2 font-semibold text-white"
+                style={{ background: PRIMARY_RED }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
+
+        {status === "error" && (
+          <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4">
+            <div className="bg-white rounded-2xl p-6 max-w-md w-full text-center shadow-xl">
+              <h3 className="text-xl font-bold text-slate-900 mb-2">Something went wrong</h3>
+              <p className="text-slate-600 mb-5">
+                Please try again or contact us directly at{" "}
+                <a href="mailto:info@tirebuddy.ca" className="text-[#E63946] underline">
+                  info@tirebuddy.ca
+                </a>.
+              </p>
+              <button
+                onClick={() => setStatus(null)}
+                className="rounded-lg px-5 py-2 font-semibold text-white"
+                style={{ background: PRIMARY_RED }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
 }
+
