@@ -11,12 +11,19 @@ export default function Layout() {
       {/* ===== HEADER ===== */}
       <header className="sticky top-0 z-30 bg-white shadow-md border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          {/* ===== LOGO ===== */}
           <Link to="/" className="flex items-center gap-2 select-none">
+            <img
+              src="https://i.imgur.com/4YFSmoN.png"
+              alt="TireBuddy logo"
+              className="h-10 w-10"
+            />
             <span className="text-2xl font-extrabold text-slate-900">
               Tire<span className="text-slate-800">Buddy</span>
             </span>
           </Link>
 
+          {/* ===== NAVIGATION ===== */}
           <nav className="hidden md:flex items-center gap-8 text-sm">
             <NavLink to="/" className={linkClass}>
               Home
@@ -96,6 +103,8 @@ export default function Layout() {
     </div>
   );
 }
+
+
 
 
 
