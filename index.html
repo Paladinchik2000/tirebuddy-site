@@ -1,7 +1,5 @@
 <!doctype html>
 <html lang="en-CA">
-<script src="https://www.google.com/recaptcha/api.js?render=6Lf1S_srAAAAACf8o0ecHsRxrazjUBKUxHC51O4F"></script>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -43,90 +41,61 @@
 
   <!-- ====== LOCAL BUSINESS SCHEMA ====== -->
   <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "AutoRepair",
-        "name": "TireBuddy",
-        "image": "https://tirebuddy.ca/logo.png",
-        "@id": "https://tirebuddy.ca",
-        "url": "https://tirebuddy.ca",
-        "telephone": "+1-416-428-5819",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Ontario, Canada",
-          "addressLocality": "Toronto",
-          "addressRegion": "ON",
-          "postalCode": "M5H 2N2",
-          "addressCountry": "CA"
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday"
-            ],
-            "opens": "08:00",
-            "closes": "20:00"
-          }
-        ],
-        "sameAs": [
-          "https://www.facebook.com/TireBuddy",
-          "https://www.instagram.com/tirebuddy",
-          "https://www.youtube.com/@tirebuddy"
-        ],
-        "description": "TireBuddy is Ontario’s trusted mobile tire service offering seasonal tire change, puncture repair, and snow plowing right at your doorstep. Proudly serving Toronto, Mississauga, and Brampton."
-      }
-    </script>
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "TireBuddy",
+    "image": "https://tirebuddy.ca/logo.png",
+    "@id": "https://tirebuddy.ca",
+    "url": "https://tirebuddy.ca",
+    "telephone": "+1-416-428-5819",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ontario, Canada",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "postalCode": "M5H 2N2",
+      "addressCountry": "CA"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/TireBuddy",
+      "https://www.instagram.com/tirebuddy",
+      "https://www.youtube.com/@tirebuddy"
+    ],
+    "description": "TireBuddy is Ontario’s trusted mobile tire service offering seasonal tire change, puncture repair, and snow plowing right at your doorstep. Proudly serving Toronto, Mississauga, and Brampton."
+  }
+  </script>
 
   <!-- ====== GOOGLE ANALYTICS 4 ====== -->
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2ZPBWCBHS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-V2ZPBWCBHS');
   </script>
 
-  <!-- ====== GOOGLE SEARCH CONSOLE VERIFICATION ====== -->
-  <!-- Replace content with your GSC verification token -->
+  <!-- ====== GOOGLE SEARCH CONSOLE ====== -->
   <meta name="google-site-verification" content="3GEW8yZJVdRsf8cehwxQJPDKHBSLRAi-q8D2FEbZDi0" />
 
-  <!-- Google reCAPTCHA v3 -->
-<script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY_HERE"></script>
-<script>
-  function onSubmit(token) {
-    document.getElementById("contact-form").submit();
-  }
-</script>
-  
+  <!-- ====== GOOGLE reCAPTCHA v3 ====== -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lf1S_srAAAAACf8o0ecHsRxrazjUBKUxHC51O4F"></script>
+  <script>
+    function onSubmit(token) {
+      document.getElementById("contact-form")?.submit();
+    }
+  </script>
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
-
-</html>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TireBuddy – Your Tire's Best Friend</title>
-</head>
-
-<body class="bg-[#F4F4F4]">
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
 </html>
