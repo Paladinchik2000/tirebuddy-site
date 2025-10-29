@@ -17,6 +17,10 @@ export default function ContactPage() {
     const data = new FormData(form);
 
     try {
+      // === reCAPTCHA v3 ===
+      const token = await window.grecaptcha.execute("6Lf1S_srAAAAACf8o0ecHsRxrazjUBKUxHC51O4F", { action: "submit" });
+      data.append("g-recaptcha-response", token);
+
       const res = await fetch("https://formspree.io/f/mnnondng", {
         method: "POST",
         body: data,
@@ -96,7 +100,8 @@ export default function ContactPage() {
           {/* CONTACT FORM */}
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Send a Message</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+
+            <form onSubmit={handleSubmit} className="space-y-4" id="contact-form">
               {/* Honeypot */}
               <input type="text" name="_gotcha" className="hidden" tabIndex="-1" autoComplete="off" />
 
@@ -121,10 +126,11 @@ export default function ContactPage() {
                 required
                 className="w-full rounded-lg border border-slate-300 px-4 py-2"
               ></textarea>
+
               <button
                 type="submit"
                 disabled={submitting}
-                className="w-full rounded-lg py-3 font-semibold text-white shadow hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
+                className="g-recaptcha w-full rounded-lg py-3 font-semibold text-white shadow hover:opacity-90 transition disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{ background: PRIMARY_RED }}
               >
                 {submitting ? "Sending..." : "Send Message"}
@@ -176,4 +182,3 @@ export default function ContactPage() {
     </>
   );
 }
-
