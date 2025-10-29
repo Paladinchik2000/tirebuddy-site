@@ -97,6 +97,15 @@
   <!-- ====== GOOGLE SEARCH CONSOLE VERIFICATION ====== -->
   <!-- Replace content with your GSC verification token -->
   <meta name="google-site-verification" content="3GEW8yZJVdRsf8cehwxQJPDKHBSLRAi-q8D2FEbZDi0" />
+
+  <!-- Google reCAPTCHA v3 -->
+<script src="https://www.google.com/recaptcha/api.js?render=YOUR_SITE_KEY_HERE"></script>
+<script>
+  function onSubmit(token) {
+    document.getElementById("contact-form").submit();
+  }
+</script>
+  
 </head>
 
 <body>
