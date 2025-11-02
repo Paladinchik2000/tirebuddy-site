@@ -69,7 +69,7 @@ export default function TireBuddyHome() {
           className="relative flex flex-col justify-center items-center text-center text-white h-[80vh] bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1581091870622-5c61c6a86e8f?auto=format&fit=crop&w=1600&q=80')",
+              "url('https://i.imgur.com/PxUDzNG.jpeg')",
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
@@ -139,7 +139,7 @@ export default function TireBuddyHome() {
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
             <div data-aos="fade-right">
               <img
-                src="https://images.unsplash.com/photo-1615201216513-88e53b8c5d04?auto=format&fit=crop&w=800&q=80"
+                src="https://i.imgur.com/4Rg07re.jpeg"
                 alt="TireBuddy van"
                 className="rounded-2xl shadow-md"
               />
