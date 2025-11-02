@@ -80,8 +80,8 @@ export default function ContactPage() {
             <ul className="space-y-4 text-slate-700">
               <li>
                 <strong className="block text-slate-900">📞 Phone:</strong>
-                <a href="tel:+14164285819" className="text-[#E63946] hover:underline">
-                  +1 (416) 428-5819
+                <a href="tel:+14374558729" className="text-[#E63946] hover:underline">
+                  +1 (437) 455-8729
                 </a>
               </li>
               <li>
