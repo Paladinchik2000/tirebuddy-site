@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ENDPOINT = "https://formspree.io/f/mnnondng"; // ✅ новый твой endpoint
+const ENDPOINT = "https://formspree.io/f/mnnondng"; // endpoint
 
 export default function BookingForm() {
   const PRIMARY_RED = "#E63946";
