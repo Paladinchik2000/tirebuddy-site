@@ -50,7 +50,7 @@ export default function ServicesPage() {
               Keep your yard clean and safe this fall with our professional leaf and debris cleanup service — quick, efficient, and affordable.
             </p>
             <p className="text-3xl font-extrabold text-[#E63946] mb-6">
-              Starting at $89
+              Starting at $170
             </p>
 
             <div className="flex justify-center gap-4">
