@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showTopBar, setShowTopBar] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const PRIMARY_RED = "#E63946";
 
   const linkClass = ({ isActive }) =>
@@ -12,10 +14,54 @@ export default function Layout() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
+  // ====== Скрытие панели при скролле вниз ======
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 80) {
+        setShowTopBar(false);
+      } else {
+        setShowTopBar(true);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div className="flex flex-col min-h-screen bg-[#F4F4F4]">
+      {/* ===== TOP CONTACT BAR ===== */}
+      <div
+        className={`bg-[#E63946] text-white text-sm py-2 transition-transform duration-300 ${
+          showTopBar ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2">
+          <div className="flex items-center gap-3 text-center sm:text-left">
+            <a
+              href="tel:+14374558729"
+              className="hover:underline flex items-center gap-1"
+            >
+              📞 +1 (437) 455-8729
+            </a>
+            <span className="hidden sm:inline text-white/70">|</span>
+            <a
+              href="mailto:info@tirebuddy.ca"
+              className="hover:underline flex items-center gap-1"
+            >
+              ✉️ info@tirebuddy.ca
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* ===== HEADER ===== */}
-      <header className="sticky top-0 z-30 bg-white shadow-md border-b border-slate-100">
+      <header
+        className={`sticky top-0 z-30 bg-white shadow-md border-b border-slate-100 transition-all duration-300 ${
+          showTopBar ? "mt-0" : "mt-[-40px]"
+        }`}
+      >
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 select-none" onClick={closeMenu}>
@@ -23,6 +69,7 @@ export default function Layout() {
               src="https://i.imgur.com/4YFSmoN.png"
               alt="Buddy logo"
               className="h-10 w-10"
+              loading="lazy"
             />
             <span className="text-2xl font-extrabold text-slate-900">
               Tire<span className="text-slate-800">Buddy</span>
@@ -52,9 +99,21 @@ export default function Layout() {
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            <span className={`w-6 h-0.5 bg-slate-800 transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`}></span>
-            <span className={`w-6 h-0.5 bg-slate-800 transition-all ${menuOpen ? "opacity-0" : ""}`}></span>
-            <span className={`w-6 h-0.5 bg-slate-800 transition-all ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}></span>
+            <span
+              className={`w-6 h-0.5 bg-slate-800 transition-all ${
+                menuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`w-6 h-0.5 bg-slate-800 transition-all ${
+                menuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`w-6 h-0.5 bg-slate-800 transition-all ${
+                menuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
           </button>
         </div>
 
