@@ -43,7 +43,7 @@ export default function FaqPage() {
     {
       question: "How can I pay for your services?",
       answer:
-        "We accept all major payment methods — including debit, credit, and e-transfer. You’ll receive a digital receipt right after your service is complete.",
+        "We accept this major payment methods — Cash, E-transfer, Cheque. You’ll receive a digital receipt right after your service is complete.",
     },
     {
       question: "Is there a senior discount available?",
