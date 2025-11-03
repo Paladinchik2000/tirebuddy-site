@@ -206,7 +206,7 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-      {/* ===== MAP SECTION ===== */}
+   {/* ===== MAP SECTION ===== */}
 <section className="bg-white border-t border-slate-200 py-20" data-aos="fade-up">
   <div className="max-w-6xl mx-auto px-4 text-center">
     <h2 className="text-3xl font-bold text-slate-900 mb-4">
@@ -220,7 +220,7 @@ export default function TireBuddyHome() {
     {/* Service Areas List */}
     <div className="text-slate-800 font-medium mb-10 max-w-3xl mx-auto leading-relaxed">
       Serving areas:
-      <span className="block sm:inline text-slate-600 ml-1">
+      <span className="block sm:inline text-slate-900 font-semibold ml-1">
         Toronto, Mississauga, Brampton, Aurora, Newmarket, King City, Markham, North York, Scarborough, Oakville, Etobicoke.
       </span>
     </div>
@@ -239,7 +239,6 @@ export default function TireBuddyHome() {
     </div>
   </div>
 </section>
-
 
         {/* ===== BOOKING SECTION ===== */}
         <section id="booking" className="bg-white border-t border-slate-200 py-16">
