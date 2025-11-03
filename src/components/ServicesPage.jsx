@@ -13,6 +13,7 @@ export default function ServicesPage() {
 
   return (
     <>
+      {/* ===== SEO ===== */}
       <Helmet>
         <title>Our Services | TireBuddy</title>
         <meta
@@ -21,6 +22,7 @@ export default function ServicesPage() {
         />
       </Helmet>
 
+      {/* ===== CONTENT ===== */}
       <div className="max-w-7xl mx-auto px-4 py-20 text-slate-700">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">
@@ -54,6 +56,7 @@ export default function ServicesPage() {
             </p>
 
             <div className="flex justify-center gap-4">
+              {/* BOOK NOW (якорь на форму) */}
               <a
                 href="/#booking"
                 className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
@@ -61,6 +64,8 @@ export default function ServicesPage() {
               >
                 Book Now
               </a>
+
+              {/* READ MORE (переход на отдельную страницу Fall Cleanup) */}
               <Link
                 to="/services/fall-cleanup"
                 className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
@@ -74,6 +79,7 @@ export default function ServicesPage() {
     </>
   );
 }
+
 
 
 
