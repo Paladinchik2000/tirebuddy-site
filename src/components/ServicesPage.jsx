@@ -56,7 +56,8 @@ export default function ServicesPage() {
             </p>
 
             <div className="flex justify-center gap-4">
-              {/* BOOK NOW (якорь на форму) */}
+              
+              {/* BOOK NOW */}
               <a
                 href="/#booking"
                 className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
@@ -65,7 +66,7 @@ export default function ServicesPage() {
                 Book Now
               </a>
 
-              {/* READ MORE (переход на отдельную страницу Fall Cleanup) */}
+              {/* READ MORE */}
               <Link
                 to="/services/fall-cleanup"
                 className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
@@ -73,12 +74,44 @@ export default function ServicesPage() {
                 Read More
               </Link>
             </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
+            
+        {/* ===== MOBILE TIRE CHANGE CARD ===== */}
+<div
+  className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-slate-200 max-w-3xl mx-auto mb-12"
+  data-aos="fade-up"
+>
+  <img
+    src="/images/services/tire-change.jpg"
+    alt="Mobile Tire Change"
+    className="w-full h-64 object-cover"
+    loading="lazy"
+  />
+  <div className="p-8 text-center">
+    <h2 className="text-2xl font-bold text-slate-900 mb-3">🚗 Mobile Tire Change</h2>
+    <p className="text-slate-600 mb-4">
+      Fast, reliable, and professional tire change service — done right at your home or workplace.
+    </p>
+    <p className="text-3xl font-extrabold text-[#E63946] mb-6">
+      Starting at $89
+    </p>
+
+    <div className="flex justify-center gap-4">
+      <a
+        href="/#booking"
+        className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
+        style={{ background: "#E63946" }}
+      >
+        Book Now
+      </a>
+      <Link
+        to="/services/tire-change"
+        className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
+      >
+        Read More
+      </Link>
+    </div>
+  </div>
+</div>
 
 
 
