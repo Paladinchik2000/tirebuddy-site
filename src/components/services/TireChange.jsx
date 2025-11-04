@@ -14,6 +14,16 @@ export default function TireChangePage() {
     });
   }, []);
 
+  // ===== Smooth scroll function =====
+  const scrollToBooking = () => {
+    const bookingSection = document.querySelector("#booking");
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = "/#booking"; // fallback
+    }
+  };
+
   return (
     <>
       {/* ===== SEO TAGS ===== */}
@@ -43,23 +53,22 @@ export default function TireChangePage() {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 px-6" data-aos="fade-up">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-             Mobile Tire Change Service
+             Mobile Tire Change - We Come To You!
           </h1>
           <p className="text-lg md:text-xl text-slate-100 max-w-2xl mx-auto mb-6">
-            Fast, friendly, and mobile tire service across Ontario — from tire
-            changes to seasonal cleanup, we come to you.
+            Fast, friendly, and mobile tire service across{" "}  <strong>GTA<strong>.
           </p>
 
-          {/* === NEW BOOK BUTTON (added here) === */}
-          <a
-            href="/#booking"
+          {/* === NEW BOOK BUTTON with smooth scroll === */}
+          <button
+            onClick={scrollToBooking}
             className="inline-block px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
             style={{ background: PRIMARY_RED }}
             data-aos="zoom-in"
             data-aos-delay="200"
           >
             🚗 Book Tire Change
-          </a>
+          </button>
         </div>
       </section>
 
@@ -71,7 +80,7 @@ export default function TireChangePage() {
             <strong>fast, affordable, and professional tire change services</strong>,
             we come directly to your home or workplace anywhere in the GTA. All
             work is completed by a{" "}
-            <strong>person using professional equipment.</strong>
+            <strong>technician  using professional equipment.</strong>
           </p>
 
           <hr className="my-8 border-slate-300" />
@@ -79,7 +88,7 @@ export default function TireChangePage() {
           {/* ===== INCLUDED ===== */}
           <h2 className="text-2xl font-bold text-slate-900 mb-4">What’s Included</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seasonal tire swaps (summer/winter)</li>
+            <li>{" "} <strong>Seasonal tire swaps (summer/winter)<strong></li>
             <li>Professional mobile service at your location</li>
             <li>Torque wrench tightening to manufacturer specs</li>
             <li>Tire pressure check and adjustment</li>
@@ -106,18 +115,18 @@ export default function TireChangePage() {
                 {[
                   {
                     size: "Sedan / Coupe",
-                    price: "$89 – $110",
-                    desc: "Standard tire swap, done on-site in your driveway or garage.",
+                    price: "$89",
+                    desc: "BMW series, Toyota, Honda, Civic, Ford and etc. ",
                   },
                   {
                     size: "SUV / Crossover",
-                    price: "$110 – $130",
-                    desc: "Includes full torque check and tire pressure adjustment.",
+                    price: "$95",
+                    desc: "Hyundai Tucson, Mazda CX-5, Toyota RAV4, Honda CR-V and etc.",
                   },
                   {
                     size: "Pickup Truck / Van",
-                    price: "$130 – $160",
-                    desc: "Heavy-duty tire change, ideal for larger vehicles.",
+                    price: "$99",
+                    desc: "Ford F-150, Ram, GMC and etc.",
                   },
                 ].map((row, i) => (
                   <tr
@@ -151,7 +160,7 @@ export default function TireChangePage() {
           <hr className="my-8 border-slate-300" />
 
           {/* ===== FINAL PRICE ===== */}
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Final Price</h2>
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Competetive Pricing</h2>
           <p>
             The total cost may vary depending on your{" "}
             <strong>
@@ -176,17 +185,19 @@ export default function TireChangePage() {
 
           {/* ===== CTA BUTTON ===== */}
           <div className="text-center mt-10" data-aos="zoom-in" data-aos-delay="300">
-            <a
-              href="/#booking"
+            <button
+              onClick={scrollToBooking}
               className="inline-block px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
               style={{ background: PRIMARY_RED }}
             >
               🚗 Book Tire Change
-            </a>
+            </button>
           </div>
         </div>
       </section>
     </>
   );
+}
+
 }
 
