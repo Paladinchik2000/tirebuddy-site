@@ -73,7 +73,6 @@ export default function ServicesPage() {
               >
                 Read More
               </Link>
-            </div>
             
         {/* ===== MOBILE TIRE CHANGE CARD ===== */}
 <div
