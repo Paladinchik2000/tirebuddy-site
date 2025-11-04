@@ -59,7 +59,7 @@ export default function TireChangePage() {
 
           {/* ===== MAIN IMAGE ===== */}
           <img
-            src="/images/services/tire-change.jpg"
+            src="/components/images/tire-change.jpg"
             alt="Mobile Tire Change Service"
             className="rounded-xl w-full mb-10 shadow-sm"
             loading="lazy"
