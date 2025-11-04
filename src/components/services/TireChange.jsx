@@ -53,13 +53,14 @@ export default function TireChangePage() {
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 px-6" data-aos="fade-up">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
-             Mobile Tire Change - We Come To You!
+            Mobile Tire Change — We Come To You!
           </h1>
           <p className="text-lg md:text-xl text-slate-100 max-w-2xl mx-auto mb-6">
-            Fast, friendly, and mobile tire service across{" "}  <strong>GTA<strong>.
+            Fast, friendly, and mobile tire service across{" "}
+            <strong>GTA</strong>.
           </p>
 
-          {/* === NEW BOOK BUTTON with smooth scroll === */}
+          {/* === BOOK BUTTON with smooth scroll === */}
           <button
             onClick={scrollToBooking}
             className="inline-block px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
@@ -77,10 +78,10 @@ export default function TireChangePage() {
         <div data-aos="fade-up" data-aos-delay="100">
           <p className="text-lg mb-6">
             TireBuddy provides{" "}
-            <strong>fast, affordable, and professional tire change services</strong>,
-            we come directly to your home or workplace anywhere in the GTA. All
+            <strong>fast, affordable, and professional tire change services</strong>.
+            We come directly to your home or workplace anywhere in the GTA. All
             work is completed by a{" "}
-            <strong>technician  using professional equipment.</strong>
+            <strong>technician using professional equipment.</strong>
           </p>
 
           <hr className="my-8 border-slate-300" />
@@ -88,7 +89,9 @@ export default function TireChangePage() {
           {/* ===== INCLUDED ===== */}
           <h2 className="text-2xl font-bold text-slate-900 mb-4">What’s Included</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>{" "} <strong>Seasonal tire swaps (summer/winter)<strong></li>
+            <li>
+              <strong>Seasonal tire swaps (summer/winter)</strong>
+            </li>
             <li>Professional mobile service at your location</li>
             <li>Torque wrench tightening to manufacturer specs</li>
             <li>Tire pressure check and adjustment</li>
@@ -116,17 +119,17 @@ export default function TireChangePage() {
                   {
                     size: "Sedan / Coupe",
                     price: "$89",
-                    desc: "BMW series, Toyota, Honda, Civic, Ford and etc. ",
+                    desc: "BMW series, Toyota, Honda, Civic, Ford, etc.",
                   },
                   {
                     size: "SUV / Crossover",
                     price: "$95",
-                    desc: "Hyundai Tucson, Mazda CX-5, Toyota RAV4, Honda CR-V and etc.",
+                    desc: "Hyundai Tucson, Mazda CX-5, Toyota RAV4, Honda CR-V, etc.",
                   },
                   {
                     size: "Pickup Truck / Van",
                     price: "$99",
-                    desc: "Ford F-150, Ram, GMC and etc.",
+                    desc: "Ford F-150, Ram, GMC, etc.",
                   },
                 ].map((row, i) => (
                   <tr
@@ -159,8 +162,8 @@ export default function TireChangePage() {
 
           <hr className="my-8 border-slate-300" />
 
-          {/* ===== FINAL PRICE ===== */}
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Competetive Pricing</h2>
+          {/* ===== COMPETITIVE PRICING ===== */}
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Competitive Pricing</h2>
           <p>
             The total cost may vary depending on your{" "}
             <strong>
@@ -197,7 +200,5 @@ export default function TireChangePage() {
       </section>
     </>
   );
-}
-
 }
 
