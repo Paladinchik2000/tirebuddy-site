@@ -12,7 +12,7 @@ import ContactPage from "./components/ContactPage";
 import FaqPage from "./components/FaqPage";
 
 //  новая страница
-import FallCleanupPage from "./services/FallCleanup";
+import FallCleanupPage from ".src/components/services/FallCleanup.jsx";
 
 import "./index.css";
 
