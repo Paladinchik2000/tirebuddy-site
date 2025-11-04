@@ -13,6 +13,7 @@ import FaqPage from "./components/FaqPage";
 
 //  новая страница
 import FallCleanupPage from "./components/services/FallCleanup";
+import TireChangePage from "./pages/services/TireChange";
 
 import "./index.css";
 
@@ -31,6 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
             {/*  Страница услуги Fall Cleanup */}
             <Route path="services/fall-cleanup" element={<FallCleanupPage />} />
+            <Route path="services/tire-change" element={<TireChangePage />} />
 
             {/*  Страница 404 (fallback) */}
             <Route
