@@ -13,7 +13,7 @@ import FaqPage from "./components/FaqPage";
 
 //  новая страница
 import FallCleanupPage from "./components/services/FallCleanup";
-import TireChangePage from "./pages/services/TireChange";
+import TireChangePage from "./components/services/TireChange";
 
 import "./index.css";
 
