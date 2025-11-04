@@ -66,7 +66,7 @@ export default function TireBuddyHome() {
       <div className="bg-[#F4F4F4] min-h-screen flex flex-col">
         {/* ===== HERO SECTION ===== */}
         <section
-          className="relative flex flex-col justify-center items-center text-center text-white h-[80vh] bg-cover bg-center"
+          className="relative flex flex-col justify-end pb-24 items-center text-center text-white h-[80vh] bg-cover bg-center"
           style={{
             backgroundImage:
               "url('https://i.imgur.com/PxUDzNG.jpeg')",
@@ -80,6 +80,9 @@ export default function TireBuddyHome() {
             <p className="text-lg md:text-xl text-slate-100 max-w-2xl mx-auto drop-shadow">
               Fast, friendly, and mobile tire service across Ontario — from tire
               changes to seasonal cleanup, we come to you.
+            </p>
+            <p className="text-2xl font-semibold text-white mt-4">
+  Starting at <span className="text-[#E63946]">$89</span>
             </p>
           </div>
         </section>
