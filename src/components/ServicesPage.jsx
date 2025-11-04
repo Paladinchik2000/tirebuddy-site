@@ -48,7 +48,7 @@ export default function ServicesPage() {
             data-aos-delay="100"
           >
             <img
-              src="/images/services/tire-change.jpg"
+              src="https://i.imgur.com/V5pLxHA.jpeg"
               alt="Mobile Tire Change"
               className="w-full h-64 object-cover"
               loading="lazy"
