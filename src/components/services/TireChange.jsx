@@ -27,7 +27,7 @@ export default function TireChangePage() {
           </h1>
 
           <img
-            src="/images/services/tire-change.jpg"
+            src="https://i.imgur.com/V5pLxHA.jpeg"
             alt="Mobile Tire Change Service"
             className="w-full rounded-2xl mb-8 shadow"
             loading="lazy"
