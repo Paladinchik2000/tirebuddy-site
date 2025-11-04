@@ -14,23 +14,37 @@ export default function Layout() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#F4F4F4]">
-      {/* ===== TOP CONTACT BAR ===== */}
-      <div className="bg-[#E63946] text-white text-sm py-2">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-2 md:gap-0">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1">
-              📞 <a href="tel:+14374558729" className="hover:underline">+1 (437) 455-8729</a>
-            </span>
-            <span className="hidden md:inline-block border-l border-white h-4"></span>
-            <span className="flex items-center gap-1">
-              ✉️ <a href="mailto:info@tirebuddy.ca" className="hover:underline">info@tirebuddy.ca</a>
-            </span>
-          </div>
-          <div className="uppercase tracking-wide font-semibold text-xs md:text-sm">
-            🇨🇦 Proudly Canadian
-          </div>
-        </div>
-      </div>
+      
+     {/* ===== TOP CONTACT BAR ===== */}
+<div className="bg-[#E63946] text-white text-sm py-2">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-2 md:gap-0">
+    <div className="flex items-center gap-4">
+      <span className="flex items-center gap-1">
+        <span className="text-black md:text-black text-white">📞</span>
+        <a
+          href="tel:+14374558729"
+          className="hover:underline text-white md:text-black font-medium"
+        >
+          +1 (437) 455-8729
+        </a>
+      </span>
+      <span className="hidden md:inline-block border-l border-white h-4"></span>
+      <span className="flex items-center gap-1">
+        <span className="text-black md:text-black text-white">✉️</span>
+        <a
+          href="mailto:info@tirebuddy.ca"
+          className="hover:underline text-white md:text-black font-medium"
+        >
+          info@tirebuddy.ca
+        </a>
+      </span>
+    </div>
+    <div className="uppercase tracking-wide font-semibold text-xs md:text-sm">
+      🇨🇦 Proudly Canadian
+    </div>
+  </div>
+</div>
+
 
       {/* ===== MAIN HEADER ===== */}
       <header className="sticky top-0 z-30 bg-white shadow-md border-b border-slate-100">
