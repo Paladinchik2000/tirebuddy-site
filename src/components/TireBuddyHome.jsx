@@ -81,7 +81,7 @@ export default function TireBuddyHome() {
               Fast, friendly, and mobile tire service across Ontario — from tire
               changes to seasonal cleanup, we come to you.
             </p>
-            <p className="text-2xl font-semibold text-white mt-4">
+            <p className="text-2xl font-semibold text-white mt-6">
   Starting at <span className="text-[#E63946]">$89</span>
             </p>
           </div>
@@ -267,7 +267,7 @@ export default function TireBuddyHome() {
               <input type="text" name="vehicle_make" placeholder="Vehicle Make" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
               <input type="text" name="vehicle_model" placeholder="Vehicle Model" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
               <input type="text" name="address" placeholder="Service Address" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
-              <input type="text" name="postal_code" placeholder="Postal Code" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
+              <input type="text" name="city" placeholder="City" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
               <textarea name="message" placeholder="Additional Details (optional)" className="w-full rounded-lg border border-slate-300 px-4 py-2"></textarea>
               <button type="submit" className="w-full rounded-lg bg-[#E63946] text-white py-3 font-semibold shadow hover:opacity-90 transition">
                 Submit Request
