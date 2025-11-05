@@ -162,17 +162,32 @@ export default function TireChangePage() {
 
           <hr className="my-8 border-slate-300" />
 
-          {/* ===== COMPETITIVE PRICING ===== */}
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">Competitive Pricing</h2>
-          <p>
-            The total cost may vary depending on your{" "}
-            <strong>
-              location, vehicle type, and accessibility (e.g., underground
-              parking or steep driveways)
-            </strong>
-            . Contact us for an accurate quote — our team will assess and confirm
-            before starting the job.
-          </p>
+         {/* ===== COMPETITIVE PRICING ===== */}
+<h2 className="text-2xl font-bold text-slate-900 mb-4">Competitive Pricing</h2>
+<p className="mb-4">
+  At <strong>TireBuddy</strong>, we believe in providing exceptional service at honest, affordable rates.
+  Our prices are among the most competitive in Ontario — no hidden fees, just transparent and fair pricing.
+</p>
+<ul className="list-disc list-inside space-y-2 mb-4">
+  <li>
+    💰 <strong>Super value for money</strong> — top-quality mobile service at the best price in the GTA.
+  </li>
+  <li>
+    👴 <strong>10% Seniors Discount</strong> — because experience deserves appreciation.
+  </li>
+  <li>
+    🚗 <strong>Multi-Vehicle Savings:</strong> every next car gets a <strong>$20 OFF</strong> discount!
+  </li>
+</ul>
+<p>
+  The total cost may vary depending on your{" "}
+  <strong>
+    location, vehicle type, and accessibility (e.g., underground
+    parking or steep driveways)
+  </strong>
+  . Contact us for an accurate quote — our team will assess and confirm before starting the job.
+</p>
+
 
           <hr className="my-8 border-slate-300" />
 
