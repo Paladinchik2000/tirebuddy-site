@@ -33,7 +33,7 @@ export default function AboutPage() {
       <section
         className="relative flex flex-col justify-center items-center text-center text-white h-[60vh] bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://i.imgur.com/jhPVFrD.jpeg')",
+          backgroundImage: "url('https://i.imgur.com/tnfWc3V.jpeg')",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -52,7 +52,7 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div data-aos="fade-right">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Your Tire’s Best Friend — TireBuddy 🐾
+              Your Tire’s Best Friend — TireBuddy 
             </h2>
             <p className="mb-4">
               TireBuddy was created with one goal in mind — to make tire change
@@ -73,7 +73,7 @@ export default function AboutPage() {
             data-aos="fade-left"
           >
             <img
-              src="https://tirebuddy.ca/logo.png"
+              src="https://i.imgur.com/4YFSmoN.png"
               alt="TireBuddy Mascot"
               className="w-full h-64 object-contain p-6"
             />
