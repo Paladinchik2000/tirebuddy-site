@@ -81,9 +81,9 @@ export default function TireBuddyHome() {
               Fast, friendly, and mobile tire service across Ontario — from tire
               changes to seasonal cleanup, we come to you.
             </p>
-            <p className="text-2xl font-semibold text-white mt-6">
-  Starting at <span className="text-[#E63946]">$89</span>
-            </p>
+            <p className="text-6xl font-extrabold text-[#E63946] mb-6">
+              Starting at $89
+           </p>
           </div>
         </section>
 
