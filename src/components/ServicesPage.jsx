@@ -9,12 +9,22 @@ export default function ServicesPage() {
 
   useEffect(() => {
     AOS.init({
-      duration: 900, // длительность анимации
-      easing: "ease-out-cubic", // плавность
-      once: true, // анимация один раз
-      offset: 100, // расстояние до начала анимации
+      duration: 900,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 100,
     });
   }, []);
+
+  // ===== функция плавного скролла =====
+  const scrollToBooking = () => {
+    const bookingSection = document.querySelector("#booking");
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = "/#booking"; // fallback если пользователь не на главной
+    }
+  };
 
   return (
     <>
@@ -66,13 +76,15 @@ export default function ServicesPage() {
               </p>
 
               <div className="flex justify-center gap-4">
-                <a
-                  href="/#booking"
+                {/* Плавная прокрутка к форме */}
+                <button
+                  onClick={scrollToBooking}
                   className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
                   style={{ background: PRIMARY_RED }}
                 >
                   Book Now
-                </a>
+                </button>
+
                 <Link
                   to="/services/tire-change"
                   className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
@@ -109,13 +121,14 @@ export default function ServicesPage() {
               </p>
 
               <div className="flex justify-center gap-4">
-                <a
-                  href="/#booking"
+                {/* Плавная прокрутка к форме */}
+                <button
+                  onClick={scrollToBooking}
                   className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
                   style={{ background: PRIMARY_RED }}
                 >
                   Book Now
-                </a>
+                </button>
 
                 <Link
                   to="/services/fall-cleanup"
@@ -131,9 +144,3 @@ export default function ServicesPage() {
     </>
   );
 }
-
-
-
-
-
-
