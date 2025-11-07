@@ -22,6 +22,16 @@ export default function TireBuddyHome() {
     });
   }, []);
 
+    // ===== Smooth scroll to booking section =====
+  const scrollToBooking = () => {
+    const bookingSection = document.querySelector("#booking");
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.location.href = "/#booking"; // fallback для других страниц
+    }
+  };
+
   // ====== SEO META TAGS ======
   const seoImage = "https://i.imgur.com/4YFSmoN.png";
 
@@ -277,12 +287,12 @@ export default function TireBuddyHome() {
         </section>
 
         {/* ===== MOBILE STICKY BUTTON ===== */}
-        <a
-          href="#booking"
-          className="fixed bottom-5 right-5 z-50 md:hidden bg-[#E63946] text-white font-semibold py-3 px-5 rounded-full shadow-lg hover:opacity-90 transition"
-        >
-          📅 Book Tire Change
-        </a>
+        <button
+          onClick={scrollToBooking}
+          className="fixed bottom-5 right-5 z-50 md:hidden bg-[#E63946] text-white font-semibold py-3 px-5 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-transform duration-300"
+      >
+        📅 Book Tire Change
+      </button>
       </div>
     </>
   );
