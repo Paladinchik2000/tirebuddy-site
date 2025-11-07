@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
 }
@@ -36,17 +40,6 @@ body {
 
 .animate-spin-slow {
   animation: spin-slow 1.5s linear;
-}
-/* ===== Buddy wink (моргает каждые ~6s) ===== */
-@keyframes buddy-wink {
-  0%, 92%, 100% { transform: scaleY(1); }
-  94%, 96% { transform: scaleY(0.05); }
-  98% { transform: scaleY(1); }
-}
-
-.buddy-wink .buddy-eye-right {
-  transform-origin: 75px 50px; /* центр правого глаза из SVG */
-  animation: buddy-wink 6s ease-in-out infinite;
 }
 
 /* ===== Rolling wheel across screen ===== */
