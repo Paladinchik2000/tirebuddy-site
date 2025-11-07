@@ -14,13 +14,13 @@ export default function TireChangePage() {
     });
   }, []);
 
-  // ===== Smooth scroll function =====
+  // ===== Smooth scroll to booking section =====
   const scrollToBooking = () => {
     const bookingSection = document.querySelector("#booking");
     if (bookingSection) {
       bookingSection.scrollIntoView({ behavior: "smooth" });
     } else {
-      window.location.href = "/#booking"; // fallback
+      window.location.href = "/#booking"; // fallback for other pages
     }
   };
 
@@ -56,8 +56,7 @@ export default function TireChangePage() {
             Mobile Tire Change — We Come To You!
           </h1>
           <p className="text-lg md:text-xl text-slate-100 max-w-2xl mx-auto mb-6">
-            Fast, friendly, and mobile tire service across{" "}
-            <strong>GTA</strong>.
+            Fast, friendly, and mobile tire service across <strong>GTA</strong>.
           </p>
 
           {/* === BOOK BUTTON with smooth scroll === */}
@@ -119,7 +118,7 @@ export default function TireChangePage() {
                   {
                     size: "Sedan / Coupe",
                     price: "$89",
-                    desc: "BMW series, Toyota, Honda, Civic, Ford, etc.",
+                    desc: "BMW 3-series, Toyota Corolla, Honda Civic, Ford Focus, etc.",
                   },
                   {
                     size: "SUV / Crossover",
@@ -129,7 +128,7 @@ export default function TireChangePage() {
                   {
                     size: "Pickup Truck / Van",
                     price: "$99",
-                    desc: "Ford F-150, Ram, GMC, etc.",
+                    desc: "Ford F-150, Dodge Ram, GMC Sierra, etc.",
                   },
                 ].map((row, i) => (
                   <tr
@@ -139,9 +138,7 @@ export default function TireChangePage() {
                     data-aos-delay={200 + i * 100}
                   >
                     <td className="py-3 px-4 font-semibold">{row.size}</td>
-                    <td className="py-3 px-4 text-[#E63946] font-bold">
-                      {row.price}
-                    </td>
+                    <td className="py-3 px-4 text-[#E63946] font-bold">{row.price}</td>
                     <td className="py-3 px-4">{row.desc}</td>
                   </tr>
                 ))}
@@ -151,43 +148,30 @@ export default function TireChangePage() {
 
           <hr className="my-8 border-slate-300" />
 
-          {/* ===== EXPECTATIONS ===== */}
-          <h2 className="text-2xl font-bold text-slate-900 mb-4">What You Can Expect</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>We come to your home, condo, or workplace — no waiting in line.</li>
-            <li>Professional technicians with full equipment and tools.</li>
-            <li>Fast and friendly service — most jobs done within 30–45 minutes.</li>
-            <li>We double-check all lug nuts with a calibrated torque wrench.</li>
+          {/* ===== COMPETITIVE PRICING ===== */}
+          <h2 className="text-2xl font-bold text-slate-900 mb-4">Competitive Pricing</h2>
+          <p className="mb-4">
+            At <strong>TireBuddy</strong>, we believe in providing exceptional service at honest, affordable rates.
+            Our prices are among the most competitive in Ontario — no hidden fees, just transparent and fair pricing.
+          </p>
+          <ul className="list-disc list-inside space-y-2 mb-4">
+            <li>
+              💰 <strong>Super value for money</strong> — top-quality mobile service at the best price in the GTA.
+            </li>
+            <li>
+              👴 <strong>10% Seniors Discount</strong> — because experience deserves appreciation.
+            </li>
+            <li>
+              🚗 <strong>Multi-Vehicle Savings:</strong> every next car gets a <strong>$20 OFF</strong> discount!
+            </li>
           </ul>
-
-          <hr className="my-8 border-slate-300" />
-
-         {/* ===== COMPETITIVE PRICING ===== */}
-<h2 className="text-2xl font-bold text-slate-900 mb-4">Competitive Pricing</h2>
-<p className="mb-4">
-  At <strong>TireBuddy</strong>, we believe in providing exceptional service at honest, affordable rates.
-  Our prices are among the most competitive in Ontario — no hidden fees, just transparent and fair pricing.
-</p>
-<ul className="list-disc list-inside space-y-2 mb-4">
-  <li>
-    💰 <strong>Super value for money</strong> — top-quality mobile service at the best price in the GTA.
-  </li>
-  <li>
-    👴 <strong>10% Seniors Discount</strong> — because experience deserves appreciation.
-  </li>
-  <li>
-    🚗 <strong>Multi-Vehicle Savings:</strong> every next car gets a <strong>$20 OFF</strong> discount!
-  </li>
-</ul>
-<p>
-  The total cost may vary depending on your{" "}
-  <strong>
-    location, vehicle type, and accessibility (e.g., underground
-    parking or steep driveways)
-  </strong>
-  . Contact us for an accurate quote — our team will assess and confirm before starting the job.
-</p>
-
+          <p>
+            The total cost may vary depending on your{" "}
+            <strong>
+              location, vehicle type, and accessibility (e.g., underground parking or steep driveways)
+            </strong>.
+            Contact us for an accurate quote — our team will assess and confirm before starting the job.
+          </p>
 
           <hr className="my-8 border-slate-300" />
 
@@ -196,8 +180,7 @@ export default function TireChangePage() {
           <p className="mb-6">
             We recommend scheduling your appointment early{" "}
             <strong>
-              in the season to ensure timely service — especially before the
-              first snowfalls.
+              in the season to ensure timely service — especially before the first snowfalls.
             </strong>
           </p>
 
