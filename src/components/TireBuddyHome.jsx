@@ -22,6 +22,19 @@ export default function TireBuddyHome() {
     });
   }, []);
 
+    // ===== Scroll to #booking if redirected with hash =====
+  useEffect(() => {
+    if (window.location.hash === "#booking") {
+      setTimeout(() => {
+        const bookingSection = document.querySelector("#booking");
+        if (bookingSection) {
+          bookingSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 600); // подождать, пока страница полностью отрисуется
+    }
+  }, []);
+
+
     // ===== Smooth scroll to booking section =====
   const scrollToBooking = () => {
     const bookingSection = document.querySelector("#booking");
