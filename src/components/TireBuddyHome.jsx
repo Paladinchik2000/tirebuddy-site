@@ -22,18 +22,21 @@ export default function TireBuddyHome() {
     });
   }, []);
 
-    // ===== Scroll to #booking if redirected with hash =====
-  useEffect(() => {
-    if (window.location.hash === "#booking") {
-      setTimeout(() => {
-        const bookingSection = document.querySelector("#booking");
-        if (bookingSection) {
-          bookingSection.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 600); // подождать, пока страница полностью отрисуется
-    }
-  }, []);
-
+   // ===== Scroll to #booking if redirected with hash =====
+useEffect(() => {
+  if (window.location.hash === "#booking") {
+    let attempts = 0;
+    const scrollInterval = setInterval(() => {
+      const bookingSection = document.querySelector("#booking");
+      if (bookingSection) {
+        bookingSection.scrollIntoView({ behavior: "smooth" });
+        clearInterval(scrollInterval);
+      }
+      attempts++;
+      if (attempts > 10) clearInterval(scrollInterval); // не крутить бесконечно
+    }, 300);
+  }
+}, []);
 
     // ===== Smooth scroll to booking section =====
   const scrollToBooking = () => {
