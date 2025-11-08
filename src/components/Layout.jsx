@@ -34,7 +34,7 @@ export default function Layout() {
           href="tel:+14374558729"
           className="hover:underline text-white md:text-black font-medium"
         >
-          +1 (437) 455-8729
+          +1 (416) 428-5819
         </a>
       </span>
 
