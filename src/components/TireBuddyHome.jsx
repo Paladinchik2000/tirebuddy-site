@@ -279,6 +279,15 @@ useEffect(() => {
               action="https://formspree.io/f/mnnondng"
               method="POST"
               className="space-y-4"
+              onSubmit={() => {
+           if (window.gtag) {
+       window.gtag('event', 'conversion', {
+        send_to: 'AW-17700861953/TQlXCL2blbsbEIHwtvhB',
+        value: 1.0,
+        currency: 'CAD',
+                  });
+               }
+             }}
             >
               <input type="text" name="name" placeholder="Full Name" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
               <input type="tel" name="phone" placeholder="Phone Number" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
