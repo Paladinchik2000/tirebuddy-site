@@ -297,10 +297,10 @@ useEffect(() => {
                 <option value="Punctured Tire Repair">Punctured Tire Repair</option>
                 <option value="Gutter Cleaning">Gutter Cleaning</option>
                 <option value="Fall Cleanup">Fall Cleanup</option>
-                <option value="Snow Plowing">Snow Plowing</option>
+                <option value="Snow Plowing">Snow Shoveling</option>
               </select>
-              <input type="text" name="vehicle_make" placeholder="Vehicle Make" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
-              <input type="text" name="vehicle_model" placeholder="Vehicle Model" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
+              <input type="text" name="vehicle_make" placeholder="Vehicle Make (optional)" className="w-full rounded-lg border border-slate-300 px-4 py-2" />
+              <input type="text" name="vehicle_model" placeholder="Vehicle Model (optional)" className="w-full rounded-lg border border-slate-300 px-4 py-2" />
               <input type="text" name="address" placeholder="Service Address" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
               <input type="text" name="city" placeholder="City" required className="w-full rounded-lg border border-slate-300 px-4 py-2" />
               <textarea name="message" placeholder="Additional Details (optional)" className="w-full rounded-lg border border-slate-300 px-4 py-2"></textarea>
