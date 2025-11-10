@@ -14,7 +14,7 @@ import FaqPage from "./components/FaqPage";
 //  новая страница
 import FallCleanupPage from "./components/services/FallCleanupPage";
 import TireChangePage from "./components/services/TireChangePage";
-import TireChangePage from "./pages/services/SnowShovelingPage";
+import TireChangePage from "./components/services/SnowShovelingPage";
 
 
 import "./index.css";
