@@ -51,6 +51,7 @@ export default function ServicesPage() {
 
         {/* ===== SERVICES GRID ===== */}
         <div className="flex flex-col items-center gap-12">
+          
           {/* ===== MOBILE TIRE CHANGE CARD ===== */}
           <div
             className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-slate-200 max-w-3xl w-full"
@@ -87,6 +88,51 @@ export default function ServicesPage() {
 
                 <Link
                   to="/services/tire-change"
+                  className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
+                >
+                  Read More
+                </Link>
+              </div>
+            </div>
+          </div>
+
+           {/* ===== SNOW SHOVELING CARD ===== */}
+          <div
+            className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-slate-200 max-w-3xl w-full"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://i.imgur.com/NAfLl2q.jpeg"
+              alt="Snow Shoveling"
+              className="w-full h-64 object-cover"
+              loading="lazy"
+            />
+            <div className="p-8 text-center">
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                ❄️ Snow Shoveling
+              </h2>
+              <p className="text-slate-600 mb-4">
+                Keep your yard clean and safe this winter with our professional
+                 snow shoveling service — quick, efficient, and
+                affordable.
+              </p>
+              <p className="text-3xl font-extrabold text-[#E63946] mb-6">
+                Starting at $80
+              </p>
+
+              <div className="flex justify-center gap-4">
+                {/* Плавная прокрутка к форме */}
+                <button
+                  onClick={scrollToBooking}
+                  className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
+                  style={{ background: PRIMARY_RED }}
+                >
+                  Book Now
+                </button>
+
+                <Link
+                  to="/services/snow-shoveling"
                   className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
                 >
                   Read More
