@@ -38,7 +38,7 @@ export default function SnowShovelingPage() {
                     property="og:description"
                     content="TireBuddy offers professional fast and reliable snow shoveling services across York, North York, Vaughan, Toronto, and Etobicoke. Starting at $80 — we come to your driveway!"
                 />
-                <meta property="og:image" content="https://i.imgur.com/V5pLxHA.jpeg" />
+                <meta property="og:image" content="/components/images/snow-shoveling.jpg" />
                 <meta property="og:type" content="service" />
                 <meta property="og:url" content="https://tirebuddy.ca/services/snow-shoveling" />
             </Helmet>
@@ -47,7 +47,7 @@ export default function SnowShovelingPage() {
             <section
                 className="relative flex flex-col justify-center items-center text-center text-white h-[60vh] bg-cover bg-center"
                 style={{
-                    backgroundImage: "url('https://i.imgur.com/V5pLxHA.jpeg')",
+                    backgroundImage: "url('https://i.imgur.com/NAfLl2q.jpeg')",
                 }}
             >
                 <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -196,18 +196,9 @@ export default function SnowShovelingPage() {
                         <li>
                             👴 <strong>10% Seniors Discount</strong> — because experience deserves appreciation.
                         </li>
-                        <li>
-                            🚗 <strong>Multi-Vehicle Savings:</strong> every next car gets a <strong>$20 OFF</strong> discount!
-                        </li>
                     </ul>
                     <p>
-                        The total cost may vary depending on your{" "}
-                        <strong>
-                            location, vehicle type, and accessibility (e.g., underground parking or steep driveways)
-                        </strong>.
-                        Contact us for an accurate quote — our team will assess and confirm before starting the job.
-                    </p>
-
+                        
                     <hr className="my-8 border-slate-300" />
 
                     {/* ===== NOTE ===== */}
