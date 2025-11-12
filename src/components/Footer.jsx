@@ -32,7 +32,7 @@ export default function Footer() {
           <h4 className="text-lg font-semibold text-white mb-3">Follow Us</h4>
           <div className="flex gap-4 text-2xl">
             <a
-              href="https://www.instagram.com/tirebuddy.ca"
+              href="https://www.instagram.com/your_tire_buddy"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#E63946]"
