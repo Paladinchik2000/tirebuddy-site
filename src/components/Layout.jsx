@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import Footer from "./Footer";
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -70,6 +71,7 @@ export default function Layout() {
       {/* ===== MAIN HEADER ===== */}
       <header className="sticky top-0 z-30 bg-white shadow-md border-b border-slate-100">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          
           {/* Logo + Title */}
           <Link to="/" className="flex items-center gap-2 select-none" onClick={closeMenu}>
             <img
@@ -135,14 +137,13 @@ export default function Layout() {
       </header>
 
       {/* MAIN CONTENT */}
-      <main className="flex-1">
+     <main className="flex-grow">
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }
-
-
 
 
 
