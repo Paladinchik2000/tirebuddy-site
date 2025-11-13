@@ -81,7 +81,7 @@ export default function ContactPage() {
               <li>
                 <strong className="block text-slate-900">📞 Phone:</strong>
                 <a href="tel:+14374558729" className="text-[#E63946] hover:underline">
-                  +1 (416) 428-5819
+                  +1 (437) 455-8729
                 </a>
               </li>
               <li>
