@@ -10,6 +10,7 @@ import ServicesPage from "./components/ServicesPage";
 import BlogPage from "./components/BlogPage";
 import ContactPage from "./components/ContactPage";
 import FaqPage from "./components/FaqPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 //  новая страница
 import FallCleanupPage from "./components/services/FallCleanupPage";
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
+         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<TireBuddyHome />} />
