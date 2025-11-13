@@ -90,6 +90,7 @@ useEffect(() => {
       </Helmet>
 
       <div className="bg-[#F4F4F4] min-h-screen flex flex-col">
+        
         {/* ===== HERO SECTION ===== */}
         <section
           className="relative flex flex-col justify-end pb-24 items-center text-center text-white h-[80vh] bg-cover bg-center"
@@ -110,6 +111,13 @@ useEffect(() => {
             <p className="text-6xl font-extrabold text-[#E63946] mb-6">
               Starting at $89
            </p>
+            <button
+              onClick={() => document.querySelector("#booking")?.scrollIntoView({ behavior: "smooth" })}
+              className="mt-6 inline-block px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+              style={{ background: "#E63946" }}
+            >
+             🚗 Book Tire Change
+         </button>
           </div>
         </section>
 
