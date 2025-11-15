@@ -11,6 +11,7 @@ import BlogPage from "./components/BlogPage";
 import ContactPage from "./components/ContactPage";
 import FaqPage from "./components/FaqPage";
 import ScrollToTop from "./components/ScrollToTop";
+import ThankYouPage from "./components/ThankYouPage";
 
 //  новая страница
 import FallCleanupPage from "./components/services/FallCleanupPage";
@@ -33,6 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="blog" element={<BlogPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="faq" element={<FaqPage />} />
+            <Route path="thank-you" element={<ThankYouPage />} />
 
             {/*  Страница услуг */}
             <Route path="services/fall-cleanup" element={<FallCleanupPage />} />
