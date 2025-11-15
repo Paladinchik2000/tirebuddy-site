@@ -254,7 +254,6 @@ useEffect(() => {
       TireBuddy proudly serves the Greater Toronto Area and nearby regions with fast, friendly, mobile tire service right at your doorstep.
     </p>
 
-    {/* Service Areas List */}
     <div className="text-slate-800 font-medium mb-10 max-w-3xl mx-auto leading-relaxed">
       Serving areas:
       <span className="block sm:inline text-slate-900 font-semibold ml-1">
@@ -263,16 +262,16 @@ useEffect(() => {
     </div>
 
     <div className="rounded-2xl overflow-hidden shadow-md border border-slate-200">
-      <iframe
-        title="TireBuddy Service Area"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92272.67448483084!2d-79.6121673275408!3d43.65322600609495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d3d3b76a7f%3A0x37f68c3b1b2f0f19!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
-        width="100%"
-        height="400"
-        style={{ border: 0 }}
-        allowFullScreen=""
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
+      <div className="w-full h-[400px]">
+        <iframe
+          src="https://storage.googleapis.com/maps-solutions-3nkqknmxeu/locator-plus/ic46/locator-plus.html"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          title="TireBuddy Service Area"
+        ></iframe>
+      </div>
     </div>
   </div>
 </section>
