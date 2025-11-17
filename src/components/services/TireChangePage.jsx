@@ -31,7 +31,7 @@ export default function TireChangePage() {
         <title>Mobile Tire Change Service | TireBuddy Ontario</title>
         <meta
           name="description"
-          content="Professional mobile tire change service across Ontario. TireBuddy comes to your home or workplace — fast, reliable, and affordable seasonal tire swaps."
+          content="Need a mobile tire change in Toronto? TireBuddy comes to your driveway for fast, friendly seasonal tire swaps and repairs across the GTA. Book online in 60 seconds"
         />
         <meta property="og:title" content="TireBuddy Mobile Tire Change Service" />
         <meta
