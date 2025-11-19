@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 
 export default function TireBuddyHome() {
   const [loading, setLoading] = useState(true);
-  const [selectedService, setSelectedService] = useState(""); // 👈 ДЛЯ NOTICE
+  const [selectedService, setSelectedService] = useState("");
   const PRIMARY_RED = "#E63946";
 
   // ====== Загрузка страницы ======
