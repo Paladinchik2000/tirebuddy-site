@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
 import Layout from "./components/Layout";
@@ -43,10 +43,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="services/tire-change" element={<TireChangePage />} />
             <Route path="services/snow-shoveling" element={<SnowShovelingPage />} />
 
-              {/*  Страница блогов */}
-            <Route path="blog/snow-shoveling-before-we-arrive" element={<SnowShovelingBeforeWeArrive />}
-            
-
+            {/*  Страница блогов */}
+            <Route path="blog/snow-shoveling-before-we-arrive" element={<SnowShovelingBeforeWeArrive />} />
 
             {/*  Страница 404 (fallback) */}
             <Route
@@ -55,14 +53,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 <div className="flex flex-col items-center justify-center h-screen text-center text-slate-700">
                   <h1 className="text-4xl font-bold mb-3">404 - Page Not Found</h1>
                   <p className="text-lg mb-6">
-                    Oops! The page you’re looking for doesn’t exist.
+                    Oops! The page you're looking for doesn't exist.
                   </p>
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="px-5 py-2 rounded-full bg-[#E63946] text-white font-semibold hover:opacity-90 transition"
                   >
                     Go Home
-                  </a>
+                  </Link>
                 </div>
               }
             />
