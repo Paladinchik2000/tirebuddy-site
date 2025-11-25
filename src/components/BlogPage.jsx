@@ -20,16 +20,16 @@ export default function BlogPage() {
         "A few simple things you can do before TireBuddy arrives to clear the snow – move cars, open gates, and let us know about hidden items under the snow.",
       highlight: "❄️",
     },
-    // сюда потом легко добавлять новые посты
-    // {
-    //   slug: "second-post-slug",
-    //   title: "...",
-    //   tag: "...",
-    //   date: "...",
-    //   readTime: "...",
-    //   excerpt: "...",
-    //   highlight: "🧹",
-    // },
+   {
+      slug: "mobile-tire-change-ontario",
+      title: "How to Get Ready for Your Mobile Tire Change Appointment",
+      tag: "Tire Change",
+      date: "March 2025",
+      readTime: "5 min read",
+      excerpt:
+        "Planning a mobile tire change at home or work? Here’s what to prepare — from parking position and tire type to lug nut keys and wheel access.",
+      highlight: "🚗",
+    },
   ];
 
   return (
