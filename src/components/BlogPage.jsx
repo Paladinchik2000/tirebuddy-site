@@ -30,6 +30,16 @@ export default function BlogPage() {
         "Planning a mobile tire change at home or work? Here’s what to prepare — from parking position and tire type to lug nut keys and wheel access.",
       highlight: "🚗",
     },
+     {
+      slug: "when-to-switch-to-winter-tires-ontario",
+      title: "When Should You Switch to Winter Tires in Ontario?",
+      tag: "Winter Tires",
+      date: "October 2025",
+      readTime: "6 min read",
+      excerpt:
+        "Not sure when to change to winter tires in Ontario? Learn about the 7°C rule, timing for the GTA, and why you shouldn’t wait for the first snowstorm.",
+      highlight: "🧊",
+    },
   ];
 
   return (
