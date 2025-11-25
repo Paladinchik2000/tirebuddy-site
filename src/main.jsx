@@ -21,6 +21,7 @@ import SnowShovelingPage from "./components/services/SnowShovelingPage";
 // блоги страниц
 import SnowShovelingBeforeWeArrive from "./components/SnowShovelingBeforeWeArrive";
 import TireChangePrepBlog from "./components/TireChangePrepBlog";
+import WinterTiresWhenBlog from "./components/WinterTiresWhenBlog";
 
 import "./index.css";
 
@@ -47,6 +48,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             {/*  Страница блогов */}
             <Route path="blog/snow-shoveling-before-we-arrive" element={<SnowShovelingBeforeWeArrive />} />
             <Route path="blog/mobile-tire-change-ontario" element={<TireChangePrepBlog />} />
+            <Route path="blog/when-to-switch-to-winter-tires-ontario" element={<WinterTiresWhenBlog />} />
+
 
             {/*  Страница 404 (fallback) */}
             <Route
