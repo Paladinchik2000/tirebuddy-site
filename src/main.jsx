@@ -34,7 +34,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="services" element={<ServicesPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="blog" element={<BlogPage />} />
-            <Route path="blog/snow-shoveling-before-we-arrive" element={<SnowShovelingBeforeWeArrive />}
             <Route path="contact" element={<ContactPage />} />
             <Route path="faq" element={<FaqPage />} />
             <Route path="thank-you" element={<ThankYouPage />} />
@@ -43,6 +42,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="services/fall-cleanup" element={<FallCleanupPage />} />
             <Route path="services/tire-change" element={<TireChangePage />} />
             <Route path="services/snow-shoveling" element={<SnowShovelingPage />} />
+
+              {/*  Страница блогов */}
+            <Route path="blog/snow-shoveling-before-we-arrive" element={<SnowShovelingBeforeWeArrive />}
+            
 
 
             {/*  Страница 404 (fallback) */}
