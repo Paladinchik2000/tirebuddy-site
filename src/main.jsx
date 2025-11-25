@@ -18,6 +18,8 @@ import FallCleanupPage from "./components/services/FallCleanupPage";
 import TireChangePage from "./components/services/TireChangePage";
 import SnowShovelingPage from "./components/services/SnowShovelingPage";
 
+// блоги страниц
+import SnowShovelingBeforeWeArrive from "./components/SnowShovelingBeforeWeArrive";
 
 import "./index.css";
 
@@ -32,6 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="services" element={<ServicesPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="blog" element={<BlogPage />} />
+            <Route path="blog/snow-shoveling-before-we-arrive" element={<SnowShovelingBeforeWeArrive />}
             <Route path="contact" element={<ContactPage />} />
             <Route path="faq" element={<FaqPage />} />
             <Route path="thank-you" element={<ThankYouPage />} />
