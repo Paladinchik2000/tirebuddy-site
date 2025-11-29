@@ -44,15 +44,25 @@ export default function BlogPage() {
 
   return (
     <>
+       {/* ===== SEO META TAGS ===== */}
       <Helmet>
         <title>Blog | TireBuddy Tips & Seasonal Advice</title>
         <meta
           name="description"
           content="Read TireBuddy blog tips about snow shoveling, tire care, seasonal cleanup, and how to prepare your home and car for Ontario weather."
         />
+        <meta property="og:title" content="TireBuddy - Contact Us" />
+        <meta
+          property="og:description"
+          content="Get in touch with TireBuddy for mobile tire change and repair across Ontario. We're happy to help!"
+        />
+        <meta property="og:image" content="/images/logo-buddy.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tirebuddy.ca/contact" />
       </Helmet>
-
+      
       <div className="max-w-6xl mx-auto px-4 py-20 text-slate-700">
+        
         {/* Заголовок страницы */}
         <header
           className="mb-12 text-center"
