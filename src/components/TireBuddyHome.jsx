@@ -101,7 +101,7 @@ export default function TireBuddyHome() {
         <section
           className="relative flex flex-col justify-end pb-24 items-center text-center text-white h-[80vh] bg-cover bg-center"
           style={{
-            backgroundImage: "url('https://i.imgur.com/PxUDzNG.jpeg')",
+            backgroundImage: "url('/images/hero-tire-change.JPG')",
           }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
