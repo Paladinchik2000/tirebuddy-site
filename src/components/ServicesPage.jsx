@@ -59,7 +59,7 @@ export default function ServicesPage() {
             data-aos-delay="100"
           >
             <img
-              src="https://i.imgur.com/V5pLxHA.jpeg"
+              src="/images/service-tire-change.jpg"
               alt="Mobile Tire Change"
               className="w-full h-64 object-cover"
               loading="lazy"
@@ -103,7 +103,7 @@ export default function ServicesPage() {
             data-aos-delay="100"
           >
             <img
-              src="https://i.imgur.com/NAfLl2q.jpeg"
+              src="/images/snow-shoveling.jpg"
               alt="Snow Shoveling"
               className="w-full h-64 object-cover"
               loading="lazy"
@@ -148,7 +148,7 @@ export default function ServicesPage() {
             data-aos-delay="200"
           >
             <img
-              src="https://i.imgur.com/UZybBYI.jpeg"
+              src="/images/service-fall-cleanup.jpg"
               alt="Fall Cleanup"
               className="w-full h-64 object-cover"
               loading="lazy"
