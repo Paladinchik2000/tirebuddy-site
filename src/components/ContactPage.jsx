@@ -54,7 +54,7 @@ export default function ContactPage() {
           property="og:description"
           content="Get in touch with TireBuddy for mobile tire change and repair across Ontario. We're happy to help!"
         />
-        <meta property="og:image" content="https://i.imgur.com/4YFSmoN.png" />
+        <meta property="og:image" content="/images/logo-buddy.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tirebuddy.ca/contact" />
       </Helmet>
