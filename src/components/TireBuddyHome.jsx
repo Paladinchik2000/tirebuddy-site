@@ -188,7 +188,7 @@ export default function TireBuddyHome() {
           <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
             <div data-aos="fade-right">
               <img
-                src="https://i.imgur.com/4Rg07re.jpeg"
+                src="/images/about-van.JPG"
                 alt="TireBuddy van"
                 className="rounded-2xl shadow-md"
               />
