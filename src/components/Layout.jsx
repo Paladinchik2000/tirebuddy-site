@@ -75,7 +75,7 @@ export default function Layout() {
           {/* Logo + Title */}
           <Link to="/" className="flex items-center gap-2 select-none" onClick={closeMenu}>
             <img
-              src="https://i.imgur.com/4YFSmoN.png"
+              src="/images/logo-buddy.png"
               alt="Buddy logo"
               className="h-10 w-10"
             />
