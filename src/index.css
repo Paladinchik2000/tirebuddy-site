@@ -10,7 +10,7 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 body {
-  background-image: url("src/components/images/tire-tracks.png");
+  background-image: url("images/tire-tracks.png");
   background-repeat: repeat;
   background-size: contain;
   background-attachment: fixed;
