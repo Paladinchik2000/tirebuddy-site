@@ -24,7 +24,7 @@ export default function AboutPage() {
           property="og:description"
           content="TireBuddy is a 100% Canadian mobile tire service offering fast, friendly, and reliable seasonal tire change and repair across Ontario."
         />
-        <meta property="og:image" content="https://i.imgur.com/4YFSmoN.png" />
+        <meta property="og:image" content="/images/logo-buddy.png" />
         <meta property="og:url" content="https://tirebuddy.ca/about" />
         <meta property="og:type" content="website" />
       </Helmet>
@@ -33,7 +33,7 @@ export default function AboutPage() {
       <section
         className="relative flex flex-col justify-center items-center text-center text-white h-[60vh] bg-cover bg-center"
         style={{
-          backgroundImage: "url('https://i.imgur.com/tnfWc3V.jpeg')",
+          backgroundImage: "url('/images/tire-about1.JPG')",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -73,7 +73,7 @@ export default function AboutPage() {
             data-aos="fade-left"
           >
             <img
-              src="https://i.imgur.com/4YFSmoN.png"
+              src="/images/logo-buddy.png"
               alt="TireBuddy Mascot"
               className="w-full h-64 object-contain p-6"
             />
@@ -149,7 +149,7 @@ export default function AboutPage() {
             data-aos="fade-right"
           >
             <img
-              src="https://i.imgur.com/FUlWaht.jpeg"
+              src="/images/R6__5820.jpg"
               alt="Tire change in progress"
               className="w-full h-72 object-cover"
               loading="lazy"
@@ -160,7 +160,29 @@ export default function AboutPage() {
             data-aos="fade-left"
           >
             <img
-              src="https://i.imgur.com/lGNeHc3.jpeg"
+              src="/images/R6__5833.jpg"
+              alt="TireBuddy service van"
+              className="w-full h-72 object-cover"
+              loading="lazy"
+            />
+             </div>
+          <div
+            className="rounded-2xl overflow-hidden shadow-lg border border-slate-200"
+            data-aos="fade-left"
+          >
+            <img
+              src="/images/tire-change3.jpg"
+              alt="TireBuddy service van"
+              className="w-full h-72 object-cover"
+              loading="lazy"
+            />
+             </div>
+          <div
+            className="rounded-2xl overflow-hidden shadow-lg border border-slate-200"
+            data-aos="fade-left"
+          >
+            <img
+              src="/images/tire-change4.JPG"
               alt="TireBuddy service van"
               className="w-full h-72 object-cover"
               loading="lazy"
