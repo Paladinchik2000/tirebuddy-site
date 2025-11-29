@@ -50,7 +50,7 @@ export default function TireBuddyHome() {
   };
 
   // ====== SEO META TAGS ======
-  const seoImage = "https://i.imgur.com/4YFSmoN.png";
+  const seoImage = "/images/logo-buddy.png";
 
   if (loading) {
     return (
