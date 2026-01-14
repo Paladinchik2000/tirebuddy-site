@@ -5,8 +5,6 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 export default function ServicesPage() {
-  const PRIMARY_RED = "#E63946";
-
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -16,173 +14,145 @@ export default function ServicesPage() {
     });
   }, []);
 
-  // ===== функция плавного скролла =====
   const scrollToBooking = () => {
     const bookingSection = document.querySelector("#booking");
     if (bookingSection) {
       bookingSection.scrollIntoView({ behavior: "smooth" });
     } else {
-      window.location.href = "/#booking"; // fallback если пользователь не на главной
+      window.location.href = "/#booking";
     }
   };
 
+  const services = [
+    {
+      id: "tire-change",
+      icon: "🚗",
+      title: "Mobile Tire Change",
+      description: "Fast, reliable, and professional tire change service — done right at your home or workplace.",
+      price: "$89",
+      image: "/images/service-tire-change.jpg",
+      link: "/services/tire-change",
+      gradient: "from-primary-500 to-orange-500",
+    },
+    {
+      id: "snow-shoveling",
+      icon: "❄️",
+      title: "Snow Shoveling",
+      description: "Keep your yard clean and safe this winter with our professional snow shoveling service.",
+      price: "$80",
+      image: "/images/snow-shoveling.jpg",
+      link: "/services/snow-shoveling",
+      gradient: "from-blue-500 to-cyan-500",
+    },
+    {
+      id: "fall-cleanup",
+      icon: "🍂",
+      title: "Fall Cleanup",
+      description: "Keep your yard clean and safe this fall with our professional leaf and debris cleanup service.",
+      price: "$170",
+      image: "/images/service-fall-cleanup.jpg",
+      link: "/services/fall-cleanup",
+      gradient: "from-amber-500 to-orange-600",
+    },
+  ];
+
   return (
     <>
-      {/* ===== SEO ===== */}
       <Helmet>
         <title>Our Services | TireBuddy</title>
         <meta
           name="description"
-          content="Explore TireBuddy’s professional mobile services — tire change, repair, seasonal cleanup, and snow removal across Ontario."
+          content="Explore TireBuddy's professional mobile services — tire change, repair, seasonal cleanup, and snow removal across Ontario."
         />
       </Helmet>
 
-      {/* ===== CONTENT ===== */}
-      <div className="max-w-7xl mx-auto px-4 py-20 text-slate-700">
-        <div className="text-center mb-12" data-aos="fade-up">
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">
-            Our Services
-          </h1>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            From seasonal cleanup to tire change — TireBuddy keeps your home and
-            vehicle ready for any season.
-          </p>
-        </div>
-
-        {/* ===== SERVICES GRID ===== */}
-        <div className="flex flex-col items-center gap-12">
-          
-          {/* ===== MOBILE TIRE CHANGE CARD ===== */}
-          <div
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-slate-200 max-w-3xl w-full"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <img
-              src="/images/service-tire-change.jpg"
-              alt="Mobile Tire Change"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <div className="p-8 text-center">
-              <h2 className="text-2xl font-bold text-slate-900 mb-3">
-                🚗 Mobile Tire Change
-              </h2>
-              <p className="text-slate-600 mb-4">
-                Fast, reliable, and professional tire change service — done right
-                at your home or workplace.
-              </p>
-              <p className="text-3xl font-extrabold text-[#E63946] mb-6">
-                Starting at $89
-              </p>
-
-              <div className="flex justify-center gap-4">
-                {/* Плавная прокрутка к форме */}
-                <button
-                  onClick={scrollToBooking}
-                  className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
-                  style={{ background: PRIMARY_RED }}
-                >
-                  Book Now
-                </button>
-
-                <Link
-                  to="/services/tire-change"
-                  className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
-                >
-                  Read More
-                </Link>
-              </div>
-            </div>
+      <div className="min-h-screen py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16" data-aos="fade-up">
+            <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
+              What We Offer
+            </span>
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-dark-900 mb-6">
+              Our <span className="text-primary-500">Services</span>
+            </h1>
+            <p className="text-dark-600 max-w-2xl mx-auto text-lg">
+              From seasonal cleanup to tire change — TireBuddy keeps your home and vehicle ready for any season.
+            </p>
           </div>
 
-           {/* ===== SNOW SHOVELING CARD ===== */}
-          <div
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-slate-200 max-w-3xl w-full"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <img
-              src="/images/snow-shoveling.jpg"
-              alt="Snow Shoveling"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <div className="p-8 text-center">
-              <h2 className="text-2xl font-bold text-slate-900 mb-3">
-                ❄️ Snow Shoveling
-              </h2>
-              <p className="text-slate-600 mb-4">
-                Keep your yard clean and safe this winter with our professional
-                 snow shoveling service — quick, efficient, and
-                affordable.
-              </p>
-              <p className="text-3xl font-extrabold text-[#E63946] mb-6">
-                Starting at $80
-              </p>
+          <div className="grid lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div
+                key={service.id}
+                className="group relative bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div>
+                  <div className="absolute top-4 right-4 w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center text-3xl transform group-hover:rotate-12 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                </div>
 
-              <div className="flex justify-center gap-4">
-                {/* Плавная прокрутка к форме */}
-                <button
-                  onClick={scrollToBooking}
-                  className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
-                  style={{ background: PRIMARY_RED }}
-                >
-                  Book Now
-                </button>
+                <div className="p-8">
+                  <h2 className="text-2xl font-heading font-bold text-dark-900 mb-3 group-hover:text-primary-500 transition-colors">
+                    {service.title}
+                  </h2>
+                  <p className="text-dark-600 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                  
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <span className="text-sm text-dark-500">Starting at</span>
+                      <p className={`text-3xl font-bold bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
+                        {service.price}
+                      </p>
+                    </div>
+                  </div>
 
-                <Link
-                  to="/services/snow-shoveling"
-                  className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
-                >
-                  Read More
-                </Link>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={scrollToBooking}
+                      className="flex-1 px-5 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-glow hover:scale-105 transition-all duration-300 text-center"
+                    >
+                      Book Now
+                    </button>
+                    <Link
+                      to={service.link}
+                      className="px-5 py-3 bg-dark-50 text-dark-700 font-semibold rounded-xl hover:bg-dark-100 transition-all duration-300"
+                    >
+                      Details
+                    </Link>
+                  </div>
+                </div>
+
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
               </div>
-            </div>
+            ))}
           </div>
 
-          {/* ===== FALL CLEANUP CARD ===== */}
-          <div
-            className="bg-white rounded-2xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-slate-200 max-w-3xl w-full"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <img
-              src="/images/service-fall-cleanup.jpg"
-              alt="Fall Cleanup"
-              className="w-full h-64 object-cover"
-              loading="lazy"
-            />
-            <div className="p-8 text-center">
-              <h2 className="text-2xl font-bold text-slate-900 mb-3">
-                🍂 Fall Cleanup
-              </h2>
-              <p className="text-slate-600 mb-4">
-                Keep your yard clean and safe this fall with our professional
-                leaf and debris cleanup service — quick, efficient, and
-                affordable.
+          <div className="mt-20 text-center" data-aos="fade-up">
+            <div className="inline-block p-8 bg-gradient-to-r from-primary-50 to-accent-50 rounded-3xl">
+              <h3 className="text-2xl font-heading font-bold text-dark-900 mb-3">
+                Need a Custom Service?
+              </h3>
+              <p className="text-dark-600 mb-6">
+                Contact us for special requests or bulk services
               </p>
-              <p className="text-3xl font-extrabold text-[#E63946] mb-6">
-                Starting at $170
-              </p>
-
-              <div className="flex justify-center gap-4">
-                {/* Плавная прокрутка к форме */}
-                <button
-                  onClick={scrollToBooking}
-                  className="px-6 py-2 rounded-full text-white font-semibold shadow hover:shadow-lg transition"
-                  style={{ background: PRIMARY_RED }}
-                >
-                  Book Now
-                </button>
-
-                <Link
-                  to="/services/fall-cleanup"
-                  className="px-6 py-2 rounded-full font-semibold border border-[#E63946] text-[#E63946] hover:bg-[#E63946] hover:text-white transition"
-                >
-                  Read More
-                </Link>
-              </div>
+              <Link
+                to="/contact"
+                className="inline-block px-8 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-glow hover:scale-105 transition-all duration-300"
+              >
+                Get in Touch
+              </Link>
             </div>
           </div>
         </div>

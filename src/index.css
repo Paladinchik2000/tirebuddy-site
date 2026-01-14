@@ -7,18 +7,38 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-}
-body {
-  background-image: url("/images/tire-tracks.png");
-  background-repeat: repeat;
-  background-size: contain;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
   background-attachment: fixed;
-  background-color: #F4F4F4;
-  opacity: 0.95;
+  min-height: 100vh;
 }
 
-/* ===== FADE-IN SCROLL ANIMATION ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-glow hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-primary-500 font-semibold rounded-xl shadow-card border-2 border-primary-500 hover:bg-primary-500 hover:text-white transition-all duration-300;
+  }
+
+  .card-modern {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-500 overflow-hidden;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-primary-600 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+}
+
 .fade-in-section {
   opacity: 0;
   transform: translateY(30px);
@@ -29,30 +49,26 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
 @keyframes spin-slow {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .animate-spin-slow {
   animation: spin-slow 1.5s linear;
 }
 
-/* ===== Rolling wheel across screen ===== */
 @keyframes roll-across {
-  0%   { transform: translateX(0) rotate(0deg);    }
+  0% { transform: translateX(0) rotate(0deg); }
   100% { transform: translateX(120vw) rotate(900deg); }
 }
 
 .wheel-roll {
   width: 56px;
   height: 56px;
-  border: 6px solid #1f2937;      /* темно-серый */
-  border-top-color: #e5e7eb;      /* светлая “полоса” */
+  border: 6px solid #1f2937;
+  border-top-color: #e5e7eb;
   border-radius: 50%;
   animation: roll-across 2s cubic-bezier(.3,.7,.2,1) forwards;
   box-shadow: 0 6px 16px rgba(0,0,0,.2);
@@ -67,4 +83,22 @@ body {
   background: #111827;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
 }
