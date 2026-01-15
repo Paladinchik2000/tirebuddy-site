@@ -102,3 +102,41 @@ h1, h2, h3, h4, h5, h6 {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+/* Tire tracks background decoration */
+.tire-tracks-bg {
+  position: relative;
+}
+
+.tire-tracks-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -5%;
+  width: 40%;
+  height: 100%;
+  background-image: url('/tire-tracks.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tire-tracks-left::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -5%;
+  width: 35%;
+  height: 80%;
+  background-image: url('/tire-tracks.png');
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: contain;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  transform: scaleX(-1) rotate(15deg);
+}

@@ -66,8 +66,8 @@ export default function ServicesPage() {
         />
       </Helmet>
 
-      <div className="min-h-screen py-20">
-        <div className="max-w-7xl mx-auto px-4">
+      <div className="min-h-screen py-20 tire-tracks-bg overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center mb-16" data-aos="fade-up">
             <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
               What We Offer

@@ -157,8 +157,8 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section data-aos="fade-up" className="py-24 bg-gradient-to-b from-white to-dark-50">
-          <div className="max-w-6xl mx-auto px-4">
+        <section data-aos="fade-up" className="py-24 bg-gradient-to-b from-white to-dark-50 tire-tracks-bg overflow-hidden">
+          <div className="max-w-6xl mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
                 Why Us
@@ -245,8 +245,8 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section className="py-24 bg-gradient-to-b from-dark-50 to-white" data-aos="fade-up">
-          <div className="max-w-6xl mx-auto px-4">
+        <section className="py-24 bg-gradient-to-b from-dark-50 to-white tire-tracks-bg tire-tracks-left overflow-hidden" data-aos="fade-up">
+          <div className="max-w-6xl mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
                 Testimonials
