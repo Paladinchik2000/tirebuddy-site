@@ -75,9 +75,14 @@ export default function BlogPage() {
           property="og:description"
           content="Practical tips for Ontario homeowners and drivers - from snow shoveling and winter prep to seasonal tire care."
         />
-        <meta property="og:image" content="/images/logo-buddy.png" />
+        <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tirebuddy.ca/blog" />
+        <link rel="canonical" href="https://tirebuddy.ca/blog" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TireBuddy Blog | Tire Tips & Seasonal Advice for Ontario" />
+        <meta name="twitter:description" content="Read TireBuddy blog tips about tire care, snow shoveling, and seasonal home maintenance for Ontario drivers." />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
       
       <div className="max-w-6xl mx-auto px-4 py-20 text-slate-700">

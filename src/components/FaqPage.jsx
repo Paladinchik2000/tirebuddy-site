@@ -68,7 +68,7 @@ export default function FaqPage() {
           property="og:description"
           content="Find out everything about TireBuddy’s mobile tire change and repair services. We bring professional tire service right to your driveway."
         />
-        <meta property="og:image" content="https://i.imgur.com/4YFSmoN.png" />
+        <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tirebuddy.ca/faq" />
 
@@ -79,7 +79,8 @@ export default function FaqPage() {
           name="twitter:description"
           content="Have questions about our services? TireBuddy answers your most common tire and seasonal service questions here."
         />
-        <meta name="twitter:image" content="https://i.imgur.com/4YFSmoN.png" />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
+        <link rel="canonical" href="https://tirebuddy.ca/faq" />
       </Helmet>
 
       {/* ===== PAGE CONTENT ===== */}

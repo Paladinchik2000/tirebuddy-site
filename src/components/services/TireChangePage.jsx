@@ -38,9 +38,14 @@ export default function TireChangePage() {
           property="og:description"
           content="TireBuddy offers professional mobile tire change services across Ontario. Starting at $89 — we come to your driveway!"
         />
-        <meta property="og:image" content="https://i.imgur.com/V5pLxHA.jpeg" />
-        <meta property="og:type" content="service" />
+        <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tirebuddy.ca/services/tire-change" />
+        <link rel="canonical" href="https://tirebuddy.ca/services/tire-change" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mobile Tire Change Service | TireBuddy Ontario" />
+        <meta name="twitter:description" content="Fast mobile tire change service across the GTA. Starting at $89 — we come to your driveway!" />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
 
       {/* ===== PAGE HEADER ===== */}

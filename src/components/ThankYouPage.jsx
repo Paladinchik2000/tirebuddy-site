@@ -21,7 +21,7 @@ export default function ThankYouPage() {
       <div className="min-h-screen bg-[#F4F4F4] flex items-center justify-center px-4">
         <div className="bg-white max-w-lg w-full rounded-2xl shadow-lg border border-slate-200 p-8 text-center">
           <h1 className="text-3xl font-bold text-slate-900 mb-3">
-            Thank You for Choosing TireBuddy! ✅
+            Thank You for Choosing TireBuddy!
           </h1>
           <p className="text-slate-600 mb-6">
             Your request has been successfully submitted. Our team will contact you shortly
@@ -43,7 +43,7 @@ export default function ThankYouPage() {
               className="inline-block px-6 py-3 rounded-full font-semibold text-white shadow hover:shadow-lg transition"
               style={{ background: PRIMARY_RED }}
             >
-              ⭐ Leave a Google Review
+              Leave a Google Review
             </a>
           </div>
 

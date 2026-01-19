@@ -24,9 +24,14 @@ export default function AboutPage() {
           property="og:description"
           content="TireBuddy is a 100% Canadian mobile tire service offering fast, friendly, and reliable seasonal tire change and repair across Ontario."
         />
-        <meta property="og:image" content="/images/logo-buddy.png" />
+        <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
         <meta property="og:url" content="https://tirebuddy.ca/about" />
         <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://tirebuddy.ca/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About TireBuddy | Mobile Tire Experts in Ontario" />
+        <meta name="twitter:description" content="Learn about TireBuddy — Ontario's trusted mobile tire service. Proudly Canadian, fast, and customer-focused!" />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
 
       {/* ===== HERO ===== */}

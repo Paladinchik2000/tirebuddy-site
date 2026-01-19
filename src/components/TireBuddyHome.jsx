@@ -96,8 +96,8 @@ export default function TireBuddyHome() {
           <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
           <div className="relative z-10 text-center px-4 max-w-5xl mx-auto" data-aos="fade-up">
-            <span className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
-              🇨🇦 Proudly Canadian Mobile Service
+            <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
+              <img src="/icons/canadian-icon.png" alt="" className="w-5 h-5" /> Proudly Canadian Mobile Service
             </span>
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">

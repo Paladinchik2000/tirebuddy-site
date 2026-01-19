@@ -38,9 +38,14 @@ export default function FallCleanupPage() {
           property="og:description"
           content="Reliable fall yard clean-up across the GTA by a 2-person crew. Raking, trimming, leaf blowing, and full seasonal yard maintenance."
         />
-        <meta property="og:image" content="https://i.imgur.com/UZybBYI.jpeg" />
-        <meta property="og:type" content="service" />
+        <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
+        <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tirebuddy.ca/services/fall-cleanup" />
+        <link rel="canonical" href="https://tirebuddy.ca/services/fall-cleanup" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Fall Clean-Up Service | TireBuddy Ontario" />
+        <meta name="twitter:description" content="Professional fall yard clean-up across the GTA. Starting at $170 — raking, trimming, and debris removal." />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
 
       {/* ===== PAGE HEADER ===== */}
@@ -68,7 +73,7 @@ export default function FallCleanupPage() {
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            🍁 Book Fall Clean-Up
+            Book Fall Clean-Up
           </button>
         </div>
       </section>
@@ -95,7 +100,7 @@ export default function FallCleanupPage() {
             <li>Bagging all leaves and debris neatly in yard waste bags</li>
           </ul>
           <p className="mt-4 text-slate-600">
-            🟤 <em>Bags are left on the property, typically near the curb or wherever the client requests.</em>
+            <em>Bags are left on the property, typically near the curb or wherever the client requests.</em>
           </p>
 
           <hr className="my-8 border-slate-300" />
@@ -196,7 +201,7 @@ export default function FallCleanupPage() {
               className="inline-block px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
               style={{ background: PRIMARY_RED }}
             >
-              🍁 Book Fall Clean-Up
+              Book Fall Clean-Up
             </button>
           </div>
         </div>

@@ -38,15 +38,14 @@ export default function SnowShovelingPage() {
           property="og:description"
           content="TireBuddy offers professional, fast and reliable snow shoveling services across York, North York, Vaughan, Toronto, and Etobicoke. Starting at $80 — we come to your driveway!"
         />
-        <meta
-          property="og:image"
-          content="https://i.imgur.com/NAfLl2q.jpeg"
-        />
-        <meta property="og:type" content="service" />
-        <meta
-          property="og:url"
-          content="https://tirebuddy.ca/services/snow-shoveling"
-        />
+        <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tirebuddy.ca/services/snow-shoveling" />
+        <link rel="canonical" href="https://tirebuddy.ca/services/snow-shoveling" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Snow Shoveling Service | TireBuddy Ontario" />
+        <meta name="twitter:description" content="Professional snow shoveling across the GTA. Starting at $80 — we come to your driveway!" />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
 
       {/* ===== PAGE HEADER ===== */}

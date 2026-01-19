@@ -54,9 +54,14 @@ export default function ContactPage() {
           property="og:description"
           content="Get in touch with TireBuddy for mobile tire change and repair across Ontario. We're happy to help!"
         />
-        <meta property="og:image" content="/images/logo-buddy.png" />
+        <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tirebuddy.ca/contact" />
+        <link rel="canonical" href="https://tirebuddy.ca/contact" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact TireBuddy | Ontario Mobile Tire Service" />
+        <meta name="twitter:description" content="Contact TireBuddy for fast, mobile tire change and repair services anywhere in Ontario. We come to you!" />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
 
       <div className="min-h-screen bg-[#F4F4F4]">
@@ -78,21 +83,30 @@ export default function ContactPage() {
             </p>
 
             <ul className="space-y-4 text-slate-700">
-              <li>
-                <strong className="block text-slate-900">📞 Phone:</strong>
-                <a href="tel:+14374558729" className="text-[#E63946] hover:underline">
-                  +1 (437) 455-8729
-                </a>
+              <li className="flex items-start gap-3">
+                <img src="/icons/mobile-service-icon.png" alt="" className="w-5 h-5 mt-1" />
+                <div>
+                  <strong className="block text-slate-900">Phone:</strong>
+                  <a href="tel:+14374558729" className="text-[#E63946] hover:underline">
+                    +1 (437) 455-8729
+                  </a>
+                </div>
               </li>
-              <li>
-                <strong className="block text-slate-900">✉️ Email:</strong>
-                <a href="mailto:info@tirebuddy.ca" className="text-[#E63946] hover:underline">
-                  info@tirebuddy.ca
-                </a>
+              <li className="flex items-start gap-3">
+                <img src="/icons/tools-icon.png" alt="" className="w-5 h-5 mt-1" />
+                <div>
+                  <strong className="block text-slate-900">Email:</strong>
+                  <a href="mailto:info@tirebuddy.ca" className="text-[#E63946] hover:underline">
+                    info@tirebuddy.ca
+                  </a>
+                </div>
               </li>
-              <li>
-                <strong className="block text-slate-900">📍 Location:</strong>
-                Ontario, Canada
+              <li className="flex items-start gap-3">
+                <img src="/icons/canadian-icon.png" alt="" className="w-5 h-5 mt-1" />
+                <div>
+                  <strong className="block text-slate-900">Location:</strong>
+                  Ontario, Canada
+                </div>
               </li>
             </ul>
           </div>

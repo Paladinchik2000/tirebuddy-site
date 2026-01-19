@@ -59,11 +59,21 @@ export default function ServicesPage() {
   return (
     <>
       <Helmet>
-        <title>Our Services | TireBuddy</title>
+        <title>Our Services | TireBuddy Mobile Tire & Yard Service Ontario</title>
         <meta
           name="description"
-          content="Explore TireBuddy's professional mobile services — tire change, repair, seasonal cleanup, and snow removal across Ontario."
+          content="Explore TireBuddy's professional mobile services — tire change, repair, fall cleanup, and snow shoveling across Toronto, Mississauga, Brampton & GTA. Book online today!"
         />
+        <link rel="canonical" href="https://tirebuddy.ca/services" />
+        <meta property="og:title" content="TireBuddy Services | Mobile Tire Change, Snow Shoveling & Fall Cleanup" />
+        <meta property="og:description" content="Professional mobile services across Ontario — tire changes starting at $89, snow shoveling from $80, and fall cleanup from $170." />
+        <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
+        <meta property="og:url" content="https://tirebuddy.ca/services" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TireBuddy Services | Ontario Mobile Tire & Yard Service" />
+        <meta name="twitter:description" content="Mobile tire change, snow shoveling, and fall cleanup services across the GTA. We come to you!" />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
 
       <div className="min-h-screen py-20 tire-tracks-bg overflow-hidden">
