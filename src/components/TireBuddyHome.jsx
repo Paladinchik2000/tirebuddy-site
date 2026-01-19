@@ -148,7 +148,7 @@ export default function TireBuddyHome() {
           </div>
           <div className="max-w-6xl mx-auto px-4 text-center relative">
             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-              <span className="text-4xl">👴👵</span>
+              <img src="/icons/seniors-icon.png" alt="Seniors discount" className="w-16 h-16 rounded-xl shadow-lg" />
               <div>
                 <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">10% Seniors Discount</h2>
                 <p className="text-white/80">Because experience deserves appreciation</p>
@@ -171,19 +171,19 @@ export default function TireBuddyHome() {
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  icon: "🚗",
+                  icon: "/icons/fast-service-icon.png",
                   title: "Fast & Reliable Service",
                   desc: "Quick tire changes and maintenance done wherever you are — no waiting lines, no wasted time.",
                   gradient: "from-primary-500 to-orange-500",
                 },
                 {
-                  icon: "👨‍👩‍👧‍👦",
+                  icon: "/icons/family-icon.png",
                   title: "Family-Owned & Friendly",
                   desc: "We treat every customer like a neighbour — friendly faces, honest prices, and dependable work.",
                   gradient: "from-blue-500 to-cyan-500",
                 },
                 {
-                  icon: "🧰",
+                  icon: "/icons/mobile-service-icon.png",
                   title: "We Come To You",
                   desc: "Our fully equipped mobile units handle your tires at home, work, or anywhere that's convenient.",
                   gradient: "from-green-500 to-emerald-500",
@@ -196,8 +196,8 @@ export default function TireBuddyHome() {
                   data-aos-delay={index * 100}
                 >
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${b.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${b.gradient} flex items-center justify-center text-4xl mb-6 shadow-lg transform group-hover:rotate-6 transition-transform duration-300`}>
-                    {b.icon}
+                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${b.gradient} flex items-center justify-center mb-6 shadow-lg transform group-hover:rotate-6 transition-transform duration-300 p-3`}>
+                    <img src={b.icon} alt={b.title} className="w-full h-full object-contain rounded-lg" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-dark-900 mb-3 group-hover:text-primary-500 transition-colors">
                     {b.title}
