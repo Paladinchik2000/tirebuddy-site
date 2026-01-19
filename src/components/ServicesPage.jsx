@@ -26,7 +26,7 @@ export default function ServicesPage() {
   const services = [
     {
       id: "tire-change",
-      icon: "🚗",
+      icon: "/icons/tire-change-icon.png",
       title: "Mobile Tire Change",
       description: "Fast, reliable, and professional tire change service — done right at your home or workplace.",
       price: "$89",
@@ -36,7 +36,7 @@ export default function ServicesPage() {
     },
     {
       id: "snow-shoveling",
-      icon: "❄️",
+      icon: "/icons/snow-shoveling-icon.png",
       title: "Snow Shoveling",
       description: "Keep your yard clean and safe this winter with our professional snow shoveling service.",
       price: "$80",
@@ -46,7 +46,7 @@ export default function ServicesPage() {
     },
     {
       id: "fall-cleanup",
-      icon: "🍂",
+      icon: "/icons/fall-cleanup-icon.png",
       title: "Fall Cleanup",
       description: "Keep your yard clean and safe this fall with our professional leaf and debris cleanup service.",
       price: "$170",
@@ -96,8 +96,8 @@ export default function ServicesPage() {
                     loading="lazy"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-t ${service.gradient} opacity-0 group-hover:opacity-30 transition-opacity duration-500`}></div>
-                  <div className="absolute top-4 right-4 w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center text-3xl transform group-hover:rotate-12 transition-transform duration-300">
-                    {service.icon}
+                  <div className="absolute top-4 right-4 w-14 h-14 bg-white rounded-2xl shadow-lg flex items-center justify-center p-2 transform group-hover:rotate-12 transition-transform duration-300">
+                    <img src={service.icon} alt={service.title} className="w-full h-full object-contain" />
                   </div>
                 </div>
 
