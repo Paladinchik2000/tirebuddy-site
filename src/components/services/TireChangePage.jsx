@@ -62,12 +62,12 @@ export default function TireChangePage() {
           {/* === BOOK BUTTON with smooth scroll === */}
           <button
             onClick={scrollToBooking}
-            className="inline-block px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
             style={{ background: PRIMARY_RED }}
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            🚗 Book Tire Change
+            <img src="/icons/tire-change-icon.png" alt="" className="w-6 h-6" /> Book Tire Change
           </button>
         </div>
       </section>
@@ -96,8 +96,8 @@ export default function TireChangePage() {
             <li>Tire pressure check and adjustment</li>
             <li>Inspection for tire wear or damage</li>
           </ul>
-          <p className="mt-4 text-slate-600">
-            🟤 <em>Fully equipped to change, repair, or service your tires on the spot.</em>
+          <p className="mt-4 text-slate-600 flex items-center gap-2">
+            <img src="/icons/tools-icon.png" alt="" className="w-5 h-5" /> <em>Fully equipped to change, repair, or service your tires on the spot.</em>
           </p>
 
           <hr className="my-8 border-slate-300" />
@@ -154,15 +154,18 @@ export default function TireChangePage() {
             At <strong>TireBuddy</strong>, we believe in providing exceptional service at honest, affordable rates.
             Our prices are among the most competitive in Ontario — no hidden fees, just transparent and fair pricing.
           </p>
-          <ul className="list-disc list-inside space-y-2 mb-4">
-            <li>
-              💰 <strong>Super value for money</strong> — top-quality mobile service at the best price in the GTA.
+          <ul className="space-y-3 mb-4">
+            <li className="flex items-center gap-3">
+              <img src="/icons/value-icon.png" alt="" className="w-6 h-6" />
+              <span><strong>Super value for money</strong> — top-quality mobile service at the best price in the GTA.</span>
             </li>
-            <li>
-              👴 <strong>10% Seniors Discount</strong> — because experience deserves appreciation.
+            <li className="flex items-center gap-3">
+              <img src="/icons/seniors-icon.png" alt="" className="w-6 h-6" />
+              <span><strong>10% Seniors Discount</strong> — because experience deserves appreciation.</span>
             </li>
-            <li>
-              🚗 <strong>Multi-Vehicle Savings:</strong> every next car gets a <strong>$20 OFF</strong> discount!
+            <li className="flex items-center gap-3">
+              <img src="/icons/multi-vehicle-icon.png" alt="" className="w-6 h-6" />
+              <span><strong>Multi-Vehicle Savings:</strong> every next car gets a <strong>$20 OFF</strong> discount!</span>
             </li>
           </ul>
           <p>
@@ -188,10 +191,10 @@ export default function TireChangePage() {
           <div className="text-center mt-10" data-aos="zoom-in" data-aos-delay="300">
             <button
               onClick={scrollToBooking}
-              className="inline-block px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300"
               style={{ background: PRIMARY_RED }}
             >
-              🚗 Book Tire Change
+              <img src="/icons/tire-change-icon.png" alt="" className="w-6 h-6" /> Book Tire Change
             </button>
           </div>
         </div>
