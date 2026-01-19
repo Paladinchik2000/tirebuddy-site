@@ -100,9 +100,10 @@ export default function AboutPage() {
               className="bg-white rounded-2xl p-6 shadow-sm border border-slate-200"
               data-aos="zoom-in"
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                🚗 Mobile Convenience
-              </h3>
+              <div className="flex items-center gap-2 mb-2">
+                <img src="/icons/mobile-service-icon.png" alt="" className="w-8 h-8" />
+                <h3 className="text-xl font-semibold text-slate-900">Mobile Convenience</h3>
+              </div>
               <p className="text-slate-600">
                 We come to you — driveway, condo, or workplace. No more lineups or waiting rooms.
               </p>
@@ -112,9 +113,10 @@ export default function AboutPage() {
               data-aos="zoom-in"
               data-aos-delay="150"
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                💪 Professional Service
-              </h3>
+              <div className="flex items-center gap-2 mb-2">
+                <img src="/icons/tools-icon.png" alt="" className="w-8 h-8" />
+                <h3 className="text-xl font-semibold text-slate-900">Professional Service</h3>
+              </div>
               <p className="text-slate-600">
                 Certified technicians equipped with modern tools and a commitment to safety.
               </p>
@@ -124,9 +126,10 @@ export default function AboutPage() {
               data-aos="zoom-in"
               data-aos-delay="300"
             >
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                🇨🇦 Proudly Canadian
-              </h3>
+              <div className="flex items-center gap-2 mb-2">
+                <img src="/icons/canadian-icon.png" alt="" className="w-8 h-8" />
+                <h3 className="text-xl font-semibold text-slate-900">Proudly Canadian</h3>
+              </div>
               <p className="text-slate-600">
                 Local business supporting Ontario communities with top-tier service and care.
               </p>
