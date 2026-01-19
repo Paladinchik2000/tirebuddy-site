@@ -65,4 +65,34 @@ Preferred communication style: Simple, everyday language.
 
 ### CDN/Assets
 - Favicon and logo assets served from `/public`
-- Google Fonts likely loaded externally (Inter, Space Grotesk referenced in config)
+- Google Fonts loaded externally with `display=swap` for better performance
+- Font Awesome icons loaded with deferred media query technique
+
+## Performance Optimizations (January 2026)
+
+### Image Optimization
+- All large images compressed from 5-9MB down to 200-600KB using ImageMagick
+- Lazy loading (`loading="lazy"`) added to below-fold images
+- Width/height attributes added to all images to prevent Cumulative Layout Shift (CLS)
+- Hero images use `fetchpriority="high"` for faster LCP
+
+### Script Loading
+- Google Analytics and Tag Manager scripts deferred to window.load event
+- reCAPTCHA loaded with 3-second delay after page load
+- Font Awesome CSS uses deferred media query technique (`media="print" onload="this.media='all'"`)
+
+### Build Optimizations (vite.config.js)
+- Code splitting with manual chunks for vendor libraries (react, react-dom, react-router-dom)
+- Separate chunk for AOS animations
+- esbuild minification enabled
+- CSS code splitting enabled
+
+### Preconnect Hints
+- `fonts.googleapis.com` and `fonts.gstatic.com` preconnected
+- `googletagmanager.com` preconnected for analytics
+- `cdnjs.cloudflare.com` DNS prefetched for Font Awesome
+
+### Accessibility
+- All images have descriptive alt text for screen readers
+- Icons include appropriate alt attributes
+- ARIA labels on interactive elements
