@@ -79,8 +79,11 @@ export default function AboutPage() {
           >
             <img
               src="/images/logo-buddy.png"
-              alt="TireBuddy Mascot"
+              alt="TireBuddy Mascot - Your Tire's Best Friend"
               className="w-full h-64 object-contain p-6"
+              width="256"
+              height="256"
+              loading="lazy"
             />
             <div className="p-4">
               <h3 className="text-xl font-bold text-slate-900 mb-2">
@@ -106,7 +109,7 @@ export default function AboutPage() {
               data-aos="zoom-in"
             >
               <div className="flex items-center gap-2 mb-2">
-                <img src="/icons/mobile-service-icon.png" alt="" className="w-8 h-8" />
+                <img src="/icons/mobile-service-icon.png" alt="Mobile service icon" className="w-8 h-8" width="32" height="32" />
                 <h3 className="text-xl font-semibold text-slate-900">Mobile Convenience</h3>
               </div>
               <p className="text-slate-600">
@@ -119,7 +122,7 @@ export default function AboutPage() {
               data-aos-delay="150"
             >
               <div className="flex items-center gap-2 mb-2">
-                <img src="/icons/tools-icon.png" alt="" className="w-8 h-8" />
+                <img src="/icons/tools-icon.png" alt="Professional tools icon" className="w-8 h-8" width="32" height="32" />
                 <h3 className="text-xl font-semibold text-slate-900">Professional Service</h3>
               </div>
               <p className="text-slate-600">
@@ -132,7 +135,7 @@ export default function AboutPage() {
               data-aos-delay="300"
             >
               <div className="flex items-center gap-2 mb-2">
-                <img src="/icons/canadian-icon.png" alt="" className="w-8 h-8" />
+                <img src="/icons/canadian-icon.png" alt="Canadian maple leaf" className="w-8 h-8" width="32" height="32" />
                 <h3 className="text-xl font-semibold text-slate-900">Proudly Canadian</h3>
               </div>
               <p className="text-slate-600">
@@ -158,9 +161,11 @@ export default function AboutPage() {
           >
             <img
               src="/images/R6__5820.jpg"
-              alt="Tire change in progress"
+              alt="TireBuddy technician performing tire change in progress"
               className="w-full h-72 object-cover"
               loading="lazy"
+              width="600"
+              height="288"
             />
           </div>
           <div
@@ -169,9 +174,11 @@ export default function AboutPage() {
           >
             <img
               src="/images/R6__5833.jpg"
-              alt="TireBuddy service van"
+              alt="TireBuddy mobile service van in Ontario"
               className="w-full h-72 object-cover"
               loading="lazy"
+              width="600"
+              height="288"
             />
              </div>
           <div
@@ -180,9 +187,11 @@ export default function AboutPage() {
           >
             <img
               src="/images/tire-change3.jpg"
-              alt="TireBuddy service van"
+              alt="Professional tire installation by TireBuddy"
               className="w-full h-72 object-cover"
               loading="lazy"
+              width="600"
+              height="288"
             />
              </div>
           <div
@@ -191,9 +200,11 @@ export default function AboutPage() {
           >
             <img
               src="/images/tire-change4.JPG"
-              alt="TireBuddy service van"
+              alt="Mobile tire service at customer location"
               className="w-full h-72 object-cover"
               loading="lazy"
+              width="600"
+              height="288"
             />
           </div>
         </div>

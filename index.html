@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- ====== PRECONNECT HINTS (Performance) ====== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
   <!-- ====== BASIC SEO ====== -->
   <title>TireBuddy — Mobile Tire Change & Repair Across Ontario</title>
   <meta name="description"
@@ -36,12 +42,14 @@
     content="TireBuddy provides fast, reliable mobile tire change and repair across Ontario. Book your service today!" />
   <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
 
- <!-- ===== FAVICON & META PREVIEW ===== -->
-<link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" href="/favicon.png" />
-<meta name="theme-color" content="#E63946" />
+  <!-- ===== FAVICON & META PREVIEW ===== -->
+  <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <meta name="theme-color" content="#E63946" />
 
+  <!-- ====== GOOGLE SEARCH CONSOLE ====== -->
+  <meta name="google-site-verification" content="3GEW8yZJVdRsf8cehwxQJPDKHBSLRAi-q8D2FEbZDi0" />
 
   <!-- ====== LOCAL BUSINESS SCHEMA ====== -->
   <script type="application/ld+json">
@@ -73,47 +81,50 @@
       "https://www.instagram.com/tirebuddy",
       "https://www.youtube.com/@tirebuddy"
     ],
-    "description": "TireBuddy is Ontario’s trusted mobile tire service offering seasonal tire change, puncture repair, and snow plowing right at your doorstep. Proudly serving Toronto, Mississauga, and Brampton."
+    "description": "TireBuddy is Ontario's trusted mobile tire service offering seasonal tire change, puncture repair, and snow plowing right at your doorstep. Proudly serving Toronto, Mississauga, and Brampton."
   }
   </script>
 
-  <!-- ====== GOOGLE ANALYTICS 4 ====== -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V2ZPBWCBHS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-V2ZPBWCBHS');
-  </script>
+  <!-- ====== FONTS (with display=swap for performance) ====== -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- ====== GOOGLE SEARCH CONSOLE ====== -->
-  <meta name="google-site-verification" content="3GEW8yZJVdRsf8cehwxQJPDKHBSLRAi-q8D2FEbZDi0" />
-
-  <!-- ====== GOOGLE reCAPTCHA v3 ====== -->
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lf1S_srAAAAACf8o0ecHsRxrazjUBKUxHC51O4F"></script>
-  <script>
-    function onSubmit(token) {
-      document.getElementById("contact-form")?.submit();
-    }
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17700861953"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17700861953');
-</script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- ====== FONT AWESOME (deferred) ====== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+
+  <!-- ====== ANALYTICS (deferred to not block rendering) ====== -->
+  <script>
+    window.addEventListener('load', function() {
+      // Google Analytics 4
+      var ga = document.createElement('script');
+      ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-V2ZPBWCBHS';
+      ga.async = true;
+      document.head.appendChild(ga);
+      
+      ga.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-V2ZPBWCBHS');
+        gtag('config', 'AW-17700861953');
+      };
+
+      // reCAPTCHA (only load when needed)
+      setTimeout(function() {
+        var rc = document.createElement('script');
+        rc.src = 'https://www.google.com/recaptcha/api.js?render=6Lf1S_srAAAAACf8o0ecHsRxrazjUBKUxHC51O4F';
+        document.head.appendChild(rc);
+      }, 3000);
+    });
+
+    function onSubmit(token) {
+      document.getElementById("contact-form")?.submit();
+    }
+  </script>
 </body>
 </html>

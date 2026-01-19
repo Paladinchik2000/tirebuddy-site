@@ -85,8 +85,11 @@ export default function TireBuddyHome() {
           <div className="absolute inset-0">
             <img
               src="/images/hero-tire-change.JPG"
-              alt="Hero background"
+              alt="TireBuddy mobile tire change service in Ontario"
               className="w-full h-full object-cover"
+              width="1920"
+              height="1080"
+              fetchpriority="high"
             />
             <div className="absolute inset-0 bg-gradient-to-br from-dark-900/80 via-dark-900/60 to-primary-900/50"></div>
           </div>
@@ -97,7 +100,7 @@ export default function TireBuddyHome() {
 
           <div className="relative z-10 text-center px-4 max-w-5xl mx-auto" data-aos="fade-up">
             <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
-              <img src="/icons/canadian-icon.png" alt="" className="w-5 h-5" /> Proudly Canadian Mobile Service
+              <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
             </span>
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">

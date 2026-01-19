@@ -84,7 +84,7 @@ export default function ContactPage() {
 
             <ul className="space-y-4 text-slate-700">
               <li className="flex items-start gap-3">
-                <img src="/icons/mobile-service-icon.png" alt="" className="w-5 h-5 mt-1" />
+                <img src="/icons/mobile-service-icon.png" alt="Phone icon" className="w-5 h-5 mt-1" width="20" height="20" />
                 <div>
                   <strong className="block text-slate-900">Phone:</strong>
                   <a href="tel:+14374558729" className="text-[#E63946] hover:underline">
@@ -93,7 +93,7 @@ export default function ContactPage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <img src="/icons/tools-icon.png" alt="" className="w-5 h-5 mt-1" />
+                <img src="/icons/tools-icon.png" alt="Email icon" className="w-5 h-5 mt-1" width="20" height="20" />
                 <div>
                   <strong className="block text-slate-900">Email:</strong>
                   <a href="mailto:info@tirebuddy.ca" className="text-[#E63946] hover:underline">
@@ -102,7 +102,7 @@ export default function ContactPage() {
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <img src="/icons/canadian-icon.png" alt="" className="w-5 h-5 mt-1" />
+                <img src="/icons/canadian-icon.png" alt="Location icon" className="w-5 h-5 mt-1" width="20" height="20" />
                 <div>
                   <strong className="block text-slate-900">Location:</strong>
                   Ontario, Canada

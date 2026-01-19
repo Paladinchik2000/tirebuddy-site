@@ -44,7 +44,7 @@ export default function Layout() {
           </div>
 
           <div className="flex items-center gap-2 font-bold tracking-wide">
-            <span className="text-2xl">🇨🇦</span>
+            <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-6 h-6" width="24" height="24" />
             <span>PROUDLY CANADIAN</span>
           </div>
         </div>
@@ -55,8 +55,10 @@ export default function Layout() {
           <Link to="/" className="flex items-center gap-3 select-none group" onClick={closeMenu}>
             <img
               src="/images/logo-buddy.png"
-              alt="Buddy logo"
+              alt="TireBuddy logo"
               className="h-12 w-12 transition-transform duration-300 group-hover:scale-110"
+              width="48"
+              height="48"
             />
             <span className="text-2xl font-heading font-bold">
               <span className="text-dark-800">Tire</span>
