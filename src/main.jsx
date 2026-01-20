@@ -24,6 +24,8 @@ import TireChangePrepBlog from "./components/TireChangePrepBlog";
 import WinterTiresWhenBlog from "./components/WinterTiresWhenBlog";
 import TireSafetySignsBlog from "./components/blog/TireSafetySignsBlog";
 import WinterVsAllSeasonBlog from "./components/blog/WinterVsAllSeasonBlog";
+import ChoosingRightTiresBlog from "./components/blog/ChoosingRightTiresBlog";
+import TireStorageGuideBlog from "./components/blog/TireStorageGuideBlog";
 
 import "./index.css";
 
@@ -53,7 +55,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="blog/snow-shoveling-before-we-arrive" element={<SnowShovelingBeforeWeArrive />} />
             <Route path="blog/mobile-tire-change-ontario" element={<TireChangePrepBlog />} />
             <Route path="blog/when-to-switch-to-winter-tires-ontario" element={<WinterTiresWhenBlog />} />
-
+            <Route path="blog/choosing-right-tires-ontario" element={<ChoosingRightTiresBlog />} />
+            <Route path="blog/tire-storage-guide-canada" element={<TireStorageGuideBlog />} />
 
             {/*  Страница 404 (fallback) */}
             <Route

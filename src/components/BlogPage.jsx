@@ -11,6 +11,26 @@ export default function BlogPage() {
 
   const posts = [
     {
+      slug: "choosing-right-tires-ontario",
+      title: "How to Choose the Right Tires for Your Vehicle in Ontario",
+      tag: "Tire Guide",
+      date: "January 2026",
+      readTime: "8 min read",
+      excerpt:
+        "Complete guide to choosing the right tires for Ontario roads. Learn about tire sizes, types, and what to consider for GTA driving conditions.",
+      icon: "/icons/tire-change-icon.png",
+    },
+    {
+      slug: "tire-storage-guide-canada",
+      title: "Complete Guide to Seasonal Tire Storage in Canada",
+      tag: "Tire Care",
+      date: "January 2026",
+      readTime: "7 min read",
+      excerpt:
+        "Learn how to properly store your seasonal tires in Ontario. Expert tips on storage locations, preparation, and common mistakes to avoid.",
+      icon: "/icons/tools-icon.png",
+    },
+    {
       slug: "tire-safety-warning-signs",
       title: "5 Warning Signs You Need New Tires",
       tag: "Tire Safety",
