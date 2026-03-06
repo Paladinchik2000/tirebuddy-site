@@ -15,7 +15,7 @@ export default defineConfig({
     allowedHosts: true,
   },
   build: {
-    target: 'esnext',
+    target: 'es2015',
     minify: 'esbuild',
     sourcemap: false,
     cssCodeSplit: true,

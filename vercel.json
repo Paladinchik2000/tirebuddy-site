@@ -1,7 +1,10 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "buildCommand": "echo \"Skipping build, using prebuilt dist\"",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }

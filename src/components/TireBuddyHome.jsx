@@ -5,7 +5,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function TireBuddyHome() {
-  const [loading, setLoading] = useState(true);
+  const isSnapBot = typeof navigator !== 'undefined' && navigator.userAgent === 'ReactSnap';
+  const [loading, setLoading] = useState(!isSnapBot);
   const [selectedService, setSelectedService] = useState("");
 
   useEffect(() => {
@@ -102,14 +103,14 @@ export default function TireBuddyHome() {
             <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
               <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
             </span>
-            
+
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
               Your Tire's
               <span className="block bg-gradient-to-r from-primary-400 via-primary-500 to-orange-400 bg-clip-text text-transparent">
                 Best Friend
               </span>
             </h1>
-            
+
             <p className="text-xl md:text-2xl text-dark-200 max-w-3xl mx-auto mb-8 leading-relaxed">
               Fast, friendly, and mobile tire service across Ontario — from tire changes to seasonal cleanup, we come to you.
             </p>
@@ -147,7 +148,7 @@ export default function TireBuddyHome() {
         </section>
 
         <section data-aos="fade-up" className="py-8 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"}}>
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }}>
           </div>
           <div className="max-w-6xl mx-auto px-4 text-center relative">
             <div className="flex flex-col md:flex-row items-center justify-center gap-4">
