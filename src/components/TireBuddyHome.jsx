@@ -6,7 +6,6 @@ import "aos/dist/aos.css";
 
 export default function TireBuddyHome() {
   const isBot = typeof navigator !== 'undefined' && /bot|googlebot|crawler|spider|robot|crawling|ReactSnap/i.test(navigator.userAgent);
-  const [loading, setLoading] = useState(!isBot);
   const [selectedService, setSelectedService] = useState("");
 
   useEffect(() => {
@@ -15,10 +14,15 @@ export default function TireBuddyHome() {
   }, []);
 
   useEffect(() => {
+    const isBot = typeof navigator !== 'undefined' && /bot|googlebot|crawler|spider|robot|crawling|ReactSnap/i.test(navigator.userAgent);
+    if (isBot && typeof document !== 'undefined') {
+      document.body.classList.add('seo-bot');
+    }
     AOS.init({
       duration: 800,
       easing: "ease-out-cubic",
       once: true,
+      disable: isBot
     });
   }, []);
 
@@ -47,23 +51,6 @@ export default function TireBuddyHome() {
   };
 
   const seoImage = "/images/logo-buddy.png";
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen bg-gradient-to-br from-dark-50 to-dark-100">
-        <div className="relative">
-          <div className="absolute inset-0 animate-ping">
-            <div className="w-24 h-24 rounded-full bg-primary-500/20"></div>
-          </div>
-          <img
-            src={seoImage}
-            alt="Loading Buddy"
-            className="h-24 w-24 animate-spin-slow relative z-10"
-          />
-        </div>
-      </div>
-    );
-  }
 
   return (
     <>

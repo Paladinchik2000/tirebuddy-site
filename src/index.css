@@ -13,7 +13,18 @@ body {
   min-height: 100vh;
 }
 
-h1, h2, h3, h4, h5, h6 {
+body.seo-bot [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Space Grotesk', system-ui, sans-serif;
 }
 
@@ -51,8 +62,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .animate-spin-slow {
@@ -60,8 +76,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes roll-across {
-  0% { transform: translateX(0) rotate(0deg); }
-  100% { transform: translateX(120vw) rotate(900deg); }
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(120vw) rotate(900deg);
+  }
 }
 
 .wheel-roll {
@@ -70,8 +91,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 6px solid #1f2937;
   border-top-color: #e5e7eb;
   border-radius: 50%;
-  animation: roll-across 2s cubic-bezier(.3,.7,.2,1) forwards;
-  box-shadow: 0 6px 16px rgba(0,0,0,.2);
+  animation: roll-across 2s cubic-bezier(.3, .7, .2, 1) forwards;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .2);
   position: relative;
 }
 
@@ -86,9 +107,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes blob {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
+
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
 }
 
 .animate-blob {
