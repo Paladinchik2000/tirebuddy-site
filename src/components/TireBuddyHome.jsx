@@ -77,7 +77,8 @@ export default function TireBuddyHome() {
 
           {/* Hero-секция: Атрибуты data-aos удалены для обеспечения статической видимости */}
           <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-            <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
+            {/* backdrop-blur-sm удален, bg-white/10 заменен на bg-white/20 */}
+            <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/20 text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
               <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
             </span>
 
@@ -93,7 +94,8 @@ export default function TireBuddyHome() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+              {/* backdrop-blur-sm удален, bg-white/10 заменен на bg-white/20 */}
+              <div className="bg-white/20 rounded-2xl p-6 border border-white/20">
                 <span className="text-dark-300 text-sm">Starting at</span>
                 <p className="text-5xl font-bold text-white">
                   $89
@@ -108,9 +110,10 @@ export default function TireBuddyHome() {
               >
                 <span>🚗</span> Book Tire Change
               </button>
+              {/* backdrop-blur-sm удален, bg-white/10 заменен на bg-white/20 */}
               <Link
                 to="/services"
-                className="px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-2xl border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
+                className="px-10 py-4 bg-white/20 text-white font-bold text-lg rounded-2xl border-2 border-white/30 hover:bg-white/30 transition-all duration-300"
               >
                 View Services
               </Link>
