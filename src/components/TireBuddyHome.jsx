@@ -9,12 +9,6 @@ export default function TireBuddyHome() {
   const [selectedService, setSelectedService] = useState("");
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    const isBot = typeof navigator !== 'undefined' && /bot|googlebot|crawler|spider|robot|crawling|ReactSnap/i.test(navigator.userAgent);
     if (isBot && typeof document !== 'undefined') {
       document.body.classList.add('seo-bot');
     }
@@ -24,7 +18,7 @@ export default function TireBuddyHome() {
       once: true,
       disable: isBot
     });
-  }, []);
+  }, [isBot]);
 
   useEffect(() => {
     if (window.location.hash === "#booking") {
@@ -54,6 +48,17 @@ export default function TireBuddyHome() {
 
   return (
     <>
+      {isBot && (
+        <style dangerouslySetInnerHTML={{
+          __html: `
+          [data-aos] {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+          }
+        `}} />
+      )}
+
       <Helmet>
         <title>TireBuddy – Mobile Tire Change & Repair Service in Ontario</title>
         <meta name="description" content="Fast, family-owned mobile tire service that comes to your driveway. Reliable, friendly, and stress-free tire changes and repairs across Ontario." />
