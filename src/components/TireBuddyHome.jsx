@@ -310,7 +310,7 @@ export default function TireBuddyHome() {
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-dark-100">
               <iframe
                 title="TireBuddy Service Area"
-                src="<iframe src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d216752.84259259593!2d-79.37805804999999!3d43.718241200000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e1!3m2!1sen!2sro!4v1772912760254!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92272.67448483084!2d-79.6121673275408!3d43.65322600609495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d3d3b76a7f%3A0x37f68c3b1b2f0f19!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}

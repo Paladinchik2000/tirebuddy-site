@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { hydrateRoot, createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
@@ -13,7 +13,7 @@ import FaqPage from "./components/FaqPage";
 import ScrollToTop from "./components/ScrollToTop";
 import ThankYouPage from "./components/ThankYouPage";
 
-//  новая страница
+//  новая страница
 import FallCleanupPage from "./components/services/FallCleanupPage";
 import TireChangePage from "./components/services/TireChangePage";
 import SnowShovelingPage from "./components/services/SnowShovelingPage";
@@ -29,11 +29,13 @@ import TireStorageGuideBlog from "./components/blog/TireStorageGuideBlog";
 
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const rootElement = document.getElementById("root");
+
+const app = (
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-         <ScrollToTop />
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<TireBuddyHome />} />
@@ -44,12 +46,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="faq" element={<FaqPage />} />
             <Route path="thank-you" element={<ThankYouPage />} />
 
-            {/*  Страница услуг */}
+            {/*  Страница услуг */}
             <Route path="services/fall-cleanup" element={<FallCleanupPage />} />
             <Route path="services/tire-change" element={<TireChangePage />} />
             <Route path="services/snow-shoveling" element={<SnowShovelingPage />} />
 
-            {/*  Страница блогов */}
+            {/*  Страница блогов */}
             <Route path="blog/tire-safety-warning-signs" element={<TireSafetySignsBlog />} />
             <Route path="blog/winter-vs-all-season-tires" element={<WinterVsAllSeasonBlog />} />
             <Route path="blog/snow-shoveling-before-we-arrive" element={<SnowShovelingBeforeWeArrive />} />
@@ -58,7 +60,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="blog/choosing-right-tires-ontario" element={<ChoosingRightTiresBlog />} />
             <Route path="blog/tire-storage-guide-canada" element={<TireStorageGuideBlog />} />
 
-            {/*  Страница 404 (fallback) */}
+            {/*  Страница 404 (fallback) */}
             <Route
               path="*"
               element={
@@ -82,3 +84,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </HelmetProvider>
   </React.StrictMode>
 );
+
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, app);
+} else {
+  createRoot(rootElement).render(app);
+}

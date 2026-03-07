@@ -13,12 +13,6 @@ body {
   min-height: 100vh;
 }
 
-body.seo-bot [data-aos] {
-  opacity: 1 !important;
-  transform: none !important;
-  visibility: visible !important;
-}
-
 h1,
 h2,
 h3,
@@ -51,7 +45,7 @@ h6 {
 }
 
 .fade-in-section {
-  opacity: 0;
+  opacity: 1;
   transform: translateY(30px);
   transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
