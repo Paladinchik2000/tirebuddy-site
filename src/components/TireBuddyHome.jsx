@@ -48,6 +48,7 @@ export default function TireBuddyHome() {
 
   return (
     <>
+      {/* 100% гарантия снятия невидимости AOS */}
       {isBot && (
         <style dangerouslySetInnerHTML={{
           __html: `
@@ -87,11 +88,17 @@ export default function TireBuddyHome() {
             <div className="absolute inset-0 bg-gradient-to-br from-dark-900/80 via-dark-900/60 to-primary-900/50"></div>
           </div>
 
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+          {/* Прячем тяжелые фильтры от Гуглбота, чтобы он не зависал */}
+          {!isBot && (
+            <>
+              <div className="absolute top-20 left-10 w-72 h-72 bg-primary-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+              <div className="absolute top-40 right-10 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+              <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+            </>
+          )}
 
-          <div className="relative z-10 text-center px-4 max-w-5xl mx-auto" data-aos="fade-up">
+          {/* Физически убираем атрибут data-aos для ботов */}
+          <div className="relative z-10 text-center px-4 max-w-5xl mx-auto" data-aos={isBot ? undefined : "fade-up"}>
             <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
               <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
             </span>
@@ -139,7 +146,7 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section data-aos="fade-up" className="py-8 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 relative overflow-hidden">
+        <section data-aos={isBot ? undefined : "fade-up"} className="py-8 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }}>
           </div>
           <div className="max-w-6xl mx-auto px-4 text-center relative">
@@ -153,7 +160,7 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section data-aos="fade-up" className="py-24 bg-gradient-to-b from-white to-dark-50 tire-tracks-bg overflow-hidden">
+        <section data-aos={isBot ? undefined : "fade-up"} className="py-24 bg-gradient-to-b from-white to-dark-50 tire-tracks-bg overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
@@ -188,8 +195,8 @@ export default function TireBuddyHome() {
                 <div
                   key={b.title}
                   className="group relative bg-white rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
+                  data-aos={isBot ? undefined : "fade-up"}
+                  data-aos-delay={isBot ? undefined : index * 100}
                 >
                   <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${b.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}></div>
                   <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${b.gradient} flex items-center justify-center mb-6 shadow-lg transform group-hover:rotate-6 transition-transform duration-300 p-3`}>
@@ -205,10 +212,10 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section data-aos="fade-up" className="py-24 bg-white">
+        <section data-aos={isBot ? undefined : "fade-up"} className="py-24 bg-white">
           <div className="max-w-6xl mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div data-aos="fade-right" className="relative">
+              <div data-aos={isBot ? undefined : "fade-right"} className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-primary-500 to-orange-500 rounded-3xl opacity-20 blur-xl"></div>
                 <img
                   src="/images/about-van.JPG"
@@ -217,7 +224,7 @@ export default function TireBuddyHome() {
                 />
               </div>
 
-              <div data-aos="fade-left">
+              <div data-aos={isBot ? undefined : "fade-left"}>
                 <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
                   About Us
                 </span>
@@ -241,7 +248,7 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section className="py-24 bg-gradient-to-b from-dark-50 to-white tire-tracks-bg tire-tracks-left overflow-hidden" data-aos="fade-up">
+        <section className="py-24 bg-gradient-to-b from-dark-50 to-white tire-tracks-bg tire-tracks-left overflow-hidden" data-aos={isBot ? undefined : "fade-up"}>
           <div className="max-w-6xl mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
@@ -276,8 +283,8 @@ export default function TireBuddyHome() {
                 <div
                   key={review.name}
                   className="bg-white rounded-3xl p-8 shadow-card hover:shadow-card-hover transition-all duration-500"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
+                  data-aos={isBot ? undefined : "fade-up"}
+                  data-aos-delay={isBot ? undefined : index * 100}
                 >
                   <div className="flex gap-1 mb-4">
                     {[...Array(review.rating)].map((_, i) => (
@@ -300,7 +307,7 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section className="py-24 bg-white" data-aos="fade-up">
+        <section className="py-24 bg-white" data-aos={isBot ? undefined : "fade-up"}>
           <div className="max-w-6xl mx-auto px-4">
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
@@ -325,7 +332,7 @@ export default function TireBuddyHome() {
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-dark-100">
               <iframe
                 title="TireBuddy Service Area"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92272.67448483084!2d-79.6121673275408!3d43.65322600609495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d3d3b76a7f%3A0x37f68c3b1b2f0f19!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
+                src="https://googleusercontent.com/maps.google.com/0"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
@@ -354,7 +361,7 @@ export default function TireBuddyHome() {
                 method="POST"
                 className="space-y-6"
                 onSubmit={() => {
-                  if (window.gtag) {
+                  if (window?.gtag) {
                     window.gtag("event", "conversion", {
                       send_to: "AW-17700861953/TQlXCL2blbsbEIHwtvhB",
                       value: 1.0,
