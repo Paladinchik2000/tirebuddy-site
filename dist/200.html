@@ -5,6 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <script>
+    // Блокирующий скрипт для определения поисковых роботов до старта React
+    if (/bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) {
+      document.documentElement.classList.add('seo-bot');
+    }
+  </script>
+
   <!-- ====== PRECONNECT HINTS (Performance) ====== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -97,10 +104,10 @@
   <noscript>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </noscript>
-  <script type="module" crossorigin src="/assets/index-6ddccb63.js"></script>
+  <script type="module" crossorigin src="/assets/index-ba9c9e8f.js"></script>
   <link rel="modulepreload" crossorigin href="/assets/vendor-005a0e56.js">
   <link rel="modulepreload" crossorigin href="/assets/animations-064b36e7.js">
-  <link rel="stylesheet" href="/assets/index-d99d6f6e.css">
+  <link rel="stylesheet" href="/assets/index-4cbd5708.css">
 </head>
 
 <body>

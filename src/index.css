@@ -165,3 +165,10 @@ h6 {
   z-index: 0;
   transform: scaleX(-1) rotate(15deg);
 }
+
+/* Принудительное раскрытие контента для поисковых ботов */
+html.seo-bot [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}

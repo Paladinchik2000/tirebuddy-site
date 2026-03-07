@@ -5,6 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <script>
+    // Блокирующий скрипт для определения поисковых роботов до старта React
+    if (/bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) {
+      document.documentElement.classList.add('seo-bot');
+    }
+  </script>
+
   <!-- ====== PRECONNECT HINTS (Performance) ====== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
