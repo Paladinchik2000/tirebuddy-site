@@ -5,18 +5,15 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function TireBuddyHome() {
-  const isBot = typeof navigator !== 'undefined' && /bot|googlebot|crawler|spider|robot|crawling|ReactSnap/i.test(navigator.userAgent);
   const [selectedService, setSelectedService] = useState("");
 
-  // Инициализируем AOS как обычно
   useEffect(() => {
     AOS.init({
       duration: 800,
       easing: "ease-out-cubic",
       once: true,
-      disable: isBot
     });
-  }, [isBot]);
+  }, []);
 
   useEffect(() => {
     if (window.location.hash === "#booking") {
@@ -46,18 +43,6 @@ export default function TireBuddyHome() {
 
   return (
     <>
-      {/* Железобетонная броня от невидимости. React не сломается, а стили применятся */}
-      {isBot && (
-        <style dangerouslySetInnerHTML={{
-          __html: `
-          [data-aos] {
-            opacity: 1 !important;
-            transform: none !important;
-            visibility: visible !important;
-          }
-        `}} />
-      )}
-
       <Helmet>
         <title>TireBuddy – Mobile Tire Change & Repair Service in Ontario</title>
         <meta name="description" content="Fast, family-owned mobile tire service that comes to your driveway. Reliable, friendly, and stress-free tire changes and repairs across Ontario." />
@@ -90,7 +75,7 @@ export default function TireBuddyHome() {
           <div className="absolute top-40 right-10 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
-          {/* УБРАЛИ АНИМАЦИЮ С ГЛАВНОГО ЭКРАНА. Теперь текст 100% не исчезнет! */}
+          {/* Hero-секция: Атрибуты data-aos удалены для обеспечения статической видимости */}
           <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
             <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
               <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
@@ -139,7 +124,6 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        {/* Остальные секции возвращаем к обычному виду без условий isBot */}
         <section data-aos="fade-up" className="py-8 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }}>
           </div>
@@ -324,10 +308,9 @@ export default function TireBuddyHome() {
             </div>
 
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-dark-100">
-              {/* КАРТА ПОЧИНЕНА: Вставлена правильная ссылка на Google Maps! */}
               <iframe
                 title="TireBuddy Service Area"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92272.67448483084!2d-79.6121673275408!3d43.65322600609495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d3d3b76a7f%3A0x37f68c3b1b2f0f19!2sToronto%2C%20ON!5e0!3m2!1sen!2sca!4v1700000000000!5m2!1sen!2sca"
+                src="<iframe src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d216752.84259259593!2d-79.37805804999999!3d43.718241200000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e1!3m2!1sen!2sro!4v1772912760254!5m2!1sen!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" 
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
