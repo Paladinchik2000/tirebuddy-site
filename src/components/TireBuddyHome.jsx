@@ -5,8 +5,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function TireBuddyHome() {
-  const isSnapBot = typeof navigator !== 'undefined' && navigator.userAgent === 'ReactSnap';
-  const [loading, setLoading] = useState(!isSnapBot);
+  const isBot = typeof navigator !== 'undefined' && /bot|googlebot|crawler|spider|robot|crawling|ReactSnap/i.test(navigator.userAgent);
+  const [loading, setLoading] = useState(!isBot);
   const [selectedService, setSelectedService] = useState("");
 
   useEffect(() => {
