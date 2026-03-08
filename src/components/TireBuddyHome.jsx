@@ -47,25 +47,22 @@ export default function TireBuddyHome() {
 
   const seoImage = "/images/logo-buddy.png";
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen bg-gradient-to-br from-dark-50 to-dark-100">
-        <div className="relative">
-          <div className="absolute inset-0 animate-ping">
-            <div className="w-24 h-24 rounded-full bg-primary-500/20"></div>
-          </div>
-          <img
-            src={seoImage}
-            alt="Loading Buddy"
-            className="h-24 w-24 animate-spin-slow relative z-10"
-          />
-        </div>
-      </div>
-    );
-  }
-
   return (
     <>
+      {loading && (
+        <div className="fixed inset-0 z-50 flex justify-center items-center bg-gradient-to-br from-dark-50 to-dark-100">
+          <div className="relative">
+            <div className="absolute inset-0 animate-ping">
+              <div className="w-24 h-24 rounded-full bg-primary-500/20"></div>
+            </div>
+            <img
+              src={seoImage}
+              alt="Loading Buddy"
+              className="h-24 w-24 animate-spin-slow relative z-10"
+            />
+          </div>
+        </div>
+      )}
       <Helmet>
         <title>TireBuddy – Mobile Tire Change & Repair Service in Ontario</title>
         <meta name="description" content="Fast, family-owned mobile tire service that comes to your driveway. Reliable, friendly, and stress-free tire changes and repairs across Ontario." />
