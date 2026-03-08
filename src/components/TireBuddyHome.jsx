@@ -78,6 +78,7 @@ export default function TireBuddyHome() {
         <meta name="twitter:title" content="TireBuddy | Ontario's Mobile Tire Experts" />
         <meta name="twitter:description" content="We come to you — for fast, professional tire changes and repairs anywhere in Ontario." />
         <meta name="twitter:image" content={seoImage} />
+        <link rel="canonical" href="https://tirebuddy.ca/" />
       </Helmet>
 
       <div className="min-h-screen flex flex-col">

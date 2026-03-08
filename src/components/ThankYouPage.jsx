@@ -8,6 +8,7 @@ export default function ThankYouPage() {
     <>
       <Helmet>
         <title>Thank You | TireBuddy</title>
+        <meta name="robots" content="noindex, nofollow" />
         <meta
           name="description"
           content="Thank you for contacting TireBuddy. We appreciate your trust and look forward to serving you."

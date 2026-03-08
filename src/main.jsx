@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider, Helmet } from "react-helmet-async";
 
 import Layout from "./components/Layout";
 import TireBuddyHome from "./components/TireBuddyHome";
@@ -62,18 +62,24 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route
               path="*"
               element={
-                <div className="flex flex-col items-center justify-center h-screen text-center text-slate-700">
-                  <h1 className="text-4xl font-bold mb-3">404 - Page Not Found</h1>
-                  <p className="text-lg mb-6">
-                    Oops! The page you're looking for doesn't exist.
-                  </p>
-                  <Link
-                    to="/"
-                    className="px-5 py-2 rounded-full bg-[#E63946] text-white font-semibold hover:opacity-90 transition"
-                  >
-                    Go Home
-                  </Link>
-                </div>
+                <>
+                  <Helmet>
+                    <title>Page Not Found | TireBuddy</title>
+                    <meta name="robots" content="noindex, nofollow" />
+                  </Helmet>
+                  <div className="flex flex-col items-center justify-center h-screen text-center text-slate-700">
+                    <h1 className="text-4xl font-bold mb-3">404 - Page Not Found</h1>
+                    <p className="text-lg mb-6">
+                      Oops! The page you're looking for doesn't exist.
+                    </p>
+                    <Link
+                      to="/"
+                      className="px-5 py-2 rounded-full bg-[#E63946] text-white font-semibold hover:opacity-90 transition"
+                    >
+                      Go Home
+                    </Link>
+                  </div>
+                </>
               }
             />
           </Route>

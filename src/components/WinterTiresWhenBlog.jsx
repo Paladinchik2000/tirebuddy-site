@@ -10,16 +10,15 @@ export default function WinterTiresWhenBlog() {
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDesc} />
-        <meta
-          property="og:title"
-          content="When Should You Switch to Winter Tires in Ontario?"
-        />
+        <link rel="canonical" href="https://tirebuddy.ca/blog/when-to-switch-to-winter-tires-ontario" />
+        <meta property="og:title" content="When Should You Switch to Winter Tires in Ontario?" />
         <meta property="og:description" content={seoDesc} />
-        <meta
-          property="og:url"
-          content="https://tirebuddy.ca/blog/when-to-switch-to-winter-tires-ontario"
-        />
+        <meta property="og:url" content="https://tirebuddy.ca/blog/when-to-switch-to-winter-tires-ontario" />
         <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDesc} />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
 
       <div className="bg-[#F4F4F4] min-h-screen">

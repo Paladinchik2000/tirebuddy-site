@@ -11,11 +11,15 @@ export default function SnowShovelingBeforeWeArrive() {
       <Helmet>
         <title>{seoTitle}</title>
         <meta name="description" content={seoDesc} />
-        <meta
-          property="og:title"
-          content="Before We Arrive: How to Prepare for Your Snow Shoveling"
-        />
+        <link rel="canonical" href="https://tirebuddy.ca/blog/snow-shoveling-before-we-arrive" />
+        <meta property="og:title" content="Before We Arrive: How to Prepare for Your Snow Shoveling" />
         <meta property="og:description" content={seoDesc} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://tirebuddy.ca/blog/snow-shoveling-before-we-arrive" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoTitle} />
+        <meta name="twitter:description" content={seoDesc} />
+        <meta name="twitter:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
       </Helmet>
 
       <div className="bg-[#F4F4F4] min-h-screen">
