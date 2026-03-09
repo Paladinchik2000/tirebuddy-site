@@ -17,9 +17,10 @@ export default function ContactPage() {
     const data = new FormData(form);
 
     try {
-      // === reCAPTCHA v3 ===
-      const token = await window.grecaptcha.execute("6Lf1S_srAAAAACf8o0ecHsRxrazjUBKUxHC51O4F", { action: "submit" });
-      data.append("g-recaptcha-response", token);
+      if (window.grecaptcha) {
+        const token = await window.grecaptcha.execute("6Lf1S_srAAAAACf8o0ecHsRxrazjUBKUxHC51O4F", { action: "submit" });
+        data.append("g-recaptcha-response", token);
+      }
 
       const res = await fetch("https://formspree.io/f/mnnondng", {
         method: "POST",

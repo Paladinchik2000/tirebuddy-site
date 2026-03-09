@@ -106,7 +106,7 @@ export default function TireBuddyHome() {
               <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
             </span>
             
-            <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
               Your Tire's
               <span className="block bg-gradient-to-r from-primary-400 via-primary-500 to-orange-400 bg-clip-text text-transparent">
                 Best Friend
@@ -120,7 +120,7 @@ export default function TireBuddyHome() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                 <span className="text-dark-300 text-sm">Starting at</span>
-                <p className="text-5xl font-bold text-white">
+                <p className="text-4xl sm:text-5xl font-bold text-white">
                   $89
                 </p>
               </div>
@@ -358,7 +358,7 @@ export default function TireBuddyHome() {
               </h2>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-card">
+            <div className="bg-white rounded-3xl p-5 sm:p-8 md:p-12 shadow-card">
               <form
                 action="https://formspree.io/f/mnnondng"
                 method="POST"
@@ -379,6 +379,7 @@ export default function TireBuddyHome() {
                     name="name"
                     placeholder="Full Name"
                     required
+                    aria-label="Full Name"
                     className="w-full rounded-xl border-2 border-dark-200 px-5 py-4 focus:border-primary-500 focus:outline-none transition-colors"
                   />
                   <input
@@ -386,6 +387,7 @@ export default function TireBuddyHome() {
                     name="phone"
                     placeholder="Phone Number"
                     required
+                    aria-label="Phone Number"
                     className="w-full rounded-xl border-2 border-dark-200 px-5 py-4 focus:border-primary-500 focus:outline-none transition-colors"
                   />
                 </div>
@@ -393,6 +395,7 @@ export default function TireBuddyHome() {
                 <select
                   name="service"
                   required
+                  aria-label="Select a Service"
                   value={selectedService}
                   onChange={(e) => setSelectedService(e.target.value)}
                   className="w-full rounded-xl border-2 border-dark-200 px-5 py-4 bg-white focus:border-primary-500 focus:outline-none transition-colors"
@@ -418,12 +421,14 @@ export default function TireBuddyHome() {
                     type="text"
                     name="vehicle_make"
                     placeholder="Vehicle Make (optional)"
+                    aria-label="Vehicle Make"
                     className="w-full rounded-xl border-2 border-dark-200 px-5 py-4 focus:border-primary-500 focus:outline-none transition-colors"
                   />
                   <input
                     type="text"
                     name="vehicle_model"
                     placeholder="Vehicle Model (optional)"
+                    aria-label="Vehicle Model"
                     className="w-full rounded-xl border-2 border-dark-200 px-5 py-4 focus:border-primary-500 focus:outline-none transition-colors"
                   />
                 </div>
@@ -434,6 +439,7 @@ export default function TireBuddyHome() {
                     name="address"
                     placeholder="Service Address"
                     required
+                    aria-label="Service Address"
                     className="w-full rounded-xl border-2 border-dark-200 px-5 py-4 focus:border-primary-500 focus:outline-none transition-colors"
                   />
                   <input
@@ -441,6 +447,7 @@ export default function TireBuddyHome() {
                     name="city"
                     placeholder="City"
                     required
+                    aria-label="City"
                     className="w-full rounded-xl border-2 border-dark-200 px-5 py-4 focus:border-primary-500 focus:outline-none transition-colors"
                   />
                 </div>
@@ -448,6 +455,7 @@ export default function TireBuddyHome() {
                 <textarea
                   name="message"
                   placeholder="Additional Details (optional)"
+                  aria-label="Additional Details"
                   rows={4}
                   className="w-full rounded-xl border-2 border-dark-200 px-5 py-4 focus:border-primary-500 focus:outline-none transition-colors resize-none"
                 ></textarea>

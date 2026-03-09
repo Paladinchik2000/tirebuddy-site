@@ -117,7 +117,7 @@ export default function FaqPage() {
 
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? "max-h-40 mt-3" : "max-h-0"
+                    openIndex === index ? "max-h-96 mt-3" : "max-h-0"
                   }`}
                 >
                   <p className="text-slate-700 leading-relaxed">

@@ -4,8 +4,6 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 export default function AboutPage() {
-  const PRIMARY_RED = "#E63946";
-
   useEffect(() => {
     const isBot = /bot|googlebot|crawler|spider|robot|crawling|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot/i.test(navigator.userAgent);
     AOS.init({ duration: isBot ? 0 : 800, easing: "ease-out-cubic", once: true, disable: isBot });
@@ -44,7 +42,7 @@ export default function AboutPage() {
       >
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         <div className="relative z-10 px-6" data-aos="fade-up">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
             About TireBuddy
           </h1>
           <p className="text-lg md:text-xl text-slate-100 max-w-2xl mx-auto">

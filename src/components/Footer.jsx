@@ -18,7 +18,7 @@ export default function Footer() {
           <h4 className="text-lg font-semibold text-white mb-3">Contact</h4>
           <ul className="space-y-2 text-gray-400">
             <li>
-              📞 <a href="tel:+14164285819" className="hover:text-white">+1 (437) 455-8729</a>
+              📞 <a href="tel:+14374558729" className="hover:text-white">+1 (437) 455-8729</a>
             </li>
             <li>
               📧 <a href="mailto:info@tirebuddy.ca" className="hover:text-white">info@tirebuddy.ca</a>
@@ -36,6 +36,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#E63946]"
+              aria-label="Follow TireBuddy on Instagram"
             >
               <i className="fab fa-instagram"></i>
             </a>
@@ -44,6 +45,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#E63946]"
+              aria-label="Follow TireBuddy on Facebook"
             >
               <i className="fab fa-facebook"></i>
             </a>
@@ -52,6 +54,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#E63946]"
+              aria-label="Follow TireBuddy on TikTok"
             >
               <i className="fab fa-tiktok"></i>
             </a>

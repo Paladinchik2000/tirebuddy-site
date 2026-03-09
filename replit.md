@@ -95,4 +95,16 @@ Preferred communication style: Simple, everyday language.
 ### Accessibility
 - All images have descriptive alt text for screen readers
 - Icons include appropriate alt attributes
-- ARIA labels on interactive elements
+- ARIA labels on social links and all form inputs
+- Booking form inputs have aria-label attributes for screen readers
+
+### Mobile Responsiveness
+- Hero headings use responsive text sizes (text-3xl sm:text-5xl md:text-6xl) on About, TireChange, FallCleanup, SnowShoveling pages; Homepage hero uses text-3xl sm:text-5xl md:text-7xl
+- Booking form padding scales with screen size (p-5 sm:p-8 md:p-12)
+- Navigation collapses to hamburger menu on mobile
+
+### Googlebot / Crawler Support
+- Loading overlay skipped for bots (regex-based user agent detection)
+- AOS animations disabled for crawlers in all 7 components using AOS
+- noscript HTML fallback with business info in index.html
+- Bot detection regex: /bot|googlebot|crawler|spider|robot|crawling|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot/i

@@ -73,12 +73,12 @@ export default function Layout() {
             <NavLink to="/blog" className={linkClass}>Blog</NavLink>
             <NavLink to="/faq" className={linkClass}>FAQ</NavLink>
             <NavLink to="/contact" className={linkClass}>Contact</NavLink>
-            <a
-              href="/#booking"
+            <Link
+              to="/#booking"
               className="ml-4 px-6 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-glow hover:scale-105 transition-all duration-300"
             >
               Book Now
-            </a>
+            </Link>
           </nav>
 
           <button
@@ -103,13 +103,13 @@ export default function Layout() {
               <NavLink to="/blog" className={linkClass} onClick={closeMenu}>Blog</NavLink>
               <NavLink to="/faq" className={linkClass} onClick={closeMenu}>FAQ</NavLink>
               <NavLink to="/contact" className={linkClass} onClick={closeMenu}>Contact</NavLink>
-              <a
-                href="/#booking"
+              <Link
+                to="/#booking"
                 onClick={closeMenu}
                 className="px-8 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg"
               >
                 Book Now
-              </a>
+              </Link>
             </nav>
           </div>
         )}
