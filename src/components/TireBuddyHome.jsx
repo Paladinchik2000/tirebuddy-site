@@ -4,17 +4,20 @@ import { Helmet } from "react-helmet-async";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+const isBot = /bot|googlebot|crawler|spider|robot|crawling|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot/i.test(navigator.userAgent);
+
 export default function TireBuddyHome() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!isBot);
   const [selectedService, setSelectedService] = useState("");
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 800);
-    return () => clearTimeout(timer);
+    if (!isBot) {
+      const timer = setTimeout(() => setLoading(false), 800);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   useEffect(() => {
-    const isBot = /bot|googlebot|crawler|spider|robot|crawling|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot/i.test(navigator.userAgent);
     AOS.init({
       duration: isBot ? 0 : 800,
       easing: "ease-out-cubic",
