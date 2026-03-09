@@ -12,6 +12,16 @@ export default function BlogPage() {
 
   const posts = [
     {
+      slug: "when-to-replace-winter-tires",
+      title: "When to Replace Your Winter Tires: 6 Signs They're Worn Out",
+      tag: "Winter Tire Safety",
+      date: "March 2026",
+      readTime: "7 min read",
+      excerpt:
+        "How do you know when your winter tires need replacing? Learn the 6 key signs of worn winter tires, tread depth rules, and how old tires affect your safety on icy roads.",
+      icon: "/icons/tire-change-icon.png",
+    },
+    {
       slug: "choosing-right-tires-ontario",
       title: "How to Choose the Right Tires for Your Vehicle in Ontario",
       tag: "Tire Guide",
