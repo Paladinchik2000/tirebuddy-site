@@ -6,12 +6,8 @@ import { useEffect } from "react";
 
 export default function ServicesPage() {
   useEffect(() => {
-    AOS.init({
-      duration: 900,
-      easing: "ease-out-cubic",
-      once: true,
-      offset: 100,
-    });
+    const isBot = /bot|googlebot|crawler|spider|robot|crawling|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot/i.test(navigator.userAgent);
+    AOS.init({ duration: isBot ? 0 : 900, easing: "ease-out-cubic", once: true, offset: 100, disable: isBot });
   }, []);
 
   const scrollToBooking = () => {

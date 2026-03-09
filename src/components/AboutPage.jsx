@@ -7,7 +7,8 @@ export default function AboutPage() {
   const PRIMARY_RED = "#E63946";
 
   useEffect(() => {
-    AOS.init({ duration: 800, easing: "ease-out-cubic", once: true });
+    const isBot = /bot|googlebot|crawler|spider|robot|crawling|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot/i.test(navigator.userAgent);
+    AOS.init({ duration: isBot ? 0 : 800, easing: "ease-out-cubic", once: true, disable: isBot });
   }, []);
 
   return (
