@@ -103,60 +103,72 @@ export default function TireBuddyHome() {
           <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
           <div className="relative z-10 px-4 max-w-6xl mx-auto w-full" data-aos="fade-up">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <button
+              onClick={scrollToBooking}
+              className="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 z-20 cursor-pointer bg-transparent border-0 p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-2xl hidden md:block"
+              aria-label="Spring Special - Click to book now"
+            >
+              <img
+                src="/spring-special.png"
+                alt="Spring Special $64.99 for 3+ cars"
+                className="w-96 animate-pulsate drop-shadow-2xl"
+                width="384"
+                height="384"
+              />
+            </button>
+
+            <div className="flex flex-col items-center text-center">
               <button
                 onClick={scrollToBooking}
-                className="flex-shrink-0 cursor-pointer bg-transparent border-0 p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-2xl"
+                className="md:hidden cursor-pointer bg-transparent border-0 p-0 mb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-2xl"
                 aria-label="Spring Special - Click to book now"
               >
                 <img
                   src="/spring-special.png"
                   alt="Spring Special $64.99 for 3+ cars"
-                  className="w-56 sm:w-64 md:w-80 animate-pulsate drop-shadow-2xl"
-                  width="320"
-                  height="320"
+                  className="w-64 sm:w-72 animate-pulsate drop-shadow-2xl"
+                  width="288"
+                  height="288"
                 />
               </button>
 
-              <div className="text-center md:text-left flex-1">
-                <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
-                  <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
+              <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
+                <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
+              </span>
+              
+              <h1 className="text-3xl sm:text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+                Your Tire's
+                <span className="block bg-gradient-to-r from-primary-400 via-primary-500 to-orange-400 bg-clip-text text-transparent">
+                  Best Friend
                 </span>
-                
-                <h1 className="text-3xl sm:text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-                  Your Tire's
-                  <span className="block bg-gradient-to-r from-primary-400 via-primary-500 to-orange-400 bg-clip-text text-transparent">
-                    Best Friend
-                  </span>
-                </h1>
-                
-                <p className="text-xl md:text-2xl text-dark-200 max-w-3xl mb-8 leading-relaxed">
-                  Fast, friendly, and mobile tire service across Ontario — from tire changes to seasonal cleanup, we come to you.
-                </p>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-dark-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+                Fast, friendly, and mobile tire service across Ontario — from tire changes to seasonal cleanup, we come to you.
+              </p>
 
-                <div className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mb-8">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                    <span className="text-dark-300 text-sm">Starting at</span>
-                    <p className="text-4xl sm:text-5xl font-bold text-white">
-                      $89
-                    </p>
-                  </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <span className="text-dark-300 text-sm">Starting at</span>
+                  <p className="text-4xl sm:text-5xl font-bold text-white">
+                    $89
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                  <button
-                    onClick={scrollToBooking}
-                    className="px-10 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-glow hover:scale-105 transition-all duration-300 flex items-center gap-2"
-                  >
-                    <span>🚗</span> Book Tire Change
-                  </button>
-                  <Link
-                    to="/services"
-                    className="px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-2xl border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
-                  >
-                    View Services
-                  </Link>
-                </div>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button
+                  onClick={scrollToBooking}
+                  className="px-10 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-glow hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                >
+                  <span>🚗</span> Book Tire Change
+                </button>
+                <Link
+                  to="/services"
+                  className="px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-2xl border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
+                >
+                  View Services
+                </Link>
               </div>
             </div>
           </div>
