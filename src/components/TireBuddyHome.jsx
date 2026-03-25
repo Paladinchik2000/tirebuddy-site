@@ -204,7 +204,7 @@ export default function TireBuddyHome() {
           <div className="max-w-5xl mx-auto px-4">
             <div className="bg-white rounded-3xl shadow-card overflow-hidden">
               <div className="flex flex-col md:flex-row items-center">
-                <div className="flex-shrink-0 p-8 md:p-12 flex items-center justify-center bg-gradient-to-br from-primary-50 to-orange-50">
+                <div className="flex-shrink-0 p-8 md:p-12 flex items-center justify-center bg-white">
                   <img
                     src="/spring-special.png"
                     alt="Spring Special $64.99 for 3+ cars"
