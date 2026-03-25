@@ -111,7 +111,7 @@ export default function TireBuddyHome() {
               <img
                 src="/spring-special.png"
                 alt="Spring Special $64.99 for 3+ cars"
-                className="w-72 lg:w-80 animate-pulsate drop-shadow-2xl"
+                className="w-72 lg:w-80 animate-pulsate drop-shadow-2xl -rotate-[8deg]"
                 width="320"
                 height="320"
               />
