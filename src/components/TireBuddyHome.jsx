@@ -27,12 +27,13 @@ export default function TireBuddyHome() {
   }, []);
 
   useEffect(() => {
-    if (window.location.hash === "#booking") {
+    const hash = window.location.hash;
+    if (hash) {
       let attempts = 0;
       const scrollInterval = setInterval(() => {
-        const bookingSection = document.querySelector("#booking");
-        if (bookingSection) {
-          bookingSection.scrollIntoView({ behavior: "smooth" });
+        const target = document.querySelector(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
           clearInterval(scrollInterval);
         }
         attempts++;
@@ -101,44 +102,62 @@ export default function TireBuddyHome() {
           <div className="absolute top-40 right-10 w-72 h-72 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
           <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
-          <div className="relative z-10 text-center px-4 max-w-5xl mx-auto" data-aos="fade-up">
-            <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
-              <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
-            </span>
-            
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-              Your Tire's
-              <span className="block bg-gradient-to-r from-primary-400 via-primary-500 to-orange-400 bg-clip-text text-transparent">
-                Best Friend
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-dark-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-              Fast, friendly, and mobile tire service across Ontario — from tire changes to seasonal cleanup, we come to you.
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <span className="text-dark-300 text-sm">Starting at</span>
-                <p className="text-4xl sm:text-5xl font-bold text-white">
-                  $89
-                </p>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="relative z-10 px-4 max-w-6xl mx-auto w-full" data-aos="fade-up">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
               <button
                 onClick={scrollToBooking}
-                className="px-10 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-glow hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                className="flex-shrink-0 cursor-pointer bg-transparent border-0 p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-2xl"
+                aria-label="Spring Special - Click to book now"
               >
-                <span>🚗</span> Book Tire Change
+                <img
+                  src="/spring-special.png"
+                  alt="Spring Special $64.99 for 3+ cars"
+                  className="w-48 sm:w-56 md:w-72 animate-pulsate drop-shadow-2xl"
+                  width="288"
+                  height="288"
+                />
               </button>
-              <Link
-                to="/services"
-                className="px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-2xl border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
-              >
-                View Services
-              </Link>
+
+              <div className="text-center md:text-left flex-1">
+                <span className="inline-flex items-center gap-2 px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-semibold mb-6 border border-white/20">
+                  <img src="/icons/canadian-icon.png" alt="Canadian flag" className="w-5 h-5" width="20" height="20" /> Proudly Canadian Mobile Service
+                </span>
+                
+                <h1 className="text-3xl sm:text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+                  Your Tire's
+                  <span className="block bg-gradient-to-r from-primary-400 via-primary-500 to-orange-400 bg-clip-text text-transparent">
+                    Best Friend
+                  </span>
+                </h1>
+                
+                <p className="text-xl md:text-2xl text-dark-200 max-w-3xl mb-8 leading-relaxed">
+                  Fast, friendly, and mobile tire service across Ontario — from tire changes to seasonal cleanup, we come to you.
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center md:items-start justify-center md:justify-start gap-4 mb-8">
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                    <span className="text-dark-300 text-sm">Starting at</span>
+                    <p className="text-4xl sm:text-5xl font-bold text-white">
+                      $89
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                  <button
+                    onClick={scrollToBooking}
+                    className="px-10 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-glow hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                  >
+                    <span>🚗</span> Book Tire Change
+                  </button>
+                  <Link
+                    to="/services"
+                    className="px-10 py-4 bg-white/10 backdrop-blur-sm text-white font-bold text-lg rounded-2xl border-2 border-white/30 hover:bg-white/20 transition-all duration-300"
+                  >
+                    View Services
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -149,21 +168,78 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section data-aos="fade-up" className="py-8 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 relative overflow-hidden">
+        <section id="seniordiscount" data-aos="fade-up" className="py-12 md:py-16 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"}}>
           </div>
-          <div className="max-w-6xl mx-auto px-4 text-center relative">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+          <div className="max-w-4xl mx-auto px-4 text-center relative">
+            <div className="flex flex-col items-center gap-4">
               <img src="/icons/seniors-icon.png" alt="Seniors discount" className="w-16 h-16 rounded-xl shadow-lg" />
-              <div>
-                <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">10% Seniors Discount</h2>
-                <p className="text-white/80">Because experience deserves appreciation</p>
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-white">10% Seniors Discount</h2>
+              <p className="text-white/90 text-lg max-w-xl">
+                We appreciate our senior community. Enjoy 10% off any tire service — because experience deserves respect and savings.
+              </p>
+              <button
+                onClick={scrollToBooking}
+                className="mt-4 px-8 py-3 bg-white text-primary-600 font-bold text-lg rounded-2xl shadow-lg hover:bg-dark-50 hover:scale-105 transition-all duration-300"
+              >
+                Claim Your Discount
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section id="springspecial" data-aos="fade-up" className="py-16 md:py-24 bg-gradient-to-b from-white to-dark-50 overflow-hidden">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="bg-white rounded-3xl shadow-card overflow-hidden">
+              <div className="flex flex-col md:flex-row items-center">
+                <div className="flex-shrink-0 p-8 md:p-12 flex items-center justify-center bg-gradient-to-br from-primary-50 to-orange-50">
+                  <img
+                    src="/spring-special.png"
+                    alt="Spring Special $64.99 for 3+ cars"
+                    className="w-48 sm:w-56 md:w-64 animate-pulsate"
+                    width="256"
+                    height="256"
+                  />
+                </div>
+                <div className="flex-1 p-8 md:p-12">
+                  <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
+                    Limited Time Offer
+                  </span>
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-dark-900 mb-4">
+                    Spring Special — <span className="text-primary-500">$64.99</span> per car
+                  </h2>
+                  <p className="text-dark-600 text-lg leading-relaxed mb-3">
+                    Get your tires swapped this spring at an unbeatable price! Book for <strong>3 or more cars</strong> and pay only <strong>$64.99 per car</strong>. Perfect for families, neighbours, or coworkers who want to save together.
+                  </p>
+                  <p className="text-dark-600 text-lg leading-relaxed mb-6">
+                    Rally your neighbours, grab your friends, and lock in this deal before the season ends. Our mobile crew comes to you — no shop visits, no waiting.
+                  </p>
+                  <button
+                    onClick={scrollToBooking}
+                    className="px-10 py-4 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold text-lg rounded-2xl shadow-lg hover:shadow-glow hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                  >
+                    <span>🍁</span> Book the Spring Special
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section data-aos="fade-up" className="py-24 bg-gradient-to-b from-white to-dark-50 tire-tracks-bg overflow-hidden">
+        <section data-aos="fade-up" className="py-12 bg-gradient-to-r from-dark-900 via-dark-800 to-dark-900 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5" style={{backgroundImage: "url('/tire-tracks.png')", backgroundSize: "contain", backgroundRepeat: "repeat-x"}}></div>
+          <div className="max-w-4xl mx-auto px-4 text-center relative">
+            <p className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold text-white leading-snug">
+              Bring Your <span className="text-primary-400">Neighbour</span>,{" "}
+              Bring Your <span className="text-primary-400">Friend</span>
+            </p>
+            <p className="text-dark-300 text-lg mt-3">
+              Save together with our group tire change deals — the more cars, the more you save!
+            </p>
+          </div>
+        </section>
+
+        <section data-aos="fade-up" className="py-24 bg-gradient-to-b from-dark-50 to-white tire-tracks-bg overflow-hidden">
           <div className="max-w-6xl mx-auto px-4 relative z-10">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-2 bg-primary-50 text-primary-600 rounded-full text-sm font-semibold mb-4">
@@ -402,6 +478,7 @@ export default function TireBuddyHome() {
                 >
                   <option value="">Select a Service</option>
                   <option value="Tire Change">Tire Change</option>
+                  <option value="Spring Special">Spring Special ($64.99 for 3+ cars)</option>
                   <option value="Punctured Tire Repair">Punctured Tire Repair</option>
                   <option value="Gutter Cleaning">Gutter Cleaning</option>
                   <option value="Fall Cleanup">Fall Cleanup</option>

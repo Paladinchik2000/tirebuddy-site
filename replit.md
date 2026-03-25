@@ -98,6 +98,13 @@ Preferred communication style: Simple, everyday language.
 - ARIA labels on social links and all form inputs
 - Booking form inputs have aria-label attributes for screen readers
 
+### Promotions & Specials
+- Spring Special section (id="springspecial") — $64.99/car for 3+ cars, with pulsating maple leaf image and CTA
+- Senior Discount section (id="seniordiscount") — 10% off with CTA button to booking form
+- "Bring Your Neighbour, Bring Your Friend" banner section between Spring Special and Why Choose Us
+- Spring Special image in hero section (left side, clickable, pulsating animation via CSS @keyframes)
+- Hash navigation (#springspecial, #seniordiscount, #booking) works for deep linking
+
 ### Mobile Responsiveness
 - Hero headings use responsive text sizes (text-3xl sm:text-5xl md:text-6xl) on About, TireChange, FallCleanup, SnowShoveling pages; Homepage hero uses text-3xl sm:text-5xl md:text-7xl
 - Booking form padding scales with screen size (p-5 sm:p-8 md:p-12)

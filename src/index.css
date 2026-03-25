@@ -103,6 +103,15 @@ h1, h2, h3, h4, h5, h6 {
   animation-delay: 4s;
 }
 
+@keyframes pulsate {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.animate-pulsate {
+  animation: pulsate 2s ease-in-out infinite;
+}
+
 /* Tire tracks background decoration */
 .tire-tracks-bg {
   position: relative;
