@@ -70,18 +70,40 @@ export default function TireBuddyHome() {
         </div>
       )}
       <Helmet>
-        <title>TireBuddy – Mobile Tire Change & Repair Service in Ontario</title>
-        <meta name="description" content="Fast, family-owned mobile tire service that comes to your driveway. Reliable, friendly, and stress-free tire changes and repairs across Ontario." />
-        <meta property="og:title" content="TireBuddy – Mobile Tire Change & Repair Service" />
-        <meta property="og:description" content="TireBuddy provides professional mobile tire service right to your home or workplace — saving you time and hassle." />
-        <meta property="og:image" content={seoImage} />
+        <title>TireBuddy – Mobile Tire Change & Repair in Ontario | Spring Special $64.99</title>
+        <meta name="description" content="Spring Special: $64.99/car for 3+ cars! TireBuddy is Ontario's mobile tire change & repair service. 10% seniors discount. We come to your driveway — serving Toronto, Mississauga, Brampton & GTA." />
+        <meta property="og:title" content="TireBuddy – Spring Special $64.99/Car | Mobile Tire Service Ontario" />
+        <meta property="og:description" content="Book 3+ cars and pay only $64.99 each! TireBuddy provides mobile tire changes right at your driveway. 10% seniors discount. Serving the GTA." />
+        <meta property="og:image" content="https://tirebuddy.ca/spring-special.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tirebuddy.ca/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="TireBuddy | Ontario's Mobile Tire Experts" />
-        <meta name="twitter:description" content="We come to you — for fast, professional tire changes and repairs anywhere in Ontario." />
-        <meta name="twitter:image" content={seoImage} />
+        <meta name="twitter:title" content="TireBuddy | Spring Special $64.99/Car – Mobile Tire Experts" />
+        <meta name="twitter:description" content="Spring Special: $64.99/car for 3+ cars! Bring your neighbour, bring your friend. Mobile tire service across Ontario — we come to you." />
+        <meta name="twitter:image" content="https://tirebuddy.ca/spring-special.png" />
         <link rel="canonical" href="https://tirebuddy.ca/" />
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Offer",
+            "name": "Spring Special – Mobile Tire Change",
+            "description": "Book 3 or more cars and pay only $64.99 per car for a mobile tire change. Available across the Greater Toronto Area.",
+            "price": "64.99",
+            "priceCurrency": "CAD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://tirebuddy.ca/#springspecial",
+            "offeredBy": {
+              "@type": "AutoRepair",
+              "name": "TireBuddy",
+              "url": "https://tirebuddy.ca"
+            },
+            "areaServed": {
+              "@type": "State",
+              "name": "Ontario",
+              "containedInPlace": { "@type": "Country", "name": "Canada" }
+            }
+          }
+        `}</script>
       </Helmet>
 
       <div className="min-h-screen flex flex-col">
