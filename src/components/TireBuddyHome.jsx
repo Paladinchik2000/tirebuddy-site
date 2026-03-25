@@ -105,15 +105,15 @@ export default function TireBuddyHome() {
           <div className="relative z-10 px-4 max-w-6xl mx-auto w-full" data-aos="fade-up">
             <button
               onClick={scrollToBooking}
-              className="absolute -left-8 -top-8 z-20 cursor-pointer bg-transparent border-0 p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-2xl hidden md:block"
+              className="absolute -left-16 -top-6 z-20 cursor-pointer bg-transparent border-0 p-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-2xl hidden lg:block"
               aria-label="Spring Special - Click to book now"
             >
               <img
                 src="/spring-special.png"
                 alt="Spring Special $64.99 for 3+ cars"
-                className="w-96 animate-pulsate drop-shadow-2xl"
-                width="384"
-                height="384"
+                className="w-72 lg:w-80 animate-pulsate drop-shadow-2xl"
+                width="320"
+                height="320"
               />
             </button>
 
