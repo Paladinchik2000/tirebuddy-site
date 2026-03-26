@@ -91,7 +91,7 @@ export default function TireBuddyHome() {
             "price": "64.99",
             "priceCurrency": "CAD",
             "availability": "https://schema.org/InStock",
-            "url": "https://tirebuddy.ca/#springspecial",
+            "url": "https://tirebuddy.ca/#spring-special",
             "offeredBy": {
               "@type": "AutoRepair",
               "name": "TireBuddy",
@@ -202,7 +202,7 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section id="seniordiscount" data-aos="fade-up" className="py-12 md:py-16 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 relative overflow-hidden">
+        <section id="senior-discount" data-aos="fade-up" className="py-12 md:py-16 bg-gradient-to-r from-primary-500 via-primary-600 to-primary-500 relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"}}>
           </div>
           <div className="max-w-4xl mx-auto px-4 text-center relative">
@@ -222,7 +222,7 @@ export default function TireBuddyHome() {
           </div>
         </section>
 
-        <section id="springspecial" data-aos="fade-up" className="py-16 md:py-24 bg-gradient-to-b from-white to-dark-50 overflow-hidden">
+        <section id="spring-special" data-aos="fade-up" className="py-16 md:py-24 bg-gradient-to-b from-white to-dark-50 overflow-hidden">
           <div className="max-w-5xl mx-auto px-4">
             <div className="bg-white rounded-3xl shadow-card overflow-hidden">
               <div className="flex flex-col md:flex-row items-center">
