@@ -211,7 +211,7 @@ export default function WinterVsAllSeasonBlog() {
           <div className="bg-gradient-to-r from-[#E63946] to-[#ff6b6b] text-white rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold mb-3">Ready to Switch Your Tires?</h3>
             <p className="mb-4 opacity-90">
-              Mobile tire change starting at $89 — we come to you!
+              Mobile tire change starting at $95 — we come to you!
             </p>
             <Link
               to="/#booking"

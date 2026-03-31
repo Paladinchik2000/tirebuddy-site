@@ -25,7 +25,7 @@ export default function ServicesPage() {
       icon: "/icons/tire-change-icon.png",
       title: "Mobile Tire Change",
       description: "Fast, reliable, and professional tire change service — done right at your home or workplace.",
-      price: "$89",
+      price: "$95",
       image: "/images/service-tire-change.jpg",
       link: "/services/tire-change",
       gradient: "from-primary-500 to-orange-500",
@@ -62,7 +62,7 @@ export default function ServicesPage() {
         />
         <link rel="canonical" href="https://tirebuddy.ca/services" />
         <meta property="og:title" content="TireBuddy Services | Mobile Tire Change, Snow Shoveling & Fall Cleanup" />
-        <meta property="og:description" content="Professional mobile services across Ontario — tire changes starting at $89, snow shoveling from $80, and fall cleanup from $170." />
+        <meta property="og:description" content="Professional mobile services across Ontario — tire changes starting at $95, snow shoveling from $80, and fall cleanup from $170." />
         <meta property="og:image" content="https://tirebuddy.ca/images/logo-buddy.png" />
         <meta property="og:url" content="https://tirebuddy.ca/services" />
         <meta property="og:type" content="website" />

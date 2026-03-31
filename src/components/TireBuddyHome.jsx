@@ -173,7 +173,7 @@ export default function TireBuddyHome() {
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
                   <span className="text-dark-300 text-sm">Starting at</span>
                   <p className="text-4xl sm:text-5xl font-bold text-white">
-                    $89
+                    $95
                   </p>
                 </div>
               </div>

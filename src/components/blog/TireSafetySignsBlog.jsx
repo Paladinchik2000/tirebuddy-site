@@ -161,7 +161,7 @@ export default function TireSafetySignsBlog() {
           <div className="bg-gradient-to-r from-[#E63946] to-[#ff6b6b] text-white rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold mb-3">Ready for a Tire Change?</h3>
             <p className="mb-4 opacity-90">
-              Book your mobile tire change today — starting at just $89
+              Book your mobile tire change today — starting at just $95
             </p>
             <Link
               to="/#booking"

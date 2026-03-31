@@ -224,7 +224,7 @@ export default function ChoosingRightTiresBlog() {
               and professionally — no need to visit a shop or wait in line.
             </p>
             <p className="leading-relaxed">
-              <strong>Starting at just $89</strong>, our service includes tire mounting, balancing, and 
+              <strong>Starting at just $95</strong>, our service includes tire mounting, balancing, and 
               a courtesy vehicle inspection. We serve Toronto, Mississauga, Brampton, and surrounding areas.
             </p>
           </section>

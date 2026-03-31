@@ -259,7 +259,7 @@ export default function TireStorageGuideBlog() {
               and we pick up from either location.
             </p>
             <p className="leading-relaxed">
-              <strong>Starting at just $89</strong>, our mobile tire service saves you the hassle of 
+              <strong>Starting at just $95</strong>, our mobile tire service saves you the hassle of 
               loading tires into your car and waiting at a shop. We serve Toronto, Mississauga, Brampton, 
               and the entire GTA.
             </p>
