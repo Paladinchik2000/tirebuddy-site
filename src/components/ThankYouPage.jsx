@@ -8,7 +8,7 @@ export default function ThankYouPage() {
     const isBot = /bot|googlebot|crawler|spider|robot|crawling|Bingbot|Slurp|DuckDuckBot|Baiduspider|YandexBot|facebookexternalhit|Twitterbot|LinkedInBot/i.test(navigator.userAgent);
     AOS.init({ duration: isBot ? 0 : 800, easing: "ease-out-cubic", once: true, disable: isBot });
   }, []);
-  const googleReviewUrl = "https://maps.app.goo.gl/f9f8xDphB4Xii9zu6?g_st=ic";
+  const googleReviewUrl = "https://www.google.com/search?q=TireBuddy&stick=H4sIAAAAAAAA_-NgU1I1qEg0TEtJMk82NjJJskgyME-zMqhIM0xMNEhOtDA2t0wySUo1WMTKGZJZlOpUmpJSCQBifJSQNQAAAA&hl=ru&mat=CX0atkW4Q4eZElYBTVDHnp2VuHEbe7v9Ubzb_oQwzxneaNHLFxZJa9L2DYuhXe-3xyVoDXE0L1GMudTbYj5gpluEM7KqAtl4LP8ds1vFNceaQduNfq_g8UnuAIWCcWBT0g&authuser=0&ved=2ahUKEwjyopeKktKTAxUZ4wIHHeJ0JBYQ-MgIegQIFxAn";
 
   return (
     <>
