@@ -50,6 +50,16 @@ export default function ServicesPage() {
       link: "/services/fall-cleanup",
       gradient: "from-amber-500 to-orange-600",
     },
+    {
+      id: "tire-puncture-repair",
+      icon: "/icons/tire-change-icon.png",
+      title: "Tire Puncture Repair",
+      description: "Got a flat or a nail in your tire? We come to you and fix it on the spot — no tow truck needed.",
+      price: "$60",
+      image: "/images/service-tire-change.jpg",
+      link: "/services/tire-puncture-repair",
+      gradient: "from-primary-500 to-red-600",
+    },
   ];
 
   return (
