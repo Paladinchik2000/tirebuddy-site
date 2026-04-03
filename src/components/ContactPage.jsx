@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 export default function ContactPage() {
   const PRIMARY_RED = "#E63946";
+  const navigate = useNavigate();
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState(null); // "ok" | "error" | null
 
@@ -29,8 +31,7 @@ export default function ContactPage() {
       });
 
       if (res.ok) {
-        setStatus("ok");
-        form.reset();
+        navigate("/thank-you");
       } else {
         setStatus("error");
       }

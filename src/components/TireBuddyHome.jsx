@@ -483,6 +483,7 @@ export default function TireBuddyHome() {
                   }
                 }}
               >
+                <input type="hidden" name="_next" value="https://tirebuddy.ca/thank-you" />
                 <div className="grid md:grid-cols-2 gap-6">
                   <input
                     type="text"
